@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">TourMate BD</string>
+    <string name="app_tagline">Your Smart Travel Guide to Bangladesh</string>
+    <string name="division_label">Division</string>
+    <string name="district_label">District</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="about_title">About TourMate BD</string>
+
+    <!-- Section labels -->
+    <string name="how_to_reach">How to Reach</string>
+    <string name="transport_options">Transport Options</string>
+    <string name="cost_from_dhaka">Approx. Cost from Dhaka</string>
+    <string name="cost_from_sylhet">Approx. Cost from Sylhet</string>
+    <string name="entrance_fee">Entrance Fee</string>
+    <string name="best_time">Best Time to Visit</string>
+    <string name="opening_hours">Opening Hours</string>
+    <string name="accommodation">Accommodation</string>
+    <string name="budget_accommodation">Budget Options</string>
+    <string name="local_food">Local Food</string>
+    <string name="travel_tips">Travel Tips</string>
+    <string name="important_warnings">⚠️ Warnings &amp; Cautions</string>
+    <string name="open_in_maps">Open in Google Maps</string>
+    <string name="coming_soon">Content for this region is coming soon!\n\nStay tuned for updates.</string>
+    <string name="no_spots">No tourist spots found for this district yet.</string>
+
+    <!-- Nav Drawer -->
+    <string name="nav_home">Home</string>
+    <string name="nav_about">About</string>
+
+    <!-- About -->
+    <string name="about_content">TourMate BD is your trusted travel companion for exploring the beautiful tourist destinations of Bangladesh.\n\nOur mission is to empower tourists with accurate, honest information to navigate destinations independently — without falling victim to local syndicates, overcharging, or misinformation.\n\nCurrently featuring: Sylhet Division (complete)\n\nMore divisions coming soon!</string>
+    <string name="disclaimer">📋 Disclaimer: Prices and information are approximate and subject to change. Always verify locally. The app is not responsible for any discrepancies.</string>
+</resources>

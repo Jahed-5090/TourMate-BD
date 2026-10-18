@@ -1,0 +1,44 @@
+<resources>
+    <!-- Brand Colors -->
+    <color name="brand_primary">#1B5E20</color>       <!-- Deep Forest Green -->
+    <color name="brand_primary_dark">#0A3D12</color>
+    <color name="brand_primary_light">#2E7D32</color>
+    <color name="brand_accent">#F9A825</color>          <!-- Golden Yellow (like tea) -->
+    <color name="brand_accent_dark">#F57F17</color>
+    <color name="brand_teal">#00695C</color>            <!-- Haor Teal -->
+
+    <!-- Background Colors -->
+    <color name="bg_primary">#F8FBF8</color>
+    <color name="bg_card">#FFFFFF</color>
+    <color name="bg_surface">#EEF4EE</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#1A2E1A</color>
+    <color name="text_secondary">#4A6741</color>
+    <color name="text_hint">#8FA98F</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <!-- Status Colors -->
+    <color name="warning_bg">#FFF8E1</color>
+    <color name="warning_border">#FFB300</color>
+    <color name="warning_text">#E65100</color>
+    <color name="tip_bg">#E8F5E9</color>
+    <color name="tip_border">#43A047</color>
+
+    <!-- Category Badge Colors -->
+    <color name="cat_religious">#6A1B9A</color>
+    <color name="cat_natural">#2E7D32</color>
+    <color name="cat_haor">#01579B</color>
+    <color name="cat_waterfall">#0277BD</color>
+    <color name="cat_tea_garden">#558B2F</color>
+    <color name="cat_historical">#BF360C</color>
+    <color name="cat_forest">#1B5E20</color>
+    <color name="cat_eco">#00695C</color>
+
+    <!-- Misc -->
+    <color name="divider">#E0EBE0</color>
+    <color name="card_shadow">#1A000000</color>
+    <color name="overlay_gradient_start">#00000000</color>
+    <color name="overlay_gradient_end">#CC000000</color>
+    <color name="status_bar">#0A3D12</color>
+</resources>

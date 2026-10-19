@@ -1,0 +1,5 @@
+com.tourmate.bd.test.app-jetified-core-1.6.1-0 /Users/jahedahmed/.gradle/caches/transforms-4/ed5cd8e4e7e89a7a5160a0129180f62e/transformed/jetified-core-1.6.1/res
+com.tourmate.bd.test.app-androidTest-1 /Users/jahedahmed/Desktop/TourMate-BD/app/build/generated/res/resValues/androidTest/debug
+com.tourmate.bd.test.app-mergeDebugAndroidTestResources-2 /Users/jahedahmed/Desktop/TourMate-BD/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.tourmate.bd.test.app-mergeDebugAndroidTestResources-3 /Users/jahedahmed/Desktop/TourMate-BD/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.tourmate.bd.test.app-debugAndroidTest-4 /Users/jahedahmed/Desktop/TourMate-BD/app/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources

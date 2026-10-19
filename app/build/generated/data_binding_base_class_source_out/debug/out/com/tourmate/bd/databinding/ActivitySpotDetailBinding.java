@@ -4,6 +4,8 @@ package com.tourmate.bd.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -29,7 +31,16 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
   public final AppBarLayout appBar;
 
   @NonNull
+  public final MaterialButton btnAudioGuide;
+
+  @NonNull
   public final MaterialButton btnOpenMaps;
+
+  @NonNull
+  public final MaterialButton btnSaveNote;
+
+  @NonNull
+  public final ImageButton btnToggleFavorite;
 
   @NonNull
   public final MaterialButton btnWatchYoutube;
@@ -38,10 +49,16 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
   public final CardView cardAccommodation;
 
   @NonNull
+  public final CardView cardAudioGuide;
+
+  @NonNull
   public final CardView cardFood;
 
   @NonNull
   public final CardView cardHowToReach;
+
+  @NonNull
+  public final CardView cardNotes;
 
   @NonNull
   public final CardView cardTips;
@@ -53,10 +70,19 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
   public final CardView cardWarnings;
 
   @NonNull
+  public final EditText etNewNote;
+
+  @NonNull
   public final ImageView ivSpotHeader;
 
   @NonNull
   public final Toolbar toolbar;
+
+  @NonNull
+  public final TextView tvAudioBadge;
+
+  @NonNull
+  public final TextView tvAudioStatus;
 
   @NonNull
   public final TextView tvBestTime;
@@ -92,10 +118,16 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
   public final TextView tvOpeningHours;
 
   @NonNull
+  public final TextView tvSavedNotes;
+
+  @NonNull
   public final TextView tvSpotName;
 
   @NonNull
   public final TextView tvSpotNameBn;
+
+  @NonNull
+  public final TextView tvSpotWeather;
 
   @NonNull
   public final TextView tvTips;
@@ -116,30 +148,43 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
   public final YouTubePlayerView youtubePlayerView;
 
   private ActivitySpotDetailBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull AppBarLayout appBar, @NonNull MaterialButton btnOpenMaps,
-      @NonNull MaterialButton btnWatchYoutube, @NonNull CardView cardAccommodation,
-      @NonNull CardView cardFood, @NonNull CardView cardHowToReach, @NonNull CardView cardTips,
-      @NonNull CardView cardVideo, @NonNull CardView cardWarnings, @NonNull ImageView ivSpotHeader,
-      @NonNull Toolbar toolbar, @NonNull TextView tvBestTime, @NonNull TextView tvBudgetAccom,
-      @NonNull TextView tvCategory, @NonNull TextView tvCostFromDhaka,
-      @NonNull TextView tvCostFromSylhet, @NonNull TextView tvDescription,
-      @NonNull TextView tvEntranceFee, @NonNull TextView tvHotels, @NonNull TextView tvHowToReach,
-      @NonNull TextView tvLocalFood, @NonNull TextView tvOpeningHours, @NonNull TextView tvSpotName,
-      @NonNull TextView tvSpotNameBn, @NonNull TextView tvTips, @NonNull TextView tvTransport,
-      @NonNull TextView tvVideoBadge, @NonNull TextView tvVideoCaption,
-      @NonNull TextView tvWarnings, @NonNull YouTubePlayerView youtubePlayerView) {
+      @NonNull AppBarLayout appBar, @NonNull MaterialButton btnAudioGuide,
+      @NonNull MaterialButton btnOpenMaps, @NonNull MaterialButton btnSaveNote,
+      @NonNull ImageButton btnToggleFavorite, @NonNull MaterialButton btnWatchYoutube,
+      @NonNull CardView cardAccommodation, @NonNull CardView cardAudioGuide,
+      @NonNull CardView cardFood, @NonNull CardView cardHowToReach, @NonNull CardView cardNotes,
+      @NonNull CardView cardTips, @NonNull CardView cardVideo, @NonNull CardView cardWarnings,
+      @NonNull EditText etNewNote, @NonNull ImageView ivSpotHeader, @NonNull Toolbar toolbar,
+      @NonNull TextView tvAudioBadge, @NonNull TextView tvAudioStatus, @NonNull TextView tvBestTime,
+      @NonNull TextView tvBudgetAccom, @NonNull TextView tvCategory,
+      @NonNull TextView tvCostFromDhaka, @NonNull TextView tvCostFromSylhet,
+      @NonNull TextView tvDescription, @NonNull TextView tvEntranceFee, @NonNull TextView tvHotels,
+      @NonNull TextView tvHowToReach, @NonNull TextView tvLocalFood,
+      @NonNull TextView tvOpeningHours, @NonNull TextView tvSavedNotes,
+      @NonNull TextView tvSpotName, @NonNull TextView tvSpotNameBn, @NonNull TextView tvSpotWeather,
+      @NonNull TextView tvTips, @NonNull TextView tvTransport, @NonNull TextView tvVideoBadge,
+      @NonNull TextView tvVideoCaption, @NonNull TextView tvWarnings,
+      @NonNull YouTubePlayerView youtubePlayerView) {
     this.rootView = rootView;
     this.appBar = appBar;
+    this.btnAudioGuide = btnAudioGuide;
     this.btnOpenMaps = btnOpenMaps;
+    this.btnSaveNote = btnSaveNote;
+    this.btnToggleFavorite = btnToggleFavorite;
     this.btnWatchYoutube = btnWatchYoutube;
     this.cardAccommodation = cardAccommodation;
+    this.cardAudioGuide = cardAudioGuide;
     this.cardFood = cardFood;
     this.cardHowToReach = cardHowToReach;
+    this.cardNotes = cardNotes;
     this.cardTips = cardTips;
     this.cardVideo = cardVideo;
     this.cardWarnings = cardWarnings;
+    this.etNewNote = etNewNote;
     this.ivSpotHeader = ivSpotHeader;
     this.toolbar = toolbar;
+    this.tvAudioBadge = tvAudioBadge;
+    this.tvAudioStatus = tvAudioStatus;
     this.tvBestTime = tvBestTime;
     this.tvBudgetAccom = tvBudgetAccom;
     this.tvCategory = tvCategory;
@@ -151,8 +196,10 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
     this.tvHowToReach = tvHowToReach;
     this.tvLocalFood = tvLocalFood;
     this.tvOpeningHours = tvOpeningHours;
+    this.tvSavedNotes = tvSavedNotes;
     this.tvSpotName = tvSpotName;
     this.tvSpotNameBn = tvSpotNameBn;
+    this.tvSpotWeather = tvSpotWeather;
     this.tvTips = tvTips;
     this.tvTransport = tvTransport;
     this.tvVideoBadge = tvVideoBadge;
@@ -194,9 +241,27 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btn_audio_guide;
+      MaterialButton btnAudioGuide = ViewBindings.findChildViewById(rootView, id);
+      if (btnAudioGuide == null) {
+        break missingId;
+      }
+
       id = R.id.btn_open_maps;
       MaterialButton btnOpenMaps = ViewBindings.findChildViewById(rootView, id);
       if (btnOpenMaps == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_save_note;
+      MaterialButton btnSaveNote = ViewBindings.findChildViewById(rootView, id);
+      if (btnSaveNote == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_toggle_favorite;
+      ImageButton btnToggleFavorite = ViewBindings.findChildViewById(rootView, id);
+      if (btnToggleFavorite == null) {
         break missingId;
       }
 
@@ -212,6 +277,12 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.card_audio_guide;
+      CardView cardAudioGuide = ViewBindings.findChildViewById(rootView, id);
+      if (cardAudioGuide == null) {
+        break missingId;
+      }
+
       id = R.id.card_food;
       CardView cardFood = ViewBindings.findChildViewById(rootView, id);
       if (cardFood == null) {
@@ -221,6 +292,12 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
       id = R.id.card_how_to_reach;
       CardView cardHowToReach = ViewBindings.findChildViewById(rootView, id);
       if (cardHowToReach == null) {
+        break missingId;
+      }
+
+      id = R.id.card_notes;
+      CardView cardNotes = ViewBindings.findChildViewById(rootView, id);
+      if (cardNotes == null) {
         break missingId;
       }
 
@@ -242,6 +319,12 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.et_new_note;
+      EditText etNewNote = ViewBindings.findChildViewById(rootView, id);
+      if (etNewNote == null) {
+        break missingId;
+      }
+
       id = R.id.iv_spot_header;
       ImageView ivSpotHeader = ViewBindings.findChildViewById(rootView, id);
       if (ivSpotHeader == null) {
@@ -251,6 +334,18 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
       id = R.id.toolbar;
       Toolbar toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_audio_badge;
+      TextView tvAudioBadge = ViewBindings.findChildViewById(rootView, id);
+      if (tvAudioBadge == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_audio_status;
+      TextView tvAudioStatus = ViewBindings.findChildViewById(rootView, id);
+      if (tvAudioStatus == null) {
         break missingId;
       }
 
@@ -320,6 +415,12 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tv_saved_notes;
+      TextView tvSavedNotes = ViewBindings.findChildViewById(rootView, id);
+      if (tvSavedNotes == null) {
+        break missingId;
+      }
+
       id = R.id.tv_spot_name;
       TextView tvSpotName = ViewBindings.findChildViewById(rootView, id);
       if (tvSpotName == null) {
@@ -329,6 +430,12 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
       id = R.id.tv_spot_name_bn;
       TextView tvSpotNameBn = ViewBindings.findChildViewById(rootView, id);
       if (tvSpotNameBn == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_spot_weather;
+      TextView tvSpotWeather = ViewBindings.findChildViewById(rootView, id);
+      if (tvSpotWeather == null) {
         break missingId;
       }
 
@@ -368,12 +475,14 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySpotDetailBinding((CoordinatorLayout) rootView, appBar, btnOpenMaps,
-          btnWatchYoutube, cardAccommodation, cardFood, cardHowToReach, cardTips, cardVideo,
-          cardWarnings, ivSpotHeader, toolbar, tvBestTime, tvBudgetAccom, tvCategory,
-          tvCostFromDhaka, tvCostFromSylhet, tvDescription, tvEntranceFee, tvHotels, tvHowToReach,
-          tvLocalFood, tvOpeningHours, tvSpotName, tvSpotNameBn, tvTips, tvTransport, tvVideoBadge,
-          tvVideoCaption, tvWarnings, youtubePlayerView);
+      return new ActivitySpotDetailBinding((CoordinatorLayout) rootView, appBar, btnAudioGuide,
+          btnOpenMaps, btnSaveNote, btnToggleFavorite, btnWatchYoutube, cardAccommodation,
+          cardAudioGuide, cardFood, cardHowToReach, cardNotes, cardTips, cardVideo, cardWarnings,
+          etNewNote, ivSpotHeader, toolbar, tvAudioBadge, tvAudioStatus, tvBestTime, tvBudgetAccom,
+          tvCategory, tvCostFromDhaka, tvCostFromSylhet, tvDescription, tvEntranceFee, tvHotels,
+          tvHowToReach, tvLocalFood, tvOpeningHours, tvSavedNotes, tvSpotName, tvSpotNameBn,
+          tvSpotWeather, tvTips, tvTransport, tvVideoBadge, tvVideoCaption, tvWarnings,
+          youtubePlayerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

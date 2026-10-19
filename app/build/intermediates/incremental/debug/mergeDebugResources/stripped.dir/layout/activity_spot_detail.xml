@@ -99,19 +99,129 @@
                         android:textSize="16sp"
                         android:layout_marginTop="4dp"/>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/tv_category"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/btn_primary_bg"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="4dp"
+                            android:text="Natural"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_spot_weather"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/badge_bg"
+                            android:backgroundTint="#E8F5E9"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="4dp"
+                            android:text="⛅ আবহাওয়া..."
+                            android:textColor="#2E7D32"
+                            android:textSize="12sp"
+                            android:textStyle="bold"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"/>
+
+                        <!-- Topic 11: SQLite Favorite Toggle Button -->
+                        <ImageButton
+                            android:id="@+id/btn_toggle_favorite"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:background="@drawable/badge_bg"
+                            android:backgroundTint="#FFEBEE"
+                            android:src="@android:drawable/btn_star_big_off"
+                            android:contentDescription="Bookmark spot"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ── Audio Guide Card (Topic 10: Service) ────────────────── -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_audio_guide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/bg_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🎧 অডিও ট্যুর গাইড (Audio Guide)"
+                            android:textColor="@color/brand_primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/tv_audio_badge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Service"
+                            android:textSize="10sp"
+                            android:textColor="#FFFFFF"
+                            android:background="@drawable/badge_bg"
+                            android:backgroundTint="@color/brand_primary_light"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
                     <TextView
-                        android:id="@+id/tv_category"
+                        android:id="@+id/tv_audio_status"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="এই স্পট সম্পর্কে অডিও বিবরণ শুনুন। ব্যাকগ্রাউন্ডে চললেও অডিও চলতে থাকবে।"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:layout_marginTop="6dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_audio_guide"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/btn_primary_bg"
-                        android:paddingStart="12dp"
-                        android:paddingEnd="12dp"
-                        android:paddingTop="4dp"
-                        android:paddingBottom="4dp"
-                        android:text="Natural"
+                        android:text="▶️ অডিও বিবরণ শুনুন (Play Audio Guide)"
                         android:textColor="#FFFFFF"
-                        android:textSize="12sp"/>
+                        android:textSize="13sp"
+                        app:backgroundTint="@color/brand_primary"
+                        app:cornerRadius="10dp"
+                        app:icon="@android:drawable/ic_media_play"
+                        app:iconTint="#FFFFFF"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -634,6 +744,76 @@
                         android:textColor="#B71C1C"
                         android:textSize="13sp"
                         android:lineSpacingMultiplier="1.6"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ── Personal Travel Notes (Topic 11: SQLite Database) ───── -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_notes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/bg_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📝 ব্যক্তিগত নোট ও খরচ (Travel Notes - SQLite)"
+                        android:textColor="@color/brand_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="6dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ভাড়ার হিসাব বা চুক্তি SQLite লোকাল ডাটাবেজে সেভ করে রাখুন:"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <EditText
+                        android:id="@+id/et_new_note"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="যেমন: নৌকা ভাড়া ৫০০ টাকা চুক্তি করেছি..."
+                        android:textSize="13sp"
+                        android:background="@drawable/badge_bg"
+                        android:backgroundTint="#F5F5F5"
+                        android:padding="10dp"
+                        android:minLines="2"
+                        android:gravity="top"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_save_note"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="end"
+                        android:text="নোট সেভ করুন (Save Note)"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        app:backgroundTint="@color/brand_primary"
+                        app:cornerRadius="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_saved_notes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/text_primary"
+                        android:textSize="12sp"
+                        android:lineSpacingMultiplier="1.3"
+                        android:visibility="gone"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

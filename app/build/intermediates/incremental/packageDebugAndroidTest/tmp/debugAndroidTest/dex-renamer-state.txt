@@ -1,0 +1,7 @@
+#Mon Oct 19 18:23:33 BDT 2026
+base.0=/Users/jahedahmed/Desktop/TourMate-BD/app/build/intermediates/dex/debugAndroidTest/mergeExtDexDebugAndroidTest/classes.dex
+base.1=/Users/jahedahmed/Desktop/TourMate-BD/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex
+path.0=classes.dex
+path.1=0/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex

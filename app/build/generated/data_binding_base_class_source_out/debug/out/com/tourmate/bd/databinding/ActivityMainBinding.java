@@ -4,6 +4,8 @@ package com.tourmate.bd.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -25,6 +27,12 @@ public final class ActivityMainBinding implements ViewBinding {
   public final DrawerLayout drawerLayout;
 
   @NonNull
+  public final LinearLayout layoutOfflineBanner;
+
+  @NonNull
+  public final LinearLayout layoutWeather;
+
+  @NonNull
   public final NavigationView navView;
 
   @NonNull
@@ -33,14 +41,21 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final Toolbar toolbar;
 
+  @NonNull
+  public final TextView tvWeatherTemp;
+
   private ActivityMainBinding(@NonNull DrawerLayout rootView, @NonNull DrawerLayout drawerLayout,
-      @NonNull NavigationView navView, @NonNull RecyclerView rvDivisions,
-      @NonNull Toolbar toolbar) {
+      @NonNull LinearLayout layoutOfflineBanner, @NonNull LinearLayout layoutWeather,
+      @NonNull NavigationView navView, @NonNull RecyclerView rvDivisions, @NonNull Toolbar toolbar,
+      @NonNull TextView tvWeatherTemp) {
     this.rootView = rootView;
     this.drawerLayout = drawerLayout;
+    this.layoutOfflineBanner = layoutOfflineBanner;
+    this.layoutWeather = layoutWeather;
     this.navView = navView;
     this.rvDivisions = rvDivisions;
     this.toolbar = toolbar;
+    this.tvWeatherTemp = tvWeatherTemp;
   }
 
   @Override
@@ -72,6 +87,18 @@ public final class ActivityMainBinding implements ViewBinding {
     missingId: {
       DrawerLayout drawerLayout = (DrawerLayout) rootView;
 
+      id = R.id.layout_offline_banner;
+      LinearLayout layoutOfflineBanner = ViewBindings.findChildViewById(rootView, id);
+      if (layoutOfflineBanner == null) {
+        break missingId;
+      }
+
+      id = R.id.layout_weather;
+      LinearLayout layoutWeather = ViewBindings.findChildViewById(rootView, id);
+      if (layoutWeather == null) {
+        break missingId;
+      }
+
       id = R.id.nav_view;
       NavigationView navView = ViewBindings.findChildViewById(rootView, id);
       if (navView == null) {
@@ -90,8 +117,14 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((DrawerLayout) rootView, drawerLayout, navView, rvDivisions,
-          toolbar);
+      id = R.id.tv_weather_temp;
+      TextView tvWeatherTemp = ViewBindings.findChildViewById(rootView, id);
+      if (tvWeatherTemp == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((DrawerLayout) rootView, drawerLayout, layoutOfflineBanner,
+          layoutWeather, navView, rvDivisions, toolbar, tvWeatherTemp);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

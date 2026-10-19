@@ -10,6 +10,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <permission
         android:name="com.tourmate.bd.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -80,6 +83,31 @@
             android:name="com.tourmate.bd.activities.AboutActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
+
+        <!-- ── Android Components (Topic 10) ────────────────────────── -->
+
+
+        <!-- Foreground Service for Background Audio Narration -->
+        <service
+            android:name="com.tourmate.bd.components.AudioGuideService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
+        <!-- Broadcast Receiver for Network Changes -->
+        <receiver
+            android:name="com.tourmate.bd.components.NetworkChangeReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Content Provider for Data Sharing -->
+        <provider
+            android:name="com.tourmate.bd.components.TourMateContentProvider"
+            android:authorities="com.tourmate.bd.provider"
+            android:exported="false" />
+
         <activity
             android:name="androidx.compose.ui.tooling.PreviewActivity"
             android:exported="true" />

@@ -24,6 +24,26 @@
             app:titleTextColor="@color/text_on_primary"
             app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"/>
 
+        <!-- Offline Status Banner (Topic 10: Broadcast Receiver) -->
+        <LinearLayout
+            android:id="@+id/layout_offline_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#D32F2F"
+            android:padding="8dp"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚠️ আপনি অফলাইনে আছেন (Offline Mode) — সেভ করা ডেটা কাজ করবে"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
         <!-- Header Banner -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,8 +52,8 @@
             android:background="@color/brand_primary_light"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp">
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -46,10 +66,35 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="2dp"
                 android:text="বিভাগ অনুযায়ী ব্রাউজ করুন"
                 android:textColor="#CCE8F4CC"
                 android:textSize="13sp"/>
+
+            <!-- Live Weather Badge (Topic 11: HTTP API + JSON) -->
+            <LinearLayout
+                android:id="@+id/layout_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/badge_bg"
+                android:backgroundTint="#2EFFFFFF"
+                android:paddingStart="10dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/tv_weather_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⛅ আবহাওয়া লোড হচ্ছে..."
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
 
         </LinearLayout>
 

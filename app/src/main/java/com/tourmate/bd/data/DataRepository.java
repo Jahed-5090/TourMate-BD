@@ -162,6 +162,7 @@ public class DataRepository {
         shahjalal.setWarnings("⚠️ Be cautious of fake 'khadems' who may demand money for prayers. Donation is purely voluntary. Watch your belongings in crowded areas.");
         shahjalal.setLatitude(24.8961);
         shahjalal.setLongitude(91.8690);
+        shahjalal.setYoutubeVideoId("BgFpWOwCW7Y");
         spots.add(shahjalal);
 
         // 2. Hazrat Shah Paran Mazar
@@ -182,6 +183,7 @@ public class DataRepository {
         shahParan.setWarnings("⚠️ CNG drivers may try to charge extra — agree on fare BEFORE boarding. Standard fare should be around ৳100-150.");
         shahParan.setLatitude(24.9108);
         shahParan.setLongitude(91.9220);
+        shahParan.setYoutubeVideoId("ScTmIPB5G4A");
         spots.add(shahParan);
 
         // 3. Ratargul Swamp Forest
@@ -203,6 +205,7 @@ public class DataRepository {
         ratargul.setWarnings("⚠️ IMPORTANT: Only use boats from the official Forest Department ghat. Unofficial boatmen will overcharge. The official rate board is displayed at the ghat — insist on the posted rates. Do NOT go alone — always hire a guide. Avoid the plastic pollution from boats — some operators are irresponsible.");
         ratargul.setLatitude(24.9975);
         ratargul.setLongitude(91.9419);
+        ratargul.setYoutubeVideoId("pG1Zx6sL-Ks");
         spots.add(ratargul);
 
         // 4. Jaflong
@@ -226,6 +229,7 @@ public class DataRepository {
         jaflong.setWarnings("⚠️ HIGH RISK of overcharging by local transport and 'guides'. Fix the price BEFORE starting. ⚠️ Multiple fake 'entry fees' are collected at checkpoints — only pay official government receipted fees. ⚠️ Be careful on slippery river stones. ⚠️ Photography of border area may have restrictions.");
         jaflong.setLatitude(25.1671);
         jaflong.setLongitude(92.0313);
+        jaflong.setYoutubeVideoId("NzCQK_y9nuk");
         spots.add(jaflong);
 
         // 5. Lalakhal
@@ -245,6 +249,7 @@ public class DataRepository {
         lalakhal.setWarnings("⚠️ Boat owners may try to charge 3-4x the fair rate. The fair rate for a 1-hour boat ride is ৳500-800. Ask other tourists who have just finished their rides. ⚠️ Swimming is NOT recommended — the current can be deceptive.");
         lalakhal.setLatitude(25.1020);
         lalakhal.setLongitude(92.0764);
+        lalakhal.setYoutubeVideoId("j_XBcPubB-4");
         spots.add(lalakhal);
 
         // 6. Bichanakandi
@@ -264,6 +269,7 @@ public class DataRepository {
         bichanakandi.setWarnings("⚠️ Boat operators frequently overcharge tourists. Negotiate FIRMLY before boarding. Standard round-trip boat fare: ৳600-800 per boat (not per person). ⚠️ The rocky surface is slippery — exercise caution. ⚠️ Can be crowded on weekends.");
         bichanakandi.setLatitude(25.0873);
         bichanakandi.setLongitude(91.9671);
+        bichanakandi.setYoutubeVideoId("yJWh34w-05U");
         spots.add(bichanakandi);
 
         // 7. Dibir Haor
@@ -283,6 +289,7 @@ public class DataRepository {
         dibirHaor.setWarnings("⚠️ Plan your trip with a reliable local guide. Navigation on haors can be complex and disorienting. ⚠️ During monsoon, weather can change rapidly — check forecast before visiting. ⚠️ Do not book random 'tour operators' who approach you at Sylhet bus stands — they often overcharge significantly.");
         dibirHaor.setLatitude(25.0833);
         dibirHaor.setLongitude(91.4167);
+        dibirHaor.setYoutubeVideoId("pG1Zx6sL-Ks");
         spots.add(dibirHaor);
 
         // 8. Lakkatura Tea Garden
@@ -302,6 +309,7 @@ public class DataRepository {
         lakkatura.setWarnings("⚠️ This is a private working tea estate. Entering restricted plantation areas without permission is prohibited. Be respectful to workers.");
         lakkatura.setLatitude(24.9630);
         lakkatura.setLongitude(91.8930);
+        lakkatura.setYoutubeVideoId("NzCQK_y9nuk");
         spots.add(lakkatura);
 
         dist.setSpots(spots);
@@ -340,6 +348,7 @@ public class DataRepository {
         madhabkund.setWarnings("⚠️ Swimming near the waterfall base is dangerous due to strong currents — there have been drowning accidents. Stay behind safety barriers. ⚠️ Local transport from Barlekha to the park may try to overcharge — fix fare beforehand.");
         madhabkund.setLatitude(24.5083);
         madhabkund.setLongitude(92.1833);
+        madhabkund.setYoutubeVideoId("WJaa_1cJD_w");
         spots.add(madhabkund);
 
         // 2. Lawachara National Park
@@ -363,6 +372,7 @@ public class DataRepository {
         lawachara.setWarnings("⚠️ Do not hire unofficial 'guides' who approach you before reaching the park gate. Use only Forest Department certified guides. ⚠️ Maintain complete silence inside — noise disturbs wildlife. ⚠️ Do not litter — heavy fines apply.");
         lawachara.setLatitude(24.3275);
         lawachara.setLongitude(91.7856);
+        lawachara.setYoutubeVideoId("pG1Zx6sL-Ks");
         spots.add(lawachara);
 
         // 3. Madhobpur Lake
@@ -382,6 +392,7 @@ public class DataRepository {
         madhobpur.setWarnings("⚠️ This is within a private tea estate — follow estate rules. Photography of factory equipment may be restricted.");
         madhobpur.setLatitude(24.3667);
         madhobpur.setLongitude(91.8500);
+        madhobpur.setYoutubeVideoId("NzCQK_y9nuk");
         spots.add(madhobpur);
 
         // 4. Hamham Waterfall
@@ -401,6 +412,7 @@ public class DataRepository {
         hamham.setWarnings("⚠️ CRITICAL: Do NOT attempt this trek without a local guide — people have gotten lost in this forest. ⚠️ Do NOT visit during monsoon — risk of flash floods and very slippery trail. ⚠️ Tell someone your itinerary and expected return time. ⚠️ There is NO mobile network inside the forest.");
         hamham.setLatitude(24.3000);
         hamham.setLongitude(91.8333);
+        hamham.setYoutubeVideoId("WJaa_1cJD_w");
         spots.add(hamham);
 
         // 5. Baika Beel
@@ -421,6 +433,7 @@ public class DataRepository {
         baikaBeel.setWarnings("⚠️ This is a protected sanctuary — fishing is prohibited within the sanctuary boundary. Respect wildlife. ⚠️ Keep noise to minimum to avoid disturbing birds.");
         baikaBeel.setLatitude(24.3194);
         baikaBeel.setLongitude(91.7917);
+        baikaBeel.setYoutubeVideoId("yJWh34w-05U");
         spots.add(baikaBeel);
 
         dist.setSpots(spots);
@@ -457,6 +470,7 @@ public class DataRepository {
         satchhari.setWarnings("⚠️ Guide is mandatory. Do not venture off marked trails. Maintain silence for wildlife encounters.");
         satchhari.setLatitude(24.2961);
         satchhari.setLongitude(91.6408);
+        satchhari.setYoutubeVideoId("pG1Zx6sL-Ks");
         spots.add(satchhari);
 
         dist.setSpots(spots);
@@ -495,6 +509,7 @@ public class DataRepository {
         tanguarHaor.setWarnings("⚠️ The haor can be dangerous during storms — do not travel in bad weather. ⚠️ Do NOT book random boat operators from the ghat without checking credentials — significant overcharging occurs. Get quotes from multiple operators. ⚠️ Do not purchase or consume illegally caught Hilsa fish or protected species. ⚠️ Some operators falsely claim 'official' status — verify with the District Administration Tourism office.");
         tanguarHaor.setLatitude(25.1167);
         tanguarHaor.setLongitude(91.0167);
+        tanguarHaor.setYoutubeVideoId("yJWh34w-05U");
         spots.add(tanguarHaor);
 
         // 2. Tekerghat
@@ -514,6 +529,7 @@ public class DataRepository {
         tekerghat.setWarnings("⚠️ SWIMMING IN THE QUARRY LAKE IS PROHIBITED due to deep, cold water and underwater hazards. ⚠️ Road access during monsoon is often flooded — boat is the primary transport.");
         tekerghat.setLatitude(25.1417);
         tekerghat.setLongitude(91.0000);
+        tekerghat.setYoutubeVideoId("NzCQK_y9nuk");
         spots.add(tekerghat);
 
         dist.setSpots(spots);

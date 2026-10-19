@@ -43,6 +43,7 @@ public class TouristSpot {
     // Media
     private int imageResId;            // Primary image
     private List<Integer> galleryImages; // Gallery images
+    private String youtubeVideoId;     // YouTube Video ID (e.g. "dQw4w9WgXcQ")
 
     // Category
     private SpotCategory category;
@@ -99,6 +100,7 @@ public class TouristSpot {
     public String getGoogleMapsLink() { return googleMapsLink; }
     public int getImageResId() { return imageResId; }
     public List<Integer> getGalleryImages() { return galleryImages; }
+    public String getYoutubeVideoId() { return youtubeVideoId; }
     public SpotCategory getCategory() { return category; }
 
     // ---- Setters ----
@@ -120,4 +122,5 @@ public class TouristSpot {
     public void setLongitude(double longitude) { this.longitude = longitude; }
     public void setGoogleMapsLink(String googleMapsLink) { this.googleMapsLink = googleMapsLink; }
     public void setGalleryImages(List<Integer> galleryImages) { this.galleryImages = galleryImages; }
+    public void setYoutubeVideoId(String youtubeVideoId) { this.youtubeVideoId = youtubeVideoId; }
 }

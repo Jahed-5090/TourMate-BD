@@ -59,6 +59,9 @@ dependencies {
     // Dot indicator for ViewPager
     implementation 'com.tbuonomo:dotsindicator:5.0'
 
+    // YouTube Player for tourist spot videos
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:13.0.0'
+
     // Testing
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'

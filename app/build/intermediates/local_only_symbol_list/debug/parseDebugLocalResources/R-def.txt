@@ -91,11 +91,13 @@ font hind_siliguri_semibold
 id app_bar
 id bottom_bar
 id btn_open_maps
+id btn_watch_youtube
 id card_accommodation
 id card_division
 id card_food
 id card_how_to_reach
 id card_tips
+id card_video
 id card_warnings
 id drawer_layout
 id iv_district
@@ -137,7 +139,10 @@ id tv_spot_number
 id tv_spot_short_desc
 id tv_tips
 id tv_transport
+id tv_video_badge
+id tv_video_caption
 id tv_warnings
+id youtube_player_view
 layout activity_about
 layout activity_district_list
 layout activity_main

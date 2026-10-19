@@ -6,8 +6,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.options.IFramePlayerOptions;
 import com.tourmate.bd.R;
 import com.tourmate.bd.data.DataRepository;
 import com.tourmate.bd.databinding.ActivitySpotDetailBinding;
@@ -40,6 +45,7 @@ public class SpotDetailActivity extends AppCompatActivity {
 
         setupToolbar();
         populateData();
+        setupYouTubePlayer();
         setupClickListeners();
     }
 
@@ -122,6 +128,48 @@ public class SpotDetailActivity extends AppCompatActivity {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(browserUri)));
             }
         });
+
+        binding.btnWatchYoutube.setOnClickListener(v -> {
+            String videoId = spot.getYoutubeVideoId();
+            if (videoId != null && !videoId.trim().isEmpty()) {
+                Intent appIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + videoId.trim()));
+                Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=" + videoId.trim()));
+                try {
+                    startActivity(appIntent);
+                } catch (Exception ex) {
+                    startActivity(webIntent);
+                }
+            }
+        });
+    }
+
+    private void setupYouTubePlayer() {
+        String videoId = spot.getYoutubeVideoId();
+        if (videoId != null && !videoId.trim().isEmpty()) {
+            binding.cardVideo.setVisibility(View.VISIBLE);
+            getLifecycle().addObserver(binding.youtubePlayerView);
+
+            IFramePlayerOptions options = new IFramePlayerOptions.Builder(this)
+                    .controls(1)
+                    .rel(0)
+                    .ivLoadPolicy(3)
+                    .ccLoadPolicy(0)
+                    .build();
+
+            binding.youtubePlayerView.initialize(new AbstractYouTubePlayerListener() {
+                @Override
+                public void onReady(@NonNull YouTubePlayer youTubePlayer) {
+                    youTubePlayer.cueVideo(videoId.trim(), 0f);
+                }
+
+                @Override
+                public void onError(@NonNull YouTubePlayer youTubePlayer, @NonNull PlayerConstants.PlayerError error) {
+                    binding.tvVideoCaption.setText("অনলাইনে প্লে করতে সমস্যা হলে নিচের বাটনে ট্যাপ করুন");
+                }
+            }, true, options);
+        } else {
+            binding.cardVideo.setVisibility(View.GONE);
+        }
     }
 
     private void setTextOrHide(android.widget.TextView tv, String text) {
@@ -155,5 +203,13 @@ public class SpotDetailActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (binding != null && binding.youtubePlayerView != null) {
+            binding.youtubePlayerView.release();
+        }
     }
 }

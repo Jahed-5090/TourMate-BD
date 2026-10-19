@@ -157,6 +157,7 @@ attr attributeName
 attr autoAdjustToWithinGrandparentBounds
 attr autoCompleteMode
 attr autoCompleteTextViewStyle
+attr autoPlay
 attr autoShowKeyboard
 attr autoSizeMaxTextSize
 attr autoSizeMinTextSize
@@ -526,6 +527,7 @@ attr elevationOverlayAccentColor
 attr elevationOverlayColor
 attr elevationOverlayEnabled
 attr emojiCompatEnabled
+attr enableAutomaticInitialization
 attr enableEdgeToEdge
 attr endIconCheckable
 attr endIconContentDescription
@@ -643,6 +645,7 @@ attr graph
 attr guidelineUseRtl
 attr haloColor
 attr haloRadius
+attr handleNetworkEvents
 attr headerLayout
 attr height
 attr helperText
@@ -1382,6 +1385,7 @@ attr useMaterialThemeColors
 attr values
 attr verticalOffset
 attr verticalOffsetWithText
+attr videoId
 attr viewInflaterClass
 attr viewTransitionMode
 attr viewTransitionOnCross
@@ -3372,6 +3376,7 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btn_open_maps
+id btn_watch_youtube
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3381,6 +3386,7 @@ id card_division
 id card_food
 id card_how_to_reach
 id card_tips
+id card_video
 id card_warnings
 id carryVelocity
 id center
@@ -3820,6 +3826,8 @@ id tv_spot_number
 id tv_spot_short_desc
 id tv_tips
 id tv_transport
+id tv_video_badge
+id tv_video_caption
 id tv_warnings
 id unchecked
 id uniform
@@ -3829,6 +3837,7 @@ id useLogo
 id vertical_only
 id view_offset_helper
 id view_transition
+id view_tree_disjoint_parent
 id view_tree_lifecycle_owner
 id view_tree_on_back_pressed_dispatcher_owner
 id view_tree_saved_state_registry_owner
@@ -3846,6 +3855,7 @@ id wrap_content_constrained
 id wrapped_composition_tag
 id x_left
 id x_right
+id youtube_player_view
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -4057,6 +4067,7 @@ menu drawer_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+raw ayp_youtube_player
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -5581,4 +5592,5 @@ styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration ifTagNotSet ifTagSet motionInterpolator motionTarget onStateTransition pathMotionArc setsTag transitionDisable upDuration viewTransitionMode
 styleable WormDotsIndicator dotsClickable dotsColor dotsCornerRadius dotsSize dotsSpacing dotsStrokeColor dotsStrokeWidth
+styleable YouTubePlayerView autoPlay enableAutomaticInitialization handleNetworkEvents videoId
 styleable include constraintSet

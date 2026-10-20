@@ -3253,6 +3253,7 @@ int drawable splash_background 0x7f0700f4
 int drawable spot_bichanakandi 0x7f0700f5
 int drawable spot_dibir_haor 0x7f0700f6
 int drawable spot_jaflong 0x7f0700f7
+int drawable spot_lakkatura 0x7f070106
 int drawable spot_lalakhal 0x7f0700f8
 int drawable spot_lawachara 0x7f0700f9
 int drawable spot_madhabkund 0x7f0700fa

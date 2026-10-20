@@ -297,7 +297,7 @@ public class DataRepository {
                 "lakkatura", "sylhet_dist",
                 "Lakkatura Tea Garden", "লাক্কাতুরা চা বাগান",
                 "One of Sylhet city's oldest tea gardens — rolling hills of green tea within the city limits.",
-                R.drawable.spot_tea_garden, TouristSpot.SpotCategory.TEA_GARDEN
+                R.drawable.spot_lakkatura, TouristSpot.SpotCategory.TEA_GARDEN
         );
         lakkatura.setFullDescription("Lakkatura Tea Garden is one of the oldest tea estates in Sylhet, located very close to Sylhet city center (near M.A.G Osmani Airport). The garden offers rolling green hills of tea bushes, shade trees, and a peaceful atmosphere easily accessible from the city. Tea pickers in colorful saris are a common and photogenic sight in the mornings.");
         lakkatura.setHowToReach("Located near Sylhet Airport. From Sylhet city center (Zindabazar): CNG (~3 km, ৳60-80) or Rickshaw.");

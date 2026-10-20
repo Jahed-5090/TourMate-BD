@@ -73,6 +73,10 @@ drawable gradient_overlay
 drawable ic_chevron_right
 drawable ic_launcher_foreground
 drawable placeholder_spot
+drawable ratargul2
+drawable ratargul3
+drawable ratargul4
+drawable ratargul6
 drawable splash_background
 drawable spot_bichanakandi
 drawable spot_dibir_haor
@@ -102,6 +106,7 @@ id card_division
 id card_food
 id card_how_to_reach
 id card_notes
+id card_photo_gallery
 id card_tips
 id card_video
 id card_warnings
@@ -109,6 +114,7 @@ id drawer_layout
 id et_new_note
 id iv_district
 id iv_division
+id iv_gallery_photo
 id iv_spot
 id iv_spot_header
 id layout_offline_banner
@@ -121,6 +127,7 @@ id nav_home
 id nav_view
 id rv_districts
 id rv_divisions
+id rv_photo_gallery
 id rv_spots
 id tagline
 id toolbar
@@ -145,6 +152,7 @@ id tv_hotels
 id tv_how_to_reach
 id tv_local_food
 id tv_opening_hours
+id tv_photo_count
 id tv_saved_notes
 id tv_spot_category
 id tv_spot_name
@@ -167,6 +175,7 @@ layout activity_spot_detail
 layout activity_spot_list
 layout item_district
 layout item_division
+layout item_gallery_photo
 layout item_spot
 layout nav_header
 menu drawer_menu

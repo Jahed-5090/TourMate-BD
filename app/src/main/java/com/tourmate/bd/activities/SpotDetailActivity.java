@@ -26,6 +26,10 @@ import com.tourmate.bd.databinding.ActivitySpotDetailBinding;
 import com.tourmate.bd.models.TouristSpot;
 import com.tourmate.bd.network.WeatherApiClient;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.tourmate.bd.adapters.SpotPhotoAdapter;
+
 import java.util.List;
 
 /**
@@ -59,11 +63,38 @@ public class SpotDetailActivity extends AppCompatActivity {
 
         setupToolbar();
         populateData();
+        setupPhotoGallery();
         setupYouTubePlayer();
         setupAudioGuide();
         setupFavoritesAndNotes();
         setupClickListeners();
         fetchSpotWeather();
+    }
+
+    private void setupPhotoGallery() {
+        List<Integer> photos = spot.getGalleryImages();
+        if (photos != null && !photos.isEmpty()) {
+            binding.cardPhotoGallery.setVisibility(View.VISIBLE);
+            binding.tvPhotoCount.setText(photos.size() + " Photo" + (photos.size() > 1 ? "s" : ""));
+
+            LinearLayoutManager lm = new LinearLayoutManager(
+                    this, LinearLayoutManager.HORIZONTAL, false);
+            binding.rvPhotoGallery.setLayoutManager(lm);
+
+            SpotPhotoAdapter adapter = new SpotPhotoAdapter(this, photos, (resId, position) -> {
+                // Open full-screen photo viewer on tap
+                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
+                android.widget.ImageView fullImg = new android.widget.ImageView(this);
+                fullImg.setImageResource(resId);
+                fullImg.setScaleType(android.widget.ImageView.ScaleType.FIT_CENTER);
+                fullImg.setAdjustViewBounds(true);
+                builder.setView(fullImg);
+                builder.create().show();
+            });
+            binding.rvPhotoGallery.setAdapter(adapter);
+        } else {
+            binding.cardPhotoGallery.setVisibility(View.GONE);
+        }
     }
 
     private void setupAudioGuide() {

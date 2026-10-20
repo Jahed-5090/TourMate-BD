@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Single photo item in the horizontal gallery strip -->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="180dp"
+    android:layout_height="130dp"
+    android:layout_marginEnd="10dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp">
+
+    <ImageView
+        android:id="@+id/iv_gallery_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:contentDescription="Spot photo" />
+
+    <!-- subtle dark overlay at bottom for a polished look -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/gradient_overlay" />
+
+</androidx.cardview.widget.CardView>

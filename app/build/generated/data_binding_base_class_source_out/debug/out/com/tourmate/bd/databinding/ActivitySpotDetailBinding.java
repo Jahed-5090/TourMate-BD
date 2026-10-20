@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.appbar.AppBarLayout;
@@ -61,6 +62,9 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
   public final CardView cardNotes;
 
   @NonNull
+  public final CardView cardPhotoGallery;
+
+  @NonNull
   public final CardView cardTips;
 
   @NonNull
@@ -74,6 +78,9 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
 
   @NonNull
   public final ImageView ivSpotHeader;
+
+  @NonNull
+  public final RecyclerView rvPhotoGallery;
 
   @NonNull
   public final Toolbar toolbar;
@@ -118,6 +125,9 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
   public final TextView tvOpeningHours;
 
   @NonNull
+  public final TextView tvPhotoCount;
+
+  @NonNull
   public final TextView tvSavedNotes;
 
   @NonNull
@@ -153,18 +163,19 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
       @NonNull ImageButton btnToggleFavorite, @NonNull MaterialButton btnWatchYoutube,
       @NonNull CardView cardAccommodation, @NonNull CardView cardAudioGuide,
       @NonNull CardView cardFood, @NonNull CardView cardHowToReach, @NonNull CardView cardNotes,
-      @NonNull CardView cardTips, @NonNull CardView cardVideo, @NonNull CardView cardWarnings,
-      @NonNull EditText etNewNote, @NonNull ImageView ivSpotHeader, @NonNull Toolbar toolbar,
+      @NonNull CardView cardPhotoGallery, @NonNull CardView cardTips, @NonNull CardView cardVideo,
+      @NonNull CardView cardWarnings, @NonNull EditText etNewNote, @NonNull ImageView ivSpotHeader,
+      @NonNull RecyclerView rvPhotoGallery, @NonNull Toolbar toolbar,
       @NonNull TextView tvAudioBadge, @NonNull TextView tvAudioStatus, @NonNull TextView tvBestTime,
       @NonNull TextView tvBudgetAccom, @NonNull TextView tvCategory,
       @NonNull TextView tvCostFromDhaka, @NonNull TextView tvCostFromSylhet,
       @NonNull TextView tvDescription, @NonNull TextView tvEntranceFee, @NonNull TextView tvHotels,
       @NonNull TextView tvHowToReach, @NonNull TextView tvLocalFood,
-      @NonNull TextView tvOpeningHours, @NonNull TextView tvSavedNotes,
-      @NonNull TextView tvSpotName, @NonNull TextView tvSpotNameBn, @NonNull TextView tvSpotWeather,
-      @NonNull TextView tvTips, @NonNull TextView tvTransport, @NonNull TextView tvVideoBadge,
-      @NonNull TextView tvVideoCaption, @NonNull TextView tvWarnings,
-      @NonNull YouTubePlayerView youtubePlayerView) {
+      @NonNull TextView tvOpeningHours, @NonNull TextView tvPhotoCount,
+      @NonNull TextView tvSavedNotes, @NonNull TextView tvSpotName, @NonNull TextView tvSpotNameBn,
+      @NonNull TextView tvSpotWeather, @NonNull TextView tvTips, @NonNull TextView tvTransport,
+      @NonNull TextView tvVideoBadge, @NonNull TextView tvVideoCaption,
+      @NonNull TextView tvWarnings, @NonNull YouTubePlayerView youtubePlayerView) {
     this.rootView = rootView;
     this.appBar = appBar;
     this.btnAudioGuide = btnAudioGuide;
@@ -177,11 +188,13 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
     this.cardFood = cardFood;
     this.cardHowToReach = cardHowToReach;
     this.cardNotes = cardNotes;
+    this.cardPhotoGallery = cardPhotoGallery;
     this.cardTips = cardTips;
     this.cardVideo = cardVideo;
     this.cardWarnings = cardWarnings;
     this.etNewNote = etNewNote;
     this.ivSpotHeader = ivSpotHeader;
+    this.rvPhotoGallery = rvPhotoGallery;
     this.toolbar = toolbar;
     this.tvAudioBadge = tvAudioBadge;
     this.tvAudioStatus = tvAudioStatus;
@@ -196,6 +209,7 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
     this.tvHowToReach = tvHowToReach;
     this.tvLocalFood = tvLocalFood;
     this.tvOpeningHours = tvOpeningHours;
+    this.tvPhotoCount = tvPhotoCount;
     this.tvSavedNotes = tvSavedNotes;
     this.tvSpotName = tvSpotName;
     this.tvSpotNameBn = tvSpotNameBn;
@@ -301,6 +315,12 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.card_photo_gallery;
+      CardView cardPhotoGallery = ViewBindings.findChildViewById(rootView, id);
+      if (cardPhotoGallery == null) {
+        break missingId;
+      }
+
       id = R.id.card_tips;
       CardView cardTips = ViewBindings.findChildViewById(rootView, id);
       if (cardTips == null) {
@@ -328,6 +348,12 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
       id = R.id.iv_spot_header;
       ImageView ivSpotHeader = ViewBindings.findChildViewById(rootView, id);
       if (ivSpotHeader == null) {
+        break missingId;
+      }
+
+      id = R.id.rv_photo_gallery;
+      RecyclerView rvPhotoGallery = ViewBindings.findChildViewById(rootView, id);
+      if (rvPhotoGallery == null) {
         break missingId;
       }
 
@@ -415,6 +441,12 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tv_photo_count;
+      TextView tvPhotoCount = ViewBindings.findChildViewById(rootView, id);
+      if (tvPhotoCount == null) {
+        break missingId;
+      }
+
       id = R.id.tv_saved_notes;
       TextView tvSavedNotes = ViewBindings.findChildViewById(rootView, id);
       if (tvSavedNotes == null) {
@@ -477,12 +509,12 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
 
       return new ActivitySpotDetailBinding((CoordinatorLayout) rootView, appBar, btnAudioGuide,
           btnOpenMaps, btnSaveNote, btnToggleFavorite, btnWatchYoutube, cardAccommodation,
-          cardAudioGuide, cardFood, cardHowToReach, cardNotes, cardTips, cardVideo, cardWarnings,
-          etNewNote, ivSpotHeader, toolbar, tvAudioBadge, tvAudioStatus, tvBestTime, tvBudgetAccom,
-          tvCategory, tvCostFromDhaka, tvCostFromSylhet, tvDescription, tvEntranceFee, tvHotels,
-          tvHowToReach, tvLocalFood, tvOpeningHours, tvSavedNotes, tvSpotName, tvSpotNameBn,
-          tvSpotWeather, tvTips, tvTransport, tvVideoBadge, tvVideoCaption, tvWarnings,
-          youtubePlayerView);
+          cardAudioGuide, cardFood, cardHowToReach, cardNotes, cardPhotoGallery, cardTips,
+          cardVideo, cardWarnings, etNewNote, ivSpotHeader, rvPhotoGallery, toolbar, tvAudioBadge,
+          tvAudioStatus, tvBestTime, tvBudgetAccom, tvCategory, tvCostFromDhaka, tvCostFromSylhet,
+          tvDescription, tvEntranceFee, tvHotels, tvHowToReach, tvLocalFood, tvOpeningHours,
+          tvPhotoCount, tvSavedNotes, tvSpotName, tvSpotNameBn, tvSpotWeather, tvTips, tvTransport,
+          tvVideoBadge, tvVideoCaption, tvWarnings, youtubePlayerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

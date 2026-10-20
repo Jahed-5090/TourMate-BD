@@ -206,6 +206,12 @@ public class DataRepository {
         ratargul.setLatitude(24.9975);
         ratargul.setLongitude(91.9419);
         ratargul.setYoutubeVideoId("E8R7aiTXT8E");
+        ratargul.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.ratargul2,
+                R.drawable.ratargul3,
+                R.drawable.ratargul4,
+                R.drawable.ratargul6
+        ));
         spots.add(ratargul);
 
         // 4. Jaflong

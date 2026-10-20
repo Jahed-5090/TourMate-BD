@@ -262,6 +262,68 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <!-- ── Photo Gallery Card ─────────────────────────────────── -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_photo_gallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/bg_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Header row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="📸 Photo Gallery"
+                            android:textColor="@color/brand_primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/tv_photo_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0 Photos"
+                            android:textSize="11sp"
+                            android:textColor="#FFFFFF"
+                            android:background="@drawable/badge_bg"
+                            android:backgroundTint="@color/brand_primary_light"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <!-- Horizontal scrolling photo strip -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_photo_gallery"
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:orientation="horizontal"
+                        android:clipToPadding="false"
+                        android:paddingEnd="4dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
             <!-- ── Video Tour Card ─────────────────────────────────────── -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_video"

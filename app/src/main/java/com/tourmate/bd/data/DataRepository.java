@@ -162,7 +162,7 @@ public class DataRepository {
         shahjalal.setWarnings("⚠️ Be cautious of fake 'khadems' who may demand money for prayers. Donation is purely voluntary. Watch your belongings in crowded areas.");
         shahjalal.setLatitude(24.8961);
         shahjalal.setLongitude(91.8690);
-        shahjalal.setYoutubeVideoId("BgFpWOwCW7Y");
+        shahjalal.setYoutubeVideoId("ScTmIPB5G4A");
         spots.add(shahjalal);
 
         // 2. Hazrat Shah Paran Mazar
@@ -183,7 +183,7 @@ public class DataRepository {
         shahParan.setWarnings("⚠️ CNG drivers may try to charge extra — agree on fare BEFORE boarding. Standard fare should be around ৳100-150.");
         shahParan.setLatitude(24.9108);
         shahParan.setLongitude(91.9220);
-        shahParan.setYoutubeVideoId("ScTmIPB5G4A");
+        shahParan.setYoutubeVideoId("qbCcINkiWbM");
         spots.add(shahParan);
 
         // 3. Ratargul Swamp Forest
@@ -205,7 +205,7 @@ public class DataRepository {
         ratargul.setWarnings("⚠️ IMPORTANT: Only use boats from the official Forest Department ghat. Unofficial boatmen will overcharge. The official rate board is displayed at the ghat — insist on the posted rates. Do NOT go alone — always hire a guide. Avoid the plastic pollution from boats — some operators are irresponsible.");
         ratargul.setLatitude(24.9975);
         ratargul.setLongitude(91.9419);
-        ratargul.setYoutubeVideoId("pG1Zx6sL-Ks");
+        ratargul.setYoutubeVideoId("E8R7aiTXT8E");
         spots.add(ratargul);
 
         // 4. Jaflong
@@ -229,7 +229,7 @@ public class DataRepository {
         jaflong.setWarnings("⚠️ HIGH RISK of overcharging by local transport and 'guides'. Fix the price BEFORE starting. ⚠️ Multiple fake 'entry fees' are collected at checkpoints — only pay official government receipted fees. ⚠️ Be careful on slippery river stones. ⚠️ Photography of border area may have restrictions.");
         jaflong.setLatitude(25.1671);
         jaflong.setLongitude(92.0313);
-        jaflong.setYoutubeVideoId("NzCQK_y9nuk");
+        jaflong.setYoutubeVideoId("QHhGeWyxntI");
         spots.add(jaflong);
 
         // 5. Lalakhal
@@ -249,7 +249,7 @@ public class DataRepository {
         lalakhal.setWarnings("⚠️ Boat owners may try to charge 3-4x the fair rate. The fair rate for a 1-hour boat ride is ৳500-800. Ask other tourists who have just finished their rides. ⚠️ Swimming is NOT recommended — the current can be deceptive.");
         lalakhal.setLatitude(25.1020);
         lalakhal.setLongitude(92.0764);
-        lalakhal.setYoutubeVideoId("j_XBcPubB-4");
+        lalakhal.setYoutubeVideoId("-FT5qgbxAUY");
         spots.add(lalakhal);
 
         // 6. Bichanakandi
@@ -289,7 +289,7 @@ public class DataRepository {
         dibirHaor.setWarnings("⚠️ Plan your trip with a reliable local guide. Navigation on haors can be complex and disorienting. ⚠️ During monsoon, weather can change rapidly — check forecast before visiting. ⚠️ Do not book random 'tour operators' who approach you at Sylhet bus stands — they often overcharge significantly.");
         dibirHaor.setLatitude(25.0833);
         dibirHaor.setLongitude(91.4167);
-        dibirHaor.setYoutubeVideoId("pG1Zx6sL-Ks");
+        dibirHaor.setYoutubeVideoId("43_EH6k4Mug");
         spots.add(dibirHaor);
 
         // 8. Lakkatura Tea Garden
@@ -529,7 +529,7 @@ public class DataRepository {
         tekerghat.setWarnings("⚠️ SWIMMING IN THE QUARRY LAKE IS PROHIBITED due to deep, cold water and underwater hazards. ⚠️ Road access during monsoon is often flooded — boat is the primary transport.");
         tekerghat.setLatitude(25.1417);
         tekerghat.setLongitude(91.0000);
-        tekerghat.setYoutubeVideoId("NzCQK_y9nuk");
+        tekerghat.setYoutubeVideoId("QhQXKLZ1Ki4");
         spots.add(tekerghat);
 
         dist.setSpots(spots);

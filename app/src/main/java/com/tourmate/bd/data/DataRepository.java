@@ -339,7 +339,7 @@ public class DataRepository {
                 "madhabkund", "moulvibazar_dist",
                 "Madhabkund Waterfall", "মাধবকুণ্ড জলপ্রপাত",
                 "Bangladesh's largest natural waterfall — a 162-foot cascade in a lush eco-park setting.",
-                R.drawable.spot_madhabkund, TouristSpot.SpotCategory.WATERFALL
+                R.drawable.madhobkundo1, TouristSpot.SpotCategory.WATERFALL
         );
         madhabkund.setFullDescription("Madhabkund is the largest natural waterfall in Bangladesh, located in Barlekha Upazila of Moulvibazar. The waterfall plunges approximately 162 feet from a rocky cliff into a pool below. It is located within a Government Eco-Park, surrounded by dense tropical forest. The area has significant religious importance for the Hindu community (Shiva temple nearby). On rainy days, additional smaller waterfalls appear around the main fall.");
         madhabkund.setHowToReach("From Sylhet city: Bus or CNG to Moulvibazar town (50 km, ~1.5 hrs), then another bus/CNG to Barlekha/Madhabkund (40 km, ~1 hr). From Dhaka: Direct bus to Moulvibazar via Srimangal.");
@@ -355,6 +355,12 @@ public class DataRepository {
         madhabkund.setLatitude(24.5083);
         madhabkund.setLongitude(92.1833);
         madhabkund.setYoutubeVideoId("WJaa_1cJD_w");
+        madhabkund.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.madhobkundo1,
+                R.drawable.madhobkundo2,
+                R.drawable.madhobkundo3,
+                R.drawable.madhobkundo4
+        ));
         spots.add(madhabkund);
 
         // 2. Lawachara National Park
@@ -362,7 +368,7 @@ public class DataRepository {
                 "lawachara", "moulvibazar_dist",
                 "Lawachara National Park", "লাউয়াছড়া জাতীয় উদ্যান",
                 "Primary tropical rainforest — habitat of the endangered western hoolock gibbon and diverse wildlife.",
-                R.drawable.spot_lawachara, TouristSpot.SpotCategory.FOREST
+                R.drawable.lawachara1, TouristSpot.SpotCategory.FOREST
         );
         lawachara.setFullDescription("Lawachara National Park is a protected tropical rainforest in Kamalganj Upazila of Moulvibazar. Covering about 1,250 hectares, it is one of Bangladesh's most biodiverse national parks. The forest is home to the critically endangered western hoolock gibbon — the only ape species in Bangladesh — along with leopard cats, olive-backed sunbirds, and over 240 bird species. The park has well-maintained walking trails through primary forest.");
         lawachara.setHowToReach("Located 3 km from Srimangal town. From Srimangal Railway Station or bus stand: CNG or auto (~৳50-80). From Dhaka: Upaban Express or Parabat Express train to Srimangal (direct, ~3.5 hrs).");
@@ -379,6 +385,11 @@ public class DataRepository {
         lawachara.setLatitude(24.3275);
         lawachara.setLongitude(91.7856);
         lawachara.setYoutubeVideoId("pG1Zx6sL-Ks");
+        lawachara.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.lawachara1,
+                R.drawable.lawachara2,
+                R.drawable.lawachara3
+        ));
         spots.add(lawachara);
 
         // 3. Madhobpur Lake
@@ -386,7 +397,7 @@ public class DataRepository {
                 "madhobpur_lake", "moulvibazar_dist",
                 "Madhobpur Lake", "মাধবপুর লেক",
                 "A hauntingly beautiful lake surrounded by a tea estate — a jewel hidden in Moulvibazar.",
-                R.drawable.spot_tea_garden, TouristSpot.SpotCategory.NATURAL
+                R.drawable.madhobpur_lake1, TouristSpot.SpotCategory.NATURAL
         );
         madhobpur.setFullDescription("Madhobpur Lake is a stunning artificial lake within the Madhobpur Tea Estate in Chunarughat Upazila. The lake's still dark waters, bordered by tea gardens and tropical forest, create an atmospheric and photogenic landscape unlike anything else in Bangladesh. A walking trail around the lake takes about 30-45 minutes. The reflecting trees in the dark water make for remarkable photographs.");
         madhobpur.setHowToReach("From Srimangal: CNG/Auto to Chunarughat (~20 km) then local directions to Madhobpur. From Habiganj: about 40 km via Chunarughat.");
@@ -399,6 +410,12 @@ public class DataRepository {
         madhobpur.setLatitude(24.3667);
         madhobpur.setLongitude(91.8500);
         madhobpur.setYoutubeVideoId("NzCQK_y9nuk");
+        madhobpur.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.madhobpur_lake1,
+                R.drawable.madhobpur_lake2,
+                R.drawable.madhobpur_lake3,
+                R.drawable.madhobpur_lake4
+        ));
         spots.add(madhobpur);
 
         // 4. Hamham Waterfall
@@ -406,7 +423,7 @@ public class DataRepository {
                 "hamham", "moulvibazar_dist",
                 "Hamham Waterfall", "হামহাম জলপ্রপাত",
                 "A remote, recently discovered double-tiered waterfall deep in the Rajkandi forest reserve.",
-                R.drawable.spot_madhabkund, TouristSpot.SpotCategory.WATERFALL
+                R.drawable.ham_ham1, TouristSpot.SpotCategory.WATERFALL
         );
         hamham.setFullDescription("Hamham (also spelled Hum Hum) is a spectacular double-tiered waterfall discovered as recently as 2010, hidden deep within the Rajkandi Reserve Forest in Kamalganj Upazila. To reach it requires a 4-6 hour trek through dense forest, crossing streams multiple times. The remoteness and pristine natural beauty make the difficult journey extremely rewarding. The waterfall drops about 135 feet in two stages.");
         hamham.setHowToReach("From Srimangal: CNG to Kalapur Bazar (~15 km, 30 min). From Kalapur, hire local guide and start the 9-12 km forest trek (takes 4-6 hours one way). Starting the journey at dawn (5-6 AM) is essential.");
@@ -419,6 +436,12 @@ public class DataRepository {
         hamham.setLatitude(24.3000);
         hamham.setLongitude(91.8333);
         hamham.setYoutubeVideoId("WJaa_1cJD_w");
+        hamham.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.ham_ham1,
+                R.drawable.ham_ham2,
+                R.drawable.ham_ham3,
+                R.drawable.ham_ham4
+        ));
         spots.add(hamham);
 
         // 5. Baika Beel
@@ -426,7 +449,7 @@ public class DataRepository {
                 "baika_beel", "moulvibazar_dist",
                 "Baika Beel Bird Sanctuary", "বাইক্কা বিল",
                 "A protected wetland bird sanctuary — winter home to thousands of migratory birds.",
-                R.drawable.spot_dibir_haor, TouristSpot.SpotCategory.HAOR
+                R.drawable.baikka_bil1, TouristSpot.SpotCategory.HAOR
         );
         baikaBeel.setFullDescription("Baika Beel is a permanently protected wetland sanctuary in the Hail Haor, Srimangal. The beel is a Community Conservation Area managed by the local fishing community with government support. It is famous for its enormous population of migratory birds in winter — thousands of ducks, teals, and wading birds arrive between October and March. A watchtower provides excellent bird-watching opportunities.");
         baikaBeel.setHowToReach("From Srimangal town: CNG or auto to Baika Beel (~10 km, 20 min).");
@@ -440,6 +463,11 @@ public class DataRepository {
         baikaBeel.setLatitude(24.3194);
         baikaBeel.setLongitude(91.7917);
         baikaBeel.setYoutubeVideoId("yJWh34w-05U");
+        baikaBeel.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.baikka_bil1,
+                R.drawable.baikka_bil2,
+                R.drawable.baikka_bil3
+        ));
         spots.add(baikaBeel);
 
         dist.setSpots(spots);

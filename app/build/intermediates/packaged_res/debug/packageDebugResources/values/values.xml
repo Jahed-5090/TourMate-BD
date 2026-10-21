@@ -21,6 +21,9 @@
     <color name="divider">#E0EBE0</color>
     <color name="overlay_gradient_end">#CC000000</color>
     <color name="overlay_gradient_start">#00000000</color>
+    <color name="splash_center">#103778</color>
+    <color name="splash_end">#0284C7</color>
+    <color name="splash_start">#0A192F</color>
     <color name="status_bar">#0A3D12</color>
     <color name="text_hint">#8FA98F</color>
     <color name="text_on_primary">#FFFFFF</color>
@@ -90,7 +93,7 @@
     </style>
     <style name="Theme.TourMateBD.Splash" parent="Theme.TourMateBD">
         <item name="android:windowBackground">@drawable/splash_background</item>
-        <item name="android:statusBarColor">@color/brand_primary_dark</item>
+        <item name="android:statusBarColor">@color/splash_start</item>
     </style>
     <style name="TourMate.Button.Primary" parent="Widget.MaterialComponents.Button">
         <item name="backgroundTint">@color/brand_primary</item>

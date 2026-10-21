@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="bg_card">#FFFFFF</color>
+    <color name="bg_primary">#F8FBF8</color>
+    <color name="bg_surface">#EEF4EE</color>
+    <color name="brand_accent">#F9A825</color>
+    <color name="brand_accent_dark">#F57F17</color>
+    <color name="brand_primary">#1B5E20</color>
+    <color name="brand_primary_dark">#0A3D12</color>
+    <color name="brand_primary_light">#2E7D32</color>
+    <color name="brand_teal">#00695C</color>
+    <color name="card_shadow">#1A000000</color>
+    <color name="cat_eco">#00695C</color>
+    <color name="cat_forest">#1B5E20</color>
+    <color name="cat_haor">#01579B</color>
+    <color name="cat_historical">#BF360C</color>
+    <color name="cat_natural">#2E7D32</color>
+    <color name="cat_religious">#6A1B9A</color>
+    <color name="cat_tea_garden">#558B2F</color>
+    <color name="cat_waterfall">#0277BD</color>
+    <color name="divider">#E0EBE0</color>
+    <color name="overlay_gradient_end">#CC000000</color>
+    <color name="overlay_gradient_start">#00000000</color>
+    <color name="splash_center">#103778</color>
+    <color name="splash_end">#0284C7</color>
+    <color name="splash_start">#0A192F</color>
+    <color name="status_bar">#0A3D12</color>
+    <color name="text_hint">#8FA98F</color>
+    <color name="text_on_primary">#FFFFFF</color>
+    <color name="text_primary">#1A2E1A</color>
+    <color name="text_secondary">#4A6741</color>
+    <color name="tip_bg">#E8F5E9</color>
+    <color name="tip_border">#43A047</color>
+    <color name="warning_bg">#FFF8E1</color>
+    <color name="warning_border">#FFB300</color>
+    <color name="warning_text">#E65100</color>
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="district_image_size">80dp</dimen>
+    <dimen name="division_card_height">200dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_xxl">48dp</dimen>
+    <dimen name="spot_detail_header_height">280dp</dimen>
+    <dimen name="spot_image_size">100dp</dimen>
+    <dimen name="text_body">14sp</dimen>
+    <dimen name="text_display">28sp</dimen>
+    <dimen name="text_headline">22sp</dimen>
+    <dimen name="text_sm">12sp</dimen>
+    <dimen name="text_subhead">16sp</dimen>
+    <dimen name="text_title">18sp</dimen>
+    <dimen name="text_xs">11sp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <string name="about_content">TourMate BD is your trusted travel companion for exploring the beautiful tourist destinations of Bangladesh.\n\nOur mission is to empower tourists with accurate, honest information to navigate destinations independently — without falling victim to local syndicates, overcharging, or misinformation.\n\nCurrently featuring: Sylhet Division (complete)\n\nMore divisions coming soon!</string>
+    <string name="about_title">About TourMate BD</string>
+    <string name="accommodation">Accommodation</string>
+    <string name="app_name">TourMate BD</string>
+    <string name="app_tagline">Your Smart Travel Guide to Bangladesh</string>
+    <string name="best_time">Best Time to Visit</string>
+    <string name="budget_accommodation">Budget Options</string>
+    <string name="coming_soon">Content for this region is coming soon!\n\nStay tuned for updates.</string>
+    <string name="cost_from_dhaka">Approx. Cost from Dhaka</string>
+    <string name="cost_from_sylhet">Approx. Cost from Sylhet</string>
+    <string name="disclaimer">📋 Disclaimer: Prices and information are approximate and subject to change. Always verify locally. The app is not responsible for any discrepancies.</string>
+    <string name="district_label">District</string>
+    <string name="division_label">Division</string>
+    <string name="entrance_fee">Entrance Fee</string>
+    <string name="how_to_reach">How to Reach</string>
+    <string name="important_warnings">⚠️ Warnings &amp; Cautions</string>
+    <string name="local_food">Local Food</string>
+    <string name="nav_about">About</string>
+    <string name="nav_home">Home</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="no_spots">No tourist spots found for this district yet.</string>
+    <string name="open_in_maps">Open in Google Maps</string>
+    <string name="opening_hours">Opening Hours</string>
+    <string name="transport_options">Transport Options</string>
+    <string name="travel_tips">Travel Tips</string>
+    <style name="Theme.TourMateBD" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorPrimaryVariant">@color/brand_primary_dark</item>
+        <item name="colorOnPrimary">@color/text_on_primary</item>
+        <item name="colorSecondary">@color/brand_accent</item>
+        <item name="colorOnSecondary">@color/text_primary</item>
+        <item name="android:colorBackground">@color/bg_primary</item>
+        <item name="android:statusBarColor">@color/status_bar</item>
+        <item name="android:windowLightStatusBar" ns1:targetApi="m">false</item>
+        <item name="android:fontFamily">@font/hind_siliguri</item>
+    </style>
+    <style name="Theme.TourMateBD.Splash" parent="Theme.TourMateBD">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:statusBarColor">@color/splash_start</item>
+    </style>
+    <style name="TourMate.Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/brand_primary</item>
+        <item name="android:textColor">@color/text_on_primary</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+    </style>
+    <style name="TourMate.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/bg_card</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardMaxElevation">6dp</item>
+    </style>
+    <style name="TourMate.Card.Tip">
+        <item name="cardBackgroundColor">@color/tip_bg</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="strokeColor">@color/tip_border</item>
+        <item name="strokeWidth">1.5dp</item>
+    </style>
+    <style name="TourMate.Card.Warning">
+        <item name="cardBackgroundColor">@color/warning_bg</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="strokeColor">@color/warning_border</item>
+        <item name="strokeWidth">1.5dp</item>
+    </style>
+    <style name="TourMate.TextAppearance" parent="TextAppearance.AppCompat"/>
+    <style name="TourMate.TextAppearance.Body">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/hind_siliguri</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+    </style>
+    <style name="TourMate.TextAppearance.SectionHeader">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/hind_siliguri_semibold</item>
+        <item name="android:textColor">@color/brand_primary</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="TourMate.TextAppearance.SpotTitle">
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/hind_siliguri_bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+    <style name="TourMate.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="android:background">@color/brand_primary</item>
+        <item name="titleTextColor">@color/text_on_primary</item>
+        <item name="subtitleTextColor">#B2FFFFFF</item>
+    </style>
+</resources>

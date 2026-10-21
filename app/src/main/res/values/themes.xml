@@ -16,7 +16,7 @@
     <!-- Splash Theme (no action bar, no flicker) -->
     <style name="Theme.TourMateBD.Splash" parent="Theme.TourMateBD">
         <item name="android:windowBackground">@drawable/splash_background</item>
-        <item name="android:statusBarColor">@color/brand_primary_dark</item>
+        <item name="android:statusBarColor">@color/splash_start</item>
     </style>
 
     <!-- Toolbar Style -->

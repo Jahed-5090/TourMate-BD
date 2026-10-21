@@ -25,6 +25,9 @@ color cat_waterfall
 color divider
 color overlay_gradient_end
 color overlay_gradient_start
+color splash_center
+color splash_end
+color splash_start
 color status_bar
 color text_hint
 color text_on_primary

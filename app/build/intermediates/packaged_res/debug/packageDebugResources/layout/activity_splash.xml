@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/splash_background"
@@ -21,8 +22,7 @@
             android:layout_gravity="center"
             app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="60dp"
-            app:cardElevation="20dp"
-            xmlns:app="http://schemas.android.com/apk/res-auto">
+            app:cardElevation="20dp">
 
             <ImageView
                 android:layout_width="100dp"
@@ -30,6 +30,7 @@
                 android:layout_gravity="center"
                 android:padding="10dp"
                 android:src="@drawable/ic_launcher_foreground"
+                app:tint="@color/splash_center"
                 android:contentDescription="App Logo"/>
 
         </androidx.cardview.widget.CardView>

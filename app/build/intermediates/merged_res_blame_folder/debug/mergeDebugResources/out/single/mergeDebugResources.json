@@ -32,16 +32,20 @@
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/ic_chevron_right.xml"
     },
     {
-        "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/mipmap-xxhdpi_ic_launcher_round.xml.flat",
-        "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/mipmap-xxhdpi/ic_launcher_round.xml"
-    },
-    {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_placeholder_spot.xml.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/placeholder_spot.xml"
     },
     {
+        "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/mipmap-xxhdpi_ic_launcher_round.xml.flat",
+        "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/mipmap-xxhdpi/ic_launcher_round.xml"
+    },
+    {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_gradient_overlay.xml.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/gradient_overlay.xml"
+    },
+    {
+        "merged": "com.tourmate.bd.app-debug-68:/layout_activity_splash.xml.flat",
+        "source": "com.tourmate.bd.app-main-70:/layout/activity_splash.xml"
     },
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/layout_item_district.xml.flat",
@@ -128,10 +132,6 @@
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/ratargul6.jpeg"
     },
     {
-        "merged": "com.tourmate.bd.app-debug-68:/layout_activity_spot_detail.xml.flat",
-        "source": "com.tourmate.bd.app-main-70:/layout/activity_spot_detail.xml"
-    },
-    {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/layout_activity_spot_detail.xml.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/layout/activity_spot_detail.xml"
     },
@@ -206,6 +206,10 @@
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_spot_lalakhal.xml.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/spot_lalakhal.xml"
+    },
+    {
+        "merged": "com.tourmate.bd.app-debug-68:/drawable_splash_background.xml.flat",
+        "source": "com.tourmate.bd.app-main-70:/drawable/splash_background.xml"
     },
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/layout_item_division.xml.flat",

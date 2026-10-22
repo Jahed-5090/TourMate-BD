@@ -3275,6 +3275,10 @@ drawable ratargul2
 drawable ratargul3
 drawable ratargul4
 drawable ratargul6
+drawable shatchori1
+drawable shatchori2
+drawable shatchori3
+drawable shatchori4
 drawable splash_background
 drawable spot_bichanakandi
 drawable spot_dibir_haor
@@ -3289,6 +3293,14 @@ drawable spot_shahparan
 drawable spot_tea_garden
 drawable spring_dot_background
 drawable spring_dot_stroke_background
+drawable tanguarhaor1
+drawable tanguarhaor2
+drawable tanguarhaor3
+drawable tanguarhaor4
+drawable tekerghat1
+drawable tekerghat2
+drawable tekerghat3
+drawable tekerghat4
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light

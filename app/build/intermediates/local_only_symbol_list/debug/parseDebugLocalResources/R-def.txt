@@ -98,6 +98,10 @@ drawable ratargul2
 drawable ratargul3
 drawable ratargul4
 drawable ratargul6
+drawable shatchori1
+drawable shatchori2
+drawable shatchori3
+drawable shatchori4
 drawable splash_background
 drawable spot_bichanakandi
 drawable spot_dibir_haor
@@ -110,6 +114,14 @@ drawable spot_ratargul
 drawable spot_shahjalal
 drawable spot_shahparan
 drawable spot_tea_garden
+drawable tanguarhaor1
+drawable tanguarhaor2
+drawable tanguarhaor3
+drawable tanguarhaor4
+drawable tekerghat1
+drawable tekerghat2
+drawable tekerghat3
+drawable tekerghat4
 font hind_siliguri
 font hind_siliguri_bold
 font hind_siliguri_regular

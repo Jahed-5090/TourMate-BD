@@ -491,7 +491,7 @@ public class DataRepository {
                 "satchhari", "habiganj_dist",
                 "Satchhari National Park", "সাতছড়ি জাতীয় উদ্যান",
                 "Tropical rainforest home to the hoolock gibbon, where 7 streams meet in a pristine forest.",
-                R.drawable.spot_lawachara, TouristSpot.SpotCategory.FOREST
+                R.drawable.shatchori1, TouristSpot.SpotCategory.FOREST
         );
         satchhari.setFullDescription("Satchhari National Park (literally 'seven streams') is a protected tropical rainforest in Chunarughat Upazila of Habiganj. The park covers 243 hectares of mixed tropical forest and is named after the seven small streams (chhara) flowing through it. Like Lawachara, it is a habitat for the western hoolock gibbon, as well as leopard cats, various primates, and hundreds of bird species. The park has relatively shorter and easier trails than Lawachara.");
         satchhari.setHowToReach("From Habiganj town: CNG or bus to Chunarughat (~25 km), then local directions to Satchhari. From Sylhet: Bus toward Habiganj, alight at Chunarughat.");
@@ -505,6 +505,12 @@ public class DataRepository {
         satchhari.setLatitude(24.2961);
         satchhari.setLongitude(91.6408);
         satchhari.setYoutubeVideoId("pG1Zx6sL-Ks");
+        satchhari.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.shatchori1,
+                R.drawable.shatchori2,
+                R.drawable.shatchori3,
+                R.drawable.shatchori4
+        ));
         spots.add(satchhari);
 
         dist.setSpots(spots);
@@ -528,7 +534,7 @@ public class DataRepository {
                 "tanguar_haor", "sunamganj_dist",
                 "Tanguar Haor", "টাঙ্গুয়ার হাওর",
                 "A UNESCO Ramsar wetland site — one of Bangladesh's most pristine ecosystems and a biodiversity hotspot.",
-                R.drawable.spot_dibir_haor, TouristSpot.SpotCategory.HAOR
+                R.drawable.tanguarhaor1, TouristSpot.SpotCategory.HAOR
         );
         tanguarHaor.setFullDescription("Tanguar Haor is a wetland of international importance, recognized as a Ramsar site. Located in Tahirpur and Dharmapasha Upazilas of Sunamganj, this vast haor system covers about 100 sq km and is bordered by the Meghalaya hills of India. It is home to over 140 species of freshwater fish, 208 bird species (including 98 migratory species), and various other wildlife. Experiencing the haor on a boat — especially at sunrise and sunset — is a transcendent experience. A 2-3 day houseboat trip is the ideal way to explore.");
         tanguarHaor.setHowToReach("From Sylhet: Bus to Sunamganj town (75 km, ~2-2.5 hrs). From Sunamganj Sadar Ghat: Hire speedboat or engine boat to reach Tanguar Haor (1.5-2 hrs). Alternatively, go via Tahirpur Ghat which is closer.");
@@ -544,6 +550,12 @@ public class DataRepository {
         tanguarHaor.setLatitude(25.1167);
         tanguarHaor.setLongitude(91.0167);
         tanguarHaor.setYoutubeVideoId("yJWh34w-05U");
+        tanguarHaor.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.tanguarhaor1,
+                R.drawable.tanguarhaor2,
+                R.drawable.tanguarhaor3,
+                R.drawable.tanguarhaor4
+        ));
         spots.add(tanguarHaor);
 
         // 2. Tekerghat
@@ -551,7 +563,7 @@ public class DataRepository {
                 "tekerghat", "sunamganj_dist",
                 "Tekerghat (Syed Nazrul Islam Saetu & Blue Lake)", "টেকেরঘাট",
                 "An azure blue lake in an abandoned limestone quarry — one of Bangladesh's hidden gems.",
-                R.drawable.spot_lalakhal, TouristSpot.SpotCategory.NATURAL
+                R.drawable.tekerghat1, TouristSpot.SpotCategory.NATURAL
         );
         tekerghat.setFullDescription("Tekerghat is a former lime stone (chinaclay) mining area in Tahirpur Upazila of Sunamganj. The abandoned quarries have filled with stunningly vivid turquoise-blue water, creating an otherworldly lake surrounded by white limestone cliffs. The area also overlooks Tanguar Haor and has views of the Meghalaya hills. A bridge (Syed Nazrul Islam Bridge) connects the area to the mainland. It's often combined with a Tanguar Haor trip.");
         tekerghat.setHowToReach("From Sunamganj: Speedboat or engine boat to Tahirpur, then to Tekerghat (2-3 hours total). Combined with Tanguar Haor trips.");
@@ -563,7 +575,13 @@ public class DataRepository {
         tekerghat.setWarnings("⚠️ SWIMMING IN THE QUARRY LAKE IS PROHIBITED due to deep, cold water and underwater hazards. ⚠️ Road access during monsoon is often flooded — boat is the primary transport.");
         tekerghat.setLatitude(25.1417);
         tekerghat.setLongitude(91.0000);
-        tekerghat.setYoutubeVideoId("QhQXKLZ1Ki4");
+        tekerghat.setYoutubeVideoId("dyYwTMqIvj0");
+        tekerghat.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.tekerghat1,
+                R.drawable.tekerghat2,
+                R.drawable.tekerghat3,
+                R.drawable.tekerghat4
+        ));
         spots.add(tekerghat);
 
         dist.setSpots(spots);

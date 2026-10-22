@@ -3304,6 +3304,11 @@ drawable spot_shahparan
 drawable spot_tea_garden
 drawable spring_dot_background
 drawable spring_dot_stroke_background
+drawable sreemongal1
+drawable sreemongal2
+drawable sreemongal3
+drawable sreemongal4
+drawable sreemongal5
 drawable sylhet
 drawable tanguarhaor1
 drawable tanguarhaor2

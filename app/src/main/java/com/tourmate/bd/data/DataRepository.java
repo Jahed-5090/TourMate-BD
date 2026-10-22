@@ -470,6 +470,38 @@ public class DataRepository {
         ));
         spots.add(baikaBeel);
 
+        // 6. Sreemongal
+        TouristSpot sreemongal = new TouristSpot(
+                "sreemongal", "moulvibazar_dist",
+                "Sreemongal", "শ্রীমঙ্গল চা বাগান ও শহর",
+                "The tea capital of Bangladesh — endless emerald tea estates, seven-layer tea, and rolling green hills.",
+                R.drawable.sreemongal1, TouristSpot.SpotCategory.TEA_GARDEN
+        );
+        sreemongal.setFullDescription("Sreemongal (Srimangal) is known as the Tea Capital of Bangladesh, producing a large percentage of the country's tea. It boasts over 40 sprawling tea estates with picturesque terraced hills, rubber gardens, pineapple and lemon orchards, and ethnic villages (Monipuri, Khasia). It is globally famous for the innovative 7-layer colored tea created at Nilkantha Tea Cabin. The peaceful surroundings, cool misty mornings, and cycling-friendly trails through tea plantations make it one of the premier eco-tourism destinations in South Asia.");
+        sreemongal.setHowToReach("From Dhaka: Direct intercity trains (Parabat, Jayantika, Upaban, Kalni Express) take ~3.5 to 4 hours from Kamalapur to Srimangal Railway Station. AC/Non-AC buses (Hanif, Shyamoli, Ena) depart from Sayedabad/Mohakhali (~4-5 hours). From Sylhet city: Direct trains or CNG/bus take around 1.5-2 hours (~75 km).");
+        sreemongal.setTransportOptions("Intercity Train | AC/Non-AC Bus | CNG Auto-rickshaw | Rental Bicycle");
+        sreemongal.setApproxCostFromDhaka("Train: ৳150-750 (Shovon to Snigdha/AC) | Bus: ৳350-600 | 2-Day Trip: ৳2500-6000");
+        sreemongal.setApproxCostFromSylhet("Train: ৳60-150 | Bus: ৳100-150 | CNG: ৳500-800");
+        sreemongal.setEntranceFee("Free entry to tea estates; Nilkantha 7-layer tea ৳80-100 per cup");
+        sreemongal.setBestTimeToVisit("October to March for pleasant, cool, and misty weather. Monsoon (June-August) for lush vibrant green scenery.");
+        sreemongal.setOpeningHours("Accessible 24 hours (Gardens best visited 6:00 AM – 6:00 PM)");
+        sreemongal.setNearbyHotels("Grand Sultan Tea Resort, Tea Resort & Museum, Dusai Resort, Nishorgo Eco Cottage, Shanti Bari Resort");
+        sreemongal.setBudgetAccommodation("Numerous eco-cottages and guesthouses starting from ৳800-1500/night around Radhanagar and Station Road");
+        sreemongal.setLocalFood("7-Layer Tea (সাত রঙের চা) at Nilkantha Tea Cabin, local Monipuri cuisine, fresh pineapples, Shatkora beef");
+        sreemongal.setTravelTips("Rent a bicycle to ride through the quiet tea plantation trails in the early morning. Visit the Monipuri Para for authentic handloom shawls and handicrafts. Respect tea pluckers while taking photos.");
+        sreemongal.setWarnings("⚠️ Do not pluck or damage tea leaves in working estates. ⚠️ Wear comfortable walking shoes and stay on designated paths. ⚠️ Watch out for leeches in wet grass during rainy days.");
+        sreemongal.setLatitude(24.3065);
+        sreemongal.setLongitude(91.7296);
+        sreemongal.setYoutubeVideoId("fyla95t_qXM");
+        sreemongal.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.sreemongal1,
+                R.drawable.sreemongal2,
+                R.drawable.sreemongal3,
+                R.drawable.sreemongal4,
+                R.drawable.sreemongal5
+        ));
+        spots.add(sreemongal);
+
         dist.setSpots(spots);
         return dist;
     }

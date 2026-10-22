@@ -125,6 +125,11 @@ drawable spot_ratargul
 drawable spot_shahjalal
 drawable spot_shahparan
 drawable spot_tea_garden
+drawable sreemongal1
+drawable sreemongal2
+drawable sreemongal3
+drawable sreemongal4
+drawable sreemongal5
 drawable sylhet
 drawable tanguarhaor1
 drawable tanguarhaor2

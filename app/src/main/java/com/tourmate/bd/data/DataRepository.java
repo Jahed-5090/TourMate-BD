@@ -92,19 +92,19 @@ public class DataRepository {
                 "Sylhet",
                 "সিলেট",
                 "The land of two leaves and a bud — famous for tea gardens, haors, and waterfalls.",
-                R.drawable.div_sylhet
+                R.drawable.sylhet
         );
         sylhetDivision.setDistricts(buildSylhetDistricts());
         divisions.add(sylhetDivision);
 
         // ── Other divisions (placeholder — coming soon) ───────────────────────
-        divisions.add(buildPlaceholderDivision("dhaka", "Dhaka", "ঢাকা", R.drawable.div_dhaka));
-        divisions.add(buildPlaceholderDivision("chittagong", "Chattogram", "চট্টগ্রাম", R.drawable.div_chittagong));
-        divisions.add(buildPlaceholderDivision("rajshahi", "Rajshahi", "রাজশাহী", R.drawable.div_rajshahi));
-        divisions.add(buildPlaceholderDivision("khulna", "Khulna", "খুলনা", R.drawable.div_khulna));
-        divisions.add(buildPlaceholderDivision("barishal", "Barishal", "বরিশাল", R.drawable.div_barishal));
-        divisions.add(buildPlaceholderDivision("rangpur", "Rangpur", "রংপুর", R.drawable.div_rangpur));
-        divisions.add(buildPlaceholderDivision("mymensingh", "Mymensingh", "ময়মনসিংহ", R.drawable.div_mymensingh));
+        divisions.add(buildPlaceholderDivision("dhaka", "Dhaka", "ঢাকা", R.drawable.dhaka));
+        divisions.add(buildPlaceholderDivision("chittagong", "Chattogram", "চট্টগ্রাম", R.drawable.chattogram));
+        divisions.add(buildPlaceholderDivision("rajshahi", "Rajshahi", "রাজশাহী", R.drawable.rajshahi));
+        divisions.add(buildPlaceholderDivision("khulna", "Khulna", "খুলনা", R.drawable.khulna));
+        divisions.add(buildPlaceholderDivision("barishal", "Barishal", "বরিশাল", R.drawable.barishal));
+        divisions.add(buildPlaceholderDivision("rangpur", "Rangpur", "রংপুর", R.drawable.rangpur));
+        divisions.add(buildPlaceholderDivision("mymensingh", "Mymensingh", "ময়মনসিংহ", R.drawable.mymensingh));
     }
 
     private Division buildPlaceholderDivision(String id, String name, String nameBn, int imgRes) {
@@ -504,7 +504,7 @@ public class DataRepository {
         satchhari.setWarnings("⚠️ Guide is mandatory. Do not venture off marked trails. Maintain silence for wildlife encounters.");
         satchhari.setLatitude(24.2961);
         satchhari.setLongitude(91.6408);
-        satchhari.setYoutubeVideoId("lY7BM1p-DZo");
+        satchhari.setYoutubeVideoId("iPHjZxqPdfc");
         satchhari.setGalleryImages(java.util.Arrays.asList(
                 R.drawable.shatchori1,
                 R.drawable.shatchori2,

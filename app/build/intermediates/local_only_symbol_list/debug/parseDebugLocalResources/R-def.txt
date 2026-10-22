@@ -62,7 +62,10 @@ drawable badge_bg
 drawable baikka_bil1
 drawable baikka_bil2
 drawable baikka_bil3
+drawable barishal
 drawable btn_primary_bg
+drawable chattogram
+drawable dhaka
 drawable dist_habiganj
 drawable dist_moulvibazar
 drawable dist_sunamganj
@@ -80,8 +83,10 @@ drawable ham_ham1
 drawable ham_ham2
 drawable ham_ham3
 drawable ham_ham4
+drawable header_ocean_background
 drawable ic_chevron_right
 drawable ic_launcher_foreground
+drawable khulna
 drawable lawachara1
 drawable lawachara2
 drawable lawachara3
@@ -93,7 +98,10 @@ drawable madhobpur_lake1
 drawable madhobpur_lake2
 drawable madhobpur_lake3
 drawable madhobpur_lake4
+drawable mymensingh
 drawable placeholder_spot
+drawable rajshahi
+drawable rangpur
 drawable ratargul2
 drawable ratargul3
 drawable ratargul4
@@ -114,6 +122,7 @@ drawable spot_ratargul
 drawable spot_shahjalal
 drawable spot_shahparan
 drawable spot_tea_garden
+drawable sylhet
 drawable tanguarhaor1
 drawable tanguarhaor2
 drawable tanguarhaor3

@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        getWindow().setStatusBarColor(androidx.core.content.ContextCompat.getColor(this, R.color.brand_primary_dark));
 
         setupToolbar();
         setupDrawer();

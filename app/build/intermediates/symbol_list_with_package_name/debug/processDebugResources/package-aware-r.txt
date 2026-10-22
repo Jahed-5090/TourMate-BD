@@ -3134,6 +3134,7 @@ drawable badge_bg
 drawable baikka_bil1
 drawable baikka_bil2
 drawable baikka_bil3
+drawable barishal
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3143,11 +3144,13 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable chattogram
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable dhaka
 drawable dist_habiganj
 drawable dist_moulvibazar
 drawable dist_sunamganj
@@ -3166,6 +3169,7 @@ drawable ham_ham1
 drawable ham_ham2
 drawable ham_ham3
 drawable ham_ham4
+drawable header_ocean_background
 drawable ic_arrow_back_black_24
 drawable ic_call_answer
 drawable ic_call_answer_low
@@ -3187,6 +3191,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
 drawable indeterminate_static
+drawable khulna
 drawable lawachara1
 drawable lawachara2
 drawable lawachara3
@@ -3256,6 +3261,7 @@ drawable mtrl_switch_thumb_unchecked_pressed
 drawable mtrl_switch_track
 drawable mtrl_switch_track_decoration
 drawable mtrl_tabs_default_indicator
+drawable mymensingh
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -3271,6 +3277,8 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable placeholder_spot
+drawable rajshahi
+drawable rangpur
 drawable ratargul2
 drawable ratargul3
 drawable ratargul4
@@ -3293,6 +3301,7 @@ drawable spot_shahparan
 drawable spot_tea_garden
 drawable spring_dot_background
 drawable spring_dot_stroke_background
+drawable sylhet
 drawable tanguarhaor1
 drawable tanguarhaor2
 drawable tanguarhaor3

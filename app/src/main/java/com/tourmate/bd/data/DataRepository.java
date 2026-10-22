@@ -504,7 +504,7 @@ public class DataRepository {
         satchhari.setWarnings("⚠️ Guide is mandatory. Do not venture off marked trails. Maintain silence for wildlife encounters.");
         satchhari.setLatitude(24.2961);
         satchhari.setLongitude(91.6408);
-        satchhari.setYoutubeVideoId("pG1Zx6sL-Ks");
+        satchhari.setYoutubeVideoId("lY7BM1p-DZo");
         satchhari.setGalleryImages(java.util.Arrays.asList(
                 R.drawable.shatchori1,
                 R.drawable.shatchori2,

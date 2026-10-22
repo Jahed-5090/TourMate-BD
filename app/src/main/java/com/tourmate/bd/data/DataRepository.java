@@ -135,7 +135,7 @@ public class DataRepository {
                 "sylhet_dist", "sylhet",
                 "Sylhet", "সিলেট",
                 "The capital of Sylhet division, home to shrines, tea gardens, and the iconic Jaflong.",
-                R.drawable.dist_sylhet
+                R.drawable.sylhet
         );
 
         List<TouristSpot> spots = new ArrayList<>();
@@ -329,7 +329,7 @@ public class DataRepository {
                 "moulvibazar_dist", "sylhet",
                 "Moulvibazar", "মৌলভীবাজার",
                 "Home to Srimangal — the tea capital of Bangladesh — with lush gardens, wildlife, and stunning waterfalls.",
-                R.drawable.dist_moulvibazar
+                R.drawable.moulovibzar
         );
 
         List<TouristSpot> spots = new ArrayList<>();
@@ -481,7 +481,7 @@ public class DataRepository {
                 "habiganj_dist", "sylhet",
                 "Habiganj", "হবিগঞ্জ",
                 "Land of haors, tea gardens, and the historic Satchhari forest — gateway to northeastern Bangladesh.",
-                R.drawable.dist_habiganj
+                R.drawable.hobigonj
         );
 
         List<TouristSpot> spots = new ArrayList<>();
@@ -524,7 +524,7 @@ public class DataRepository {
                 "sunamganj_dist", "sylhet",
                 "Sunamganj", "সুনামগঞ্জ",
                 "The land of haors — vast wetlands, Tanguar Haor, and the legendary folk mystic Hason Raja.",
-                R.drawable.dist_sunamganj
+                R.drawable.shunamgonj
         );
 
         List<TouristSpot> spots = new ArrayList<>();

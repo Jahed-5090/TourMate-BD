@@ -16,8 +16,8 @@
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/mipmap-hdpi/ic_launcher.xml"
     },
     {
-        "merged": "com.tourmate.bd.app-debug-68:/drawable_barishal.jpeg.flat",
-        "source": "com.tourmate.bd.app-main-70:/drawable/barishal.jpeg"
+        "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_mymensingh.jpeg.flat",
+        "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/mymensingh.jpeg"
     },
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_ic_chevron_right.xml.flat",
@@ -28,6 +28,10 @@
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/tanguarhaor2.jpeg"
     },
     {
+        "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_header_ocean_background.xml.flat",
+        "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/header_ocean_background.xml"
+    },
+    {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_placeholder_spot.xml.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/placeholder_spot.xml"
     },
@@ -36,8 +40,8 @@
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/madhobkundo4.jpeg"
     },
     {
-        "merged": "com.tourmate.bd.app-debug-68:/drawable_btn_primary_bg.xml.flat",
-        "source": "com.tourmate.bd.app-main-70:/drawable/btn_primary_bg.xml"
+        "merged": "com.tourmate.bd.app-debug-68:/drawable_hobigonj.jpeg.flat",
+        "source": "com.tourmate.bd.app-main-70:/drawable/hobigonj.jpeg"
     },
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_spot_dibir_haor.xml.flat",
@@ -50,10 +54,6 @@
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_madhobpur_lake4.jpeg.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/madhobpur_lake4.jpeg"
-    },
-    {
-        "merged": "com.tourmate.bd.app-debug-68:/drawable_khulna.jpeg.flat",
-        "source": "com.tourmate.bd.app-main-70:/drawable/khulna.jpeg"
     },
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_spot_jaflong.jpeg.flat",
@@ -80,6 +80,14 @@
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/spot_bichanakandi.webp"
     },
     {
+        "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_rangpur.jpeg.flat",
+        "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/rangpur.jpeg"
+    },
+    {
+        "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_khulna.jpeg.flat",
+        "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/khulna.jpeg"
+    },
+    {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_shatchori4.jpeg.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/shatchori4.jpeg"
     },
@@ -92,12 +100,16 @@
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/tekerghat2.jpeg"
     },
     {
+        "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_chattogram.jpeg.flat",
+        "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/chattogram.jpeg"
+    },
+    {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_ratargul6.jpeg.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/ratargul6.jpeg"
     },
     {
-        "merged": "com.tourmate.bd.app-debug-68:/layout_activity_main.xml.flat",
-        "source": "com.tourmate.bd.app-main-70:/layout/activity_main.xml"
+        "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_sylhet.jpeg.flat",
+        "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/sylhet.jpeg"
     },
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_spot_tea_garden.jpeg.flat",
@@ -124,24 +136,24 @@
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/madhobkundo2.jpeg"
     },
     {
-        "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_lawachara2.jpeg.flat",
-        "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/lawachara2.jpeg"
-    },
-    {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/layout_activity_splash.xml.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_lawachara2.jpeg.flat",
+        "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/lawachara2.jpeg"
     },
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_splash_background.xml.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/splash_background.xml"
     },
     {
-        "merged": "com.tourmate.bd.app-debug-68:/drawable_header_ocean_background.xml.flat",
-        "source": "com.tourmate.bd.app-main-70:/drawable/header_ocean_background.xml"
-    },
-    {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_spot_ratargul.jpeg.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/spot_ratargul.jpeg"
+    },
+    {
+        "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_dhaka.jpeg.flat",
+        "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/dhaka.jpeg"
     },
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_tanguarhaor1.jpeg.flat",
@@ -192,10 +204,6 @@
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/spot_jaflong.xml"
     },
     {
-        "merged": "com.tourmate.bd.app-debug-68:/drawable_chattogram.jpeg.flat",
-        "source": "com.tourmate.bd.app-main-70:/drawable/chattogram.jpeg"
-    },
-    {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/layout_item_gallery_photo.xml.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/layout/item_gallery_photo.xml"
     },
@@ -228,12 +236,12 @@
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/layout/activity_district_list.xml"
     },
     {
-        "merged": "com.tourmate.bd.app-debug-68:/drawable_dhaka.jpeg.flat",
-        "source": "com.tourmate.bd.app-main-70:/drawable/dhaka.jpeg"
-    },
-    {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_dist_sunamganj.xml.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/dist_sunamganj.xml"
+    },
+    {
+        "merged": "com.tourmate.bd.app-debug-68:/drawable_moulovibzar.jpeg.flat",
+        "source": "com.tourmate.bd.app-main-70:/drawable/moulovibzar.jpeg"
     },
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/mipmap-xxxhdpi_ic_launcher.xml.flat",
@@ -292,6 +300,10 @@
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/dist_moulvibazar.xml"
     },
     {
+        "merged": "com.tourmate.bd.app-debug-68:/drawable_shunamgonj.jpeg.flat",
+        "source": "com.tourmate.bd.app-main-70:/drawable/shunamgonj.jpeg"
+    },
+    {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/layout_nav_header.xml.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/layout/nav_header.xml"
     },
@@ -302,10 +314,6 @@
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/mipmap-mdpi_ic_launcher_round.xml.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/mipmap-mdpi/ic_launcher_round.xml"
-    },
-    {
-        "merged": "com.tourmate.bd.app-debug-68:/drawable_rangpur.jpeg.flat",
-        "source": "com.tourmate.bd.app-main-70:/drawable/rangpur.jpeg"
     },
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/anim_slide_out_right.xml.flat",
@@ -322,10 +330,6 @@
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/font_hind_siliguri_semibold.ttf.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/font/hind_siliguri_semibold.ttf"
-    },
-    {
-        "merged": "com.tourmate.bd.app-debug-68:/drawable_sylhet.jpeg.flat",
-        "source": "com.tourmate.bd.app-main-70:/drawable/sylhet.jpeg"
     },
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_div_chittagong.xml.flat",
@@ -356,6 +360,10 @@
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/anim/slide_out_left.xml"
     },
     {
+        "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_rajshahi.jpeg.flat",
+        "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/rajshahi.jpeg"
+    },
+    {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_btn_primary_bg.xml.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/btn_primary_bg.xml"
     },
@@ -376,10 +384,6 @@
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/baikka_bil1.jpeg"
     },
     {
-        "merged": "com.tourmate.bd.app-debug-68:/layout_item_division.xml.flat",
-        "source": "com.tourmate.bd.app-main-70:/layout/item_division.xml"
-    },
-    {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_ratargul4.jpeg.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/ratargul4.jpeg"
     },
@@ -390,6 +394,10 @@
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/mipmap-mdpi_ic_launcher.xml.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/mipmap-mdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_barishal.jpeg.flat",
+        "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/barishal.jpeg"
     },
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_spot_dibir_haor.webp.flat",
@@ -424,10 +432,6 @@
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.tourmate.bd.app-debug-68:/drawable_mymensingh.jpeg.flat",
-        "source": "com.tourmate.bd.app-main-70:/drawable/mymensingh.jpeg"
-    },
-    {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_spot_ratargul.xml.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/spot_ratargul.xml"
     },
@@ -446,10 +450,6 @@
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_madhobpur_lake1.jpeg.flat",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-70:/drawable/madhobpur_lake1.jpeg"
-    },
-    {
-        "merged": "com.tourmate.bd.app-debug-68:/drawable_rajshahi.jpeg.flat",
-        "source": "com.tourmate.bd.app-main-70:/drawable/rajshahi.jpeg"
     },
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-debug-68:/drawable_spot_madhabkund.xml.flat",

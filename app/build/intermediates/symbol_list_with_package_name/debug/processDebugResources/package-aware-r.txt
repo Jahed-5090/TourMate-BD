@@ -3170,6 +3170,7 @@ drawable ham_ham2
 drawable ham_ham3
 drawable ham_ham4
 drawable header_ocean_background
+drawable hobigonj
 drawable ic_arrow_back_black_24
 drawable ic_call_answer
 drawable ic_call_answer_low
@@ -3224,6 +3225,7 @@ drawable material_ic_keyboard_arrow_previous_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
+drawable moulovibzar
 drawable mtrl_bottomsheet_drag_handle
 drawable mtrl_checkbox_button
 drawable mtrl_checkbox_button_checked_unchecked
@@ -3287,6 +3289,7 @@ drawable shatchori1
 drawable shatchori2
 drawable shatchori3
 drawable shatchori4
+drawable shunamgonj
 drawable splash_background
 drawable spot_bichanakandi
 drawable spot_dibir_haor

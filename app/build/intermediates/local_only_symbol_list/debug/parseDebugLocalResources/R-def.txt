@@ -84,6 +84,7 @@ drawable ham_ham2
 drawable ham_ham3
 drawable ham_ham4
 drawable header_ocean_background
+drawable hobigonj
 drawable ic_chevron_right
 drawable ic_launcher_foreground
 drawable khulna
@@ -98,6 +99,7 @@ drawable madhobpur_lake1
 drawable madhobpur_lake2
 drawable madhobpur_lake3
 drawable madhobpur_lake4
+drawable moulovibzar
 drawable mymensingh
 drawable placeholder_spot
 drawable rajshahi
@@ -110,6 +112,7 @@ drawable shatchori1
 drawable shatchori2
 drawable shatchori3
 drawable shatchori4
+drawable shunamgonj
 drawable splash_background
 drawable spot_bichanakandi
 drawable spot_dibir_haor

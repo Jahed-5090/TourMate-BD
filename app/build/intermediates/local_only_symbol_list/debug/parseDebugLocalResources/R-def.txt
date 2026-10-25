@@ -23,6 +23,8 @@ color cat_religious
 color cat_tea_garden
 color cat_waterfall
 color divider
+color nav_item_icon_tint
+color nav_item_text_tint
 color overlay_gradient_end
 color overlay_gradient_start
 color splash_center
@@ -87,6 +89,10 @@ drawable header_ocean_background
 drawable hobigonj
 drawable ic_chevron_right
 drawable ic_launcher_foreground
+drawable ic_nav_cloud
+drawable ic_nav_favorite
+drawable ic_nav_home
+drawable ic_nav_info
 drawable khulna
 drawable lawachara1
 drawable lawachara2
@@ -101,6 +107,7 @@ drawable madhobpur_lake3
 drawable madhobpur_lake4
 drawable moulovibzar
 drawable mymensingh
+drawable nav_item_background
 drawable placeholder_spot
 drawable rajshahi
 drawable rangpur
@@ -263,6 +270,7 @@ style TourMate.Button.Primary
 style TourMate.Card
 style TourMate.Card.Tip
 style TourMate.Card.Warning
+style TourMate.DrawerArrowStyle
 style TourMate.TextAppearance
 style TourMate.TextAppearance.Body
 style TourMate.TextAppearance.SectionHeader

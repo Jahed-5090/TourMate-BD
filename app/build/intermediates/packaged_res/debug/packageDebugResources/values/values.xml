@@ -91,6 +91,7 @@
         <item name="android:statusBarColor">@color/status_bar</item>
         <item name="android:windowLightStatusBar" ns1:targetApi="m">false</item>
         <item name="android:fontFamily">@font/hind_siliguri</item>
+        <item name="drawerArrowStyle">@style/TourMate.DrawerArrowStyle</item>
     </style>
     <style name="Theme.TourMateBD.Splash" parent="Theme.TourMateBD">
         <item name="android:windowBackground">@drawable/splash_background</item>
@@ -122,6 +123,10 @@
         <item name="cardElevation">2dp</item>
         <item name="strokeColor">@color/warning_border</item>
         <item name="strokeWidth">1.5dp</item>
+    </style>
+    <style name="TourMate.DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">#FFFFFF</item>
+        <item name="spinBars">true</item>
     </style>
     <style name="TourMate.TextAppearance" parent="TextAppearance.AppCompat"/>
     <style name="TourMate.TextAppearance.Body">

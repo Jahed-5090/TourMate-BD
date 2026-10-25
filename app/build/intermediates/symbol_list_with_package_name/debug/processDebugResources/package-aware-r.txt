@@ -2184,6 +2184,8 @@ color mtrl_textinput_disabled_color
 color mtrl_textinput_filled_box_default_background_color
 color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
+color nav_item_icon_tint
+color nav_item_text_tint
 color notification_action_color_filter
 color notification_icon_bg_color
 color overlay_gradient_end
@@ -3190,6 +3192,10 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_nav_cloud
+drawable ic_nav_favorite
+drawable ic_nav_home
+drawable ic_nav_info
 drawable ic_search_black_24
 drawable indeterminate_static
 drawable khulna
@@ -3264,6 +3270,7 @@ drawable mtrl_switch_track
 drawable mtrl_switch_track_decoration
 drawable mtrl_tabs_default_indicator
 drawable mymensingh
+drawable nav_item_background
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -5106,6 +5113,7 @@ style TourMate_Button_Primary
 style TourMate_Card
 style TourMate_Card_Tip
 style TourMate_Card_Warning
+style TourMate_DrawerArrowStyle
 style TourMate_TextAppearance
 style TourMate_TextAppearance_Body
 style TourMate_TextAppearance_SectionHeader

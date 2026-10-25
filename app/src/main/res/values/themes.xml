@@ -12,6 +12,13 @@
         <item name="android:statusBarColor">@color/status_bar</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
         <item name="android:fontFamily">@font/hind_siliguri</item>
+        <item name="drawerArrowStyle">@style/TourMate.DrawerArrowStyle</item>
+    </style>
+
+    <!-- Drawer Toggle Arrow Style (White hamburger menu icon) -->
+    <style name="TourMate.DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">#FFFFFF</item>
+        <item name="spinBars">true</item>
     </style>
 
     <!-- Splash Theme (no action bar, no flicker) -->

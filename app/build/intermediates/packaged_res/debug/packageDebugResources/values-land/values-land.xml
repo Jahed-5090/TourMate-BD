@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="division_card_height">160dp</dimen>
+    <dimen name="spot_detail_header_height">200dp</dimen>
+    <integer name="division_grid_span">3</integer>
+</resources>

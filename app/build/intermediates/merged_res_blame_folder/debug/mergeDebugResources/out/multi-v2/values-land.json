@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.tourmate.bd.app-mergeDebugResources-66:/values-land/values-land.xml",
+            "outputFile": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-mergeDebugResources-66:/values-land/values-land.xml",
             "map": [
                 {
                     "source": "/Users/jahedahmed/.gradle/caches/transforms-4/da41558f534a34a14e6b0c9155555e94/transformed/material-1.12.0/res/values-land/values-land.xml",
@@ -30,6 +30,76 @@
                         "startOffsets": "55,125,196",
                         "endColumns": "69,70,67",
                         "endOffsets": "120,191,259"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.tourmate.bd.app-mergeDebugResources-66:/values-land/values-land.xml",
+            "map": [
+                {
+                    "source": "/Users/jahedahmed/.gradle/caches/transforms-4/da41558f534a34a14e6b0c9155555e94/transformed/material-1.12.0/res/values-land/values-land.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,26,27,28,32,41,46",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "317,392,466,539,609,681,751,816,883,953,1025,1094,1163,1245,1335,1411,1479,1546,1733,1798,1865,2037,2606,2875",
+                        "endLines": "6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,26,27,31,40,45,48",
+                        "endColumns": "74,73,72,69,71,69,64,66,69,71,68,68,81,89,75,67,66,77,64,66,10,10,10,10",
+                        "endOffsets": "387,461,534,604,676,746,811,878,948,1020,1089,1158,1240,1330,1406,1474,1541,1619,1793,1860,2032,2601,2870,3098"
+                    }
+                },
+                {
+                    "source": "/Users/jahedahmed/.gradle/caches/transforms-4/1da6c758042ca03d1b7c2e9419154d3d/transformed/appcompat-1.7.0/res/values-land/values-land.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1",
+                        "startColumns": "-1,-1,-1",
+                        "startOffsets": "-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
+                    }
+                },
+                {
+                    "source": "/Users/jahedahmed/Desktop/TourMate-BD/app/src/main/res/values-land/dimens.xml",
+                    "from": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "118,171",
+                        "endColumns": "52,57",
+                        "endOffsets": "166,224"
+                    },
+                    "to": {
+                        "startLines": "5,24",
+                        "startColumns": "4,4",
+                        "startOffsets": "264,1624",
+                        "endColumns": "52,57",
+                        "endOffsets": "312,1677"
+                    }
+                },
+                {
+                    "source": "/Users/jahedahmed/Desktop/TourMate-BD/app/src/main/res/values-land/integers.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "131",
+                        "endColumns": "50",
+                        "endOffsets": "177"
+                    },
+                    "to": {
+                        "startLines": "25",
+                        "startColumns": "4",
+                        "startOffsets": "1682",
+                        "endColumns": "50",
+                        "endOffsets": "1728"
                     }
                 }
             ]

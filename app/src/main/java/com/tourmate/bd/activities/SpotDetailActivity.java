@@ -4,10 +4,12 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -380,6 +382,19 @@ public class SpotDetailActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (binding != null && binding.appBar != null) {
+            int newHeaderHeight = getResources().getDimensionPixelSize(R.dimen.spot_detail_header_height);
+            ViewGroup.LayoutParams lp = binding.appBar.getLayoutParams();
+            if (lp != null) {
+                lp.height = newHeaderHeight;
+                binding.appBar.setLayoutParams(lp);
+            }
+        }
     }
 
     @Override

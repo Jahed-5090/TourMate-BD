@@ -54,6 +54,7 @@
     <dimen name="text_title">18sp</dimen>
     <dimen name="text_xs">11sp</dimen>
     <dimen name="toolbar_height">56dp</dimen>
+    <integer name="division_grid_span">2</integer>
     <string name="about_content">TourMate BD is your trusted travel companion for exploring the beautiful tourist destinations of Bangladesh.\n\nOur mission is to empower tourists with accurate, honest information to navigate destinations independently — without falling victim to local syndicates, overcharging, or misinformation.\n\nCurrently featuring: Sylhet Division (complete)\n\nMore divisions coming soon!</string>
     <string name="about_title">About TourMate BD</string>
     <string name="accommodation">Accommodation</string>

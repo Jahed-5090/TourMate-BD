@@ -30,7 +30,6 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.TourMateBD"
         android:usesCleartextTraffic="true" >
 
@@ -50,39 +49,28 @@
         <!-- Main / Home Screen -->
         <activity
             android:name="com.tourmate.bd.activities.MainActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-
-        <!-- Division List Screen -->
-        <activity
-            android:name="com.tourmate.bd.activities.DivisionListActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
+            android:exported="false" />
 
         <!-- District List Screen -->
         <activity
             android:name="com.tourmate.bd.activities.DistrictListActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
+            android:exported="false" />
 
         <!-- Spot List Screen -->
         <activity
             android:name="com.tourmate.bd.activities.SpotListActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
+            android:exported="false" />
 
         <!-- Spot Detail Screen -->
         <activity
             android:name="com.tourmate.bd.activities.SpotDetailActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
-            android:exported="false"
-            android:screenOrientation="portrait" />
+            android:exported="false" />
 
         <!-- About Screen -->
         <activity
             android:name="com.tourmate.bd.activities.AboutActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
+            android:exported="false" />
 
         <!-- ── Android Components (Topic 10) ────────────────────────── -->
 

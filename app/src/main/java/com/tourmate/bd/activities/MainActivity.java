@@ -80,7 +80,8 @@ public class MainActivity extends AppCompatActivity
     private void setupDivisionGrid() {
         List<Division> divisions = DataRepository.getInstance().getAllDivisions();
         adapter = new DivisionAdapter(this, divisions, this);
-        binding.rvDivisions.setLayoutManager(new GridLayoutManager(this, 2));
+        int spanCount = getResources().getInteger(R.integer.division_grid_span);
+        binding.rvDivisions.setLayoutManager(new GridLayoutManager(this, spanCount));
         binding.rvDivisions.setAdapter(adapter);
     }
 

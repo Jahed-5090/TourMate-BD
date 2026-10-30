@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Landscape dimensions for optimized vertical space -->
+    <dimen name="division_card_height">160dp</dimen>
+    <dimen name="spot_detail_header_height">200dp</dimen>
+</resources>
+

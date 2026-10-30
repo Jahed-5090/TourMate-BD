@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Number of columns for Division grid on Home screen (Landscape) -->
+    <integer name="division_grid_span">3</integer>
+</resources>
+

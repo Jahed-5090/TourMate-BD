@@ -31,4 +31,7 @@
     <!-- About -->
     <string name="about_content">TourMate BD is your trusted travel companion for exploring the beautiful tourist destinations of Bangladesh.\n\nOur mission is to empower tourists with accurate, honest information to navigate destinations independently — without falling victim to local syndicates, overcharging, or misinformation.\n\nCurrently featuring: Sylhet Division (complete)\n\nMore divisions coming soon!</string>
     <string name="disclaimer">📋 Disclaimer: Prices and information are approximate and subject to change. Always verify locally. The app is not responsible for any discrepancies.</string>
+
+    <!-- Firebase Google Sign-In Web Client ID -->
+    <string name="default_web_client_id">108726354819-webclient.apps.googleusercontent.com</string>
 </resources>

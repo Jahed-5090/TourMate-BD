@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.tourmate.bd.R;
@@ -31,6 +34,12 @@ public class DistrictListActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         binding = ActivityDistrictListBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(0, systemBars.top, 0, 0);
+            return insets;
+        });
 
         String divisionId = getIntent().getStringExtra(EXTRA_DIVISION_ID);
         String divisionName = getIntent().getStringExtra(EXTRA_DIVISION_NAME);

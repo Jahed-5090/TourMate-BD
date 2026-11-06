@@ -4,6 +4,7 @@ package com.tourmate.bd.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -22,6 +23,9 @@ import java.lang.String;
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   private final DrawerLayout rootView;
+
+  @NonNull
+  public final ImageButton btnThemeToggle;
 
   @NonNull
   public final DrawerLayout drawerLayout;
@@ -44,11 +48,13 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final TextView tvWeatherTemp;
 
-  private ActivityMainBinding(@NonNull DrawerLayout rootView, @NonNull DrawerLayout drawerLayout,
-      @NonNull LinearLayout layoutOfflineBanner, @NonNull LinearLayout layoutWeather,
-      @NonNull NavigationView navView, @NonNull RecyclerView rvDivisions, @NonNull Toolbar toolbar,
+  private ActivityMainBinding(@NonNull DrawerLayout rootView, @NonNull ImageButton btnThemeToggle,
+      @NonNull DrawerLayout drawerLayout, @NonNull LinearLayout layoutOfflineBanner,
+      @NonNull LinearLayout layoutWeather, @NonNull NavigationView navView,
+      @NonNull RecyclerView rvDivisions, @NonNull Toolbar toolbar,
       @NonNull TextView tvWeatherTemp) {
     this.rootView = rootView;
+    this.btnThemeToggle = btnThemeToggle;
     this.drawerLayout = drawerLayout;
     this.layoutOfflineBanner = layoutOfflineBanner;
     this.layoutWeather = layoutWeather;
@@ -85,6 +91,12 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btn_theme_toggle;
+      ImageButton btnThemeToggle = ViewBindings.findChildViewById(rootView, id);
+      if (btnThemeToggle == null) {
+        break missingId;
+      }
+
       DrawerLayout drawerLayout = (DrawerLayout) rootView;
 
       id = R.id.layout_offline_banner;
@@ -123,8 +135,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((DrawerLayout) rootView, drawerLayout, layoutOfflineBanner,
-          layoutWeather, navView, rvDivisions, toolbar, tvWeatherTemp);
+      return new ActivityMainBinding((DrawerLayout) rootView, btnThemeToggle, drawerLayout,
+          layoutOfflineBanner, layoutWeather, navView, rvDivisions, toolbar, tvWeatherTemp);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

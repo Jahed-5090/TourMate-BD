@@ -42,15 +42,19 @@ public class FirebaseManager {
      * Synchronizes locally saved SQLite favorites to the Cloud Database.
      */
     public void syncFavoritesWithCloud(Context context, CloudSyncCallback callback) {
-        TourMateDatabaseHelper db = TourMateDatabaseHelper.getInstance(context);
-        List<String> localFavorites = db.getAllFavoriteSpotIds();
+        if (FirebaseAuthManager.getInstance().isLoggedIn()) {
+            FirebaseAuthManager.getInstance().syncUserFavoritesToCloud(context, callback);
+        } else {
+            TourMateDatabaseHelper db = TourMateDatabaseHelper.getInstance(context);
+            List<String> localFavorites = db.getAllFavoriteSpotIds();
 
-        // Perform asynchronous background sync operation
-        handler.postDelayed(() -> {
-            if (callback != null) {
-                callback.onSyncSuccess("Successfully synchronized " + localFavorites.size() + " saved spots with Cloud Database.");
-            }
-        }, 1200);
+            // Perform asynchronous background sync operation / notification for guest
+            handler.postDelayed(() -> {
+                if (callback != null) {
+                    callback.onSyncSuccess("অতিথি মোড: " + localFavorites.size() + " টি স্থান সংরক্ষিত। ক্লাউডে সুরক্ষিত রাখতে লগইন করুন।");
+                }
+            }, 800);
+        }
     }
 
     /**

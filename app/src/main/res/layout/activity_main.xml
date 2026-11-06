@@ -23,7 +23,7 @@
             android:background="@drawable/header_ocean_background"
             android:elevation="4dp">
 
-            <!-- Toolbar with White Hamburger Menu Icon -->
+            <!-- Toolbar with White Hamburger Menu Icon and Theme Toggle in Top-Right Corner -->
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
@@ -31,7 +31,21 @@
                 android:background="@android:color/transparent"
                 app:titleTextColor="#FFFFFF"
                 app:navigationIconTint="#FFFFFF"
-                app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"/>
+                app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light">
+
+                <ImageButton
+                    android:id="@+id/btn_theme_toggle"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/bg_theme_toggle_btn"
+                    android:src="@drawable/ic_mode_night"
+                    android:padding="9dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="Dark or Light Mode Toggle"/>
+
+            </androidx.appcompat.widget.Toolbar>
 
             <!-- Offline Status Banner (Topic 10: Broadcast Receiver) -->
             <LinearLayout

@@ -22,10 +22,13 @@ import com.tourmate.bd.components.NetworkChangeReceiver;
 import com.tourmate.bd.data.DataRepository;
 import com.tourmate.bd.database.TourMateDatabaseHelper;
 import com.tourmate.bd.databinding.ActivityMainBinding;
+import com.google.firebase.auth.FirebaseUser;
 import com.tourmate.bd.models.Division;
 import com.tourmate.bd.models.TouristSpot;
+import com.tourmate.bd.network.FirebaseAuthManager;
 import com.tourmate.bd.network.FirebaseManager;
 import com.tourmate.bd.network.WeatherApiClient;
+import com.tourmate.bd.utils.ThemeHelper;
 
 import java.util.List;
 
@@ -54,10 +57,108 @@ public class MainActivity extends AppCompatActivity
         getWindow().setStatusBarColor(androidx.core.content.ContextCompat.getColor(this, R.color.brand_primary_dark));
 
         setupToolbar();
+        setupThemeToggle();
         setupDrawer();
         setupDivisionGrid();
         setupNetworkReceiver();
         fetchLiveWeather();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateThemeToggleUI();
+        updateUserNavHeader();
+    }
+
+    private void updateUserNavHeader() {
+        View headerView = binding.navView.getHeaderView(0);
+        if (headerView == null) return;
+
+        android.widget.ImageView ivAvatar = headerView.findViewById(R.id.iv_user_avatar);
+        android.widget.TextView tvName = headerView.findViewById(R.id.tv_user_name);
+        android.widget.TextView tvEmail = headerView.findViewById(R.id.tv_user_email);
+
+        FirebaseUser currentUser = FirebaseAuthManager.getInstance().getCurrentUser();
+        MenuItem authMenuItem = binding.navView.getMenu().findItem(R.id.nav_auth);
+
+        if (currentUser != null) {
+            String name = currentUser.getDisplayName() != null && !currentUser.getDisplayName().isEmpty()
+                    ? currentUser.getDisplayName() : "ভ্রমণকারী";
+            tvName.setText(name);
+            tvEmail.setText(currentUser.getEmail() != null ? currentUser.getEmail() : "লগইন করা আছে");
+
+            if (currentUser.getPhotoUrl() != null) {
+                com.bumptech.glide.Glide.with(this)
+                        .load(currentUser.getPhotoUrl())
+                        .circleCrop()
+                        .into(ivAvatar);
+            } else {
+                ivAvatar.setImageResource(R.drawable.ic_person);
+            }
+
+            if (authMenuItem != null) {
+                authMenuItem.setTitle("লগআউট (Logout)");
+                authMenuItem.setIcon(R.drawable.ic_logout);
+            }
+
+            headerView.setOnClickListener(v -> {
+                binding.drawerLayout.closeDrawer(GravityCompat.START);
+                startActivity(new Intent(this, ProfileActivity.class));
+            });
+        } else {
+            tvName.setText("অতিথি পরিব্রাজক");
+            tvEmail.setText("লগইন করতে এখানে ট্যাপ করুন ➔");
+            ivAvatar.setImageResource(R.drawable.ic_person);
+
+            if (authMenuItem != null) {
+                authMenuItem.setTitle("লগইন / সাইন আপ");
+                authMenuItem.setIcon(R.drawable.ic_login);
+            }
+
+            headerView.setOnClickListener(v -> {
+                binding.drawerLayout.closeDrawer(GravityCompat.START);
+                startActivity(new Intent(this, LoginActivity.class));
+            });
+        }
+    }
+
+    private void showLogoutDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle("লগআউট")
+                .setMessage("আপনি কি আপনার অ্যাকাউন্ট থেকে লগআউট করতে চান?")
+                .setPositiveButton("লগআউট", (dialog, which) -> {
+                    FirebaseAuthManager.getInstance().signOut(this);
+                    updateUserNavHeader();
+                    Toast.makeText(this, "সফলভাবে লগআউট করা হয়েছে", Toast.LENGTH_SHORT).show();
+                })
+                .setNegativeButton("বাতিল", null)
+                .show();
+    }
+
+    private void setupThemeToggle() {
+        updateThemeToggleUI();
+        binding.btnThemeToggle.setOnClickListener(v -> handleThemeToggle());
+    }
+
+    private void handleThemeToggle() {
+        boolean isDarkMode = ThemeHelper.toggleTheme(this);
+        updateThemeToggleUI();
+        String message = isDarkMode ? "Dark Mode ON" : "Light Mode ON";
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    private void updateThemeToggleUI() {
+        boolean isDark = ThemeHelper.isDarkMode(this);
+        binding.btnThemeToggle.setImageResource(isDark ? R.drawable.ic_mode_light : R.drawable.ic_mode_night);
+        binding.btnThemeToggle.setContentDescription(isDark ? "Switch to Light Mode" : "Switch to Dark Mode");
+
+        // Also update navigation drawer item icon if present
+        MenuItem themeMenuItem = binding.navView.getMenu().findItem(R.id.nav_theme_toggle);
+        if (themeMenuItem != null) {
+            themeMenuItem.setIcon(isDark ? R.drawable.ic_mode_light : R.drawable.ic_mode_night);
+            themeMenuItem.setTitle(isDark ? "লাইট মোড (Light Mode)" : "ডার্ক মোড (Dark Mode)");
+        }
     }
 
     private void setupToolbar() {
@@ -150,12 +251,26 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         if (id == R.id.nav_home) {
             // Already home
+        } else if (id == R.id.nav_profile) {
+            if (FirebaseAuthManager.getInstance().isLoggedIn()) {
+                startActivity(new Intent(this, ProfileActivity.class));
+            } else {
+                startActivity(new Intent(this, LoginActivity.class));
+            }
         } else if (id == R.id.nav_favorites) {
             showFavoritesDialog();
         } else if (id == R.id.nav_cloud_sync) {
             triggerCloudSync();
+        } else if (id == R.id.nav_theme_toggle) {
+            handleThemeToggle();
         } else if (id == R.id.nav_about) {
             startActivity(new Intent(this, AboutActivity.class));
+        } else if (id == R.id.nav_auth) {
+            if (FirebaseAuthManager.getInstance().isLoggedIn()) {
+                showLogoutDialog();
+            } else {
+                startActivity(new Intent(this, LoginActivity.class));
+            }
         }
         binding.drawerLayout.closeDrawer(GravityCompat.START);
         return true;

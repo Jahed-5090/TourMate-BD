@@ -65,10 +65,17 @@
     <string name="coming_soon">Content for this region is coming soon!\n\nStay tuned for updates.</string>
     <string name="cost_from_dhaka">Approx. Cost from Dhaka</string>
     <string name="cost_from_sylhet">Approx. Cost from Sylhet</string>
+    <string name="default_web_client_id" translatable="false">817905230915-h86oo7kg8vpcp7t6kaj770ibad0t14pp.apps.googleusercontent.com</string>
     <string name="disclaimer">📋 Disclaimer: Prices and information are approximate and subject to change. Always verify locally. The app is not responsible for any discrepancies.</string>
     <string name="district_label">District</string>
     <string name="division_label">Division</string>
     <string name="entrance_fee">Entrance Fee</string>
+    <string name="firebase_database_url" translatable="false">https://tourmate-bd-1d966-default-rtdb.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">817905230915</string>
+    <string name="google_api_key" translatable="false">AIzaSyA3RRj-m_BtlyOQwBJrRWSpOLCy7b1TIPg</string>
+    <string name="google_app_id" translatable="false">1:817905230915:android:fc26db1a69b287dc4aa0f6</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA3RRj-m_BtlyOQwBJrRWSpOLCy7b1TIPg</string>
+    <string name="google_storage_bucket" translatable="false">tourmate-bd-1d966.firebasestorage.app</string>
     <string name="how_to_reach">How to Reach</string>
     <string name="important_warnings">⚠️ Warnings &amp; Cautions</string>
     <string name="local_food">Local Food</string>
@@ -79,6 +86,7 @@
     <string name="no_spots">No tourist spots found for this district yet.</string>
     <string name="open_in_maps">Open in Google Maps</string>
     <string name="opening_hours">Opening Hours</string>
+    <string name="project_id" translatable="false">tourmate-bd-1d966</string>
     <string name="transport_options">Transport Options</string>
     <string name="travel_tips">Travel Tips</string>
     <style name="Theme.TourMateBD" parent="Theme.MaterialComponents.DayNight.NoActionBar">

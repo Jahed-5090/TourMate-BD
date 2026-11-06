@@ -12,6 +12,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.tourmate.bd.databinding.ActivitySplashBinding;
+import com.tourmate.bd.utils.ThemeHelper;
 
 /**
  * Splash screen shown on app launch.
@@ -24,6 +25,7 @@ public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ThemeHelper.applySavedTheme(this);
         super.onCreate(savedInstanceState);
         binding = ActivitySplashBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
     <application
+        android:name=".TourMateApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:usesCleartextTraffic="true"
@@ -53,6 +54,19 @@
         <!-- About Screen -->
         <activity
             android:name=".activities.AboutActivity"
+            android:exported="false"/>
+
+        <!-- Authentication Screens (Topic 11: Firebase Auth & Cloud Sync) -->
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:exported="false"/>
+
+        <!-- Profile & Account Management Screen -->
+        <activity
+            android:name=".activities.ProfileActivity"
             android:exported="false"/>
 
         <!-- ── Android Components (Topic 10) ────────────────────────── -->

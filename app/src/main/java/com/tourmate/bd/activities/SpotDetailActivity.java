@@ -1,9 +1,6 @@
 package com.tourmate.bd.activities;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,32 +11,37 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.options.IFramePlayerOptions;
 import com.tourmate.bd.R;
-import com.tourmate.bd.components.AudioGuideService;
 import com.tourmate.bd.data.DataRepository;
 import com.tourmate.bd.database.TourMateDatabaseHelper;
 import com.tourmate.bd.databinding.ActivitySpotDetailBinding;
 import com.tourmate.bd.models.TouristSpot;
 import com.tourmate.bd.network.WeatherApiClient;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.tourmate.bd.adapters.CommentAdapter;
 import com.tourmate.bd.adapters.SpotPhotoAdapter;
+import com.tourmate.bd.models.SpotComment;
+import com.tourmate.bd.network.FirebaseAuthManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Detailed information screen for a single Tourist Spot.
- * Demonstrates:
- * - Topic 10: AudioGuideService (Foreground Service with Media notification & TTS)
- * - Topic 11: TourMateDatabaseHelper (SQLite CRUD for bookmarks and travel notes)
- * - Topic 11: WeatherApiClient (Live HTTP weather request & JSON parsing)
  */
 public class SpotDetailActivity extends AppCompatActivity {
 
@@ -47,7 +49,11 @@ public class SpotDetailActivity extends AppCompatActivity {
 
     private ActivitySpotDetailBinding binding;
     private TouristSpot spot;
-    private BroadcastReceiver audioStatusReceiver;
+
+    private CommentAdapter commentAdapter;
+    private final List<SpotComment> spotComments = new ArrayList<>();
+    private ValueEventListener commentsListener;
+    private DatabaseReference commentsRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +73,8 @@ public class SpotDetailActivity extends AppCompatActivity {
         populateData();
         setupPhotoGallery();
         setupYouTubePlayer();
-        setupAudioGuide();
         setupFavoritesAndNotes();
+        setupCommunityComments();
         setupClickListeners();
         fetchSpotWeather();
     }
@@ -99,53 +105,7 @@ public class SpotDetailActivity extends AppCompatActivity {
         }
     }
 
-    private void setupAudioGuide() {
-        audioStatusReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                if (AudioGuideService.ACTION_STATUS_BROADCAST.equals(intent.getAction())) {
-                    boolean isPlaying = intent.getBooleanExtra(AudioGuideService.EXTRA_IS_PLAYING, false);
-                    String playingSpot = intent.getStringExtra(AudioGuideService.EXTRA_SPOT_NAME);
-                    if (isPlaying && spot.getName().equals(playingSpot)) {
-                        binding.btnAudioGuide.setText("⏹️ অডিও গাইড বন্ধ করুন (Stop Audio Guide)");
-                        binding.tvAudioStatus.setText("🎧 এখন বাজছে: " + playingSpot);
-                    } else {
-                        binding.btnAudioGuide.setText("▶️ অডিও বিবরণ শুনুন (Play Audio Guide)");
-                        binding.tvAudioStatus.setText("এই স্পট সম্পর্কে অডিও বিবরণ শুনুন। ব্যাকগ্রাউন্ডে চললেও অডিও চলতে থাকবে।");
-                    }
-                }
-            }
-        };
-        LocalBroadcastManager.getInstance(this).registerReceiver(
-                audioStatusReceiver, new IntentFilter(AudioGuideService.ACTION_STATUS_BROADCAST)
-        );
 
-        if (AudioGuideService.isServiceRunning() && spot.getName().equals(AudioGuideService.getCurrentSpotName())) {
-            binding.btnAudioGuide.setText("⏹️ অডিও গাইড বন্ধ করুন (Stop Audio Guide)");
-            binding.tvAudioStatus.setText("🎧 এখন বাজছে: " + spot.getName());
-        }
-
-        binding.btnAudioGuide.setOnClickListener(v -> {
-            if (AudioGuideService.isServiceRunning() && spot.getName().equals(AudioGuideService.getCurrentSpotName())) {
-                Intent stopIntent = new Intent(this, AudioGuideService.class);
-                stopIntent.setAction(AudioGuideService.ACTION_STOP);
-                startService(stopIntent);
-            } else {
-                Intent startIntent = new Intent(this, AudioGuideService.class);
-                startIntent.setAction(AudioGuideService.ACTION_START);
-                startIntent.putExtra(AudioGuideService.EXTRA_SPOT_NAME, spot.getName());
-                String narration = spot.getFullDescription() != null && !spot.getFullDescription().isEmpty()
-                        ? spot.getFullDescription() : spot.getShortDescription();
-                startIntent.putExtra(AudioGuideService.EXTRA_NARRATION_TEXT, narration);
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                    startForegroundService(startIntent);
-                } else {
-                    startService(startIntent);
-                }
-                Toast.makeText(this, "Audio Guide Started", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
     private void setupFavoritesAndNotes() {
         TourMateDatabaseHelper dbHelper = TourMateDatabaseHelper.getInstance(this);
@@ -158,11 +118,13 @@ public class SpotDetailActivity extends AppCompatActivity {
                 if (Boolean.TRUE.equals(currentFav)) {
                     dbHelper.removeFavoriteAsync(spot.getId(), success -> {
                         updateFavoriteIcon(false);
+                        com.tourmate.bd.network.FirebaseAuthManager.getInstance().removeFavoriteFromCloud(spot.getId());
                         Toast.makeText(this, "Removed from Favorites", Toast.LENGTH_SHORT).show();
                     });
                 } else {
                     dbHelper.addFavoriteAsync(spot, success -> {
                         updateFavoriteIcon(true);
+                        com.tourmate.bd.network.FirebaseAuthManager.getInstance().addFavoriteToCloud(spot.getId());
                         Toast.makeText(this, "Added to Favorites", Toast.LENGTH_SHORT).show();
                     });
                 }
@@ -213,6 +175,107 @@ public class SpotDetailActivity extends AppCompatActivity {
                 binding.tvSavedNotes.setVisibility(View.GONE);
             }
         });
+    }
+
+    private void setupCommunityComments() {
+        commentAdapter = new CommentAdapter(this, spotComments, comment -> {
+            new AlertDialog.Builder(this)
+                    .setTitle("মুছে ফেলা নিশ্চিত করুন")
+                    .setMessage("আপনি কি নিশ্চিত যে এই মন্তব্যটি ক্লাউড থেকে মুছে ফেলতে চান?")
+                    .setPositiveButton("মুছে ফেলুন (Delete)", (dialog, which) -> {
+                        if (commentsRef != null && comment.getCommentId() != null) {
+                            commentsRef.child(comment.getCommentId()).removeValue()
+                                    .addOnSuccessListener(aVoid -> Toast.makeText(this, "মন্তব্য মুছে ফেলা হয়েছে", Toast.LENGTH_SHORT).show())
+                                    .addOnFailureListener(e -> Toast.makeText(this, "মুছে ফেলতে ব্যর্থ: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                        }
+                    })
+                    .setNegativeButton("বাতিল", null)
+                    .show();
+        });
+
+        binding.rvComments.setLayoutManager(new LinearLayoutManager(this));
+        binding.rvComments.setAdapter(commentAdapter);
+
+        try {
+            FirebaseDatabase db = FirebaseDatabase.getInstance("https://tourmate-bd-1d966-default-rtdb.firebaseio.com");
+            commentsRef = db.getReference("spot_comments").child(spot.getId());
+        } catch (Exception e) {
+            commentsRef = FirebaseDatabase.getInstance().getReference("spot_comments").child(spot.getId());
+        }
+
+        commentsListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                spotComments.clear();
+                for (DataSnapshot child : snapshot.getChildren()) {
+                    SpotComment comment = child.getValue(SpotComment.class);
+                    if (comment != null) {
+                        spotComments.add(comment);
+                    }
+                }
+                commentAdapter.notifyDataSetChanged();
+
+                if (spotComments.isEmpty()) {
+                    binding.tvNoComments.setVisibility(View.VISIBLE);
+                    binding.rvComments.setVisibility(View.GONE);
+                } else {
+                    binding.tvNoComments.setVisibility(View.GONE);
+                    binding.rvComments.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(SpotDetailActivity.this, "মন্তব্য ডাটা পড়তে ব্যর্থ: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        };
+        commentsRef.addValueEventListener(commentsListener);
+
+        binding.btnPostComment.setOnClickListener(v -> postComment());
+    }
+
+    private void postComment() {
+        FirebaseUser currentUser = FirebaseAuthManager.getInstance().getCurrentUser();
+        if (currentUser == null) {
+            new AlertDialog.Builder(this)
+                    .setTitle("লগইন প্রয়োজন")
+                    .setMessage("মতামত পোস্ট করতে আপনার অ্যাকাউন্টে লগইন করুন।")
+                    .setPositiveButton("লগইন করুন", (dialog, which) -> startActivity(new Intent(this, LoginActivity.class)))
+                    .setNegativeButton("বাতিল", null)
+                    .show();
+            return;
+        }
+
+        String commentText = binding.etCommentInput.getText() != null ? binding.etCommentInput.getText().toString().trim() : "";
+        if (commentText.isEmpty()) {
+            binding.tilComment.setError("মন্তব্য লিখুন");
+            return;
+        }
+        binding.tilComment.setError(null);
+
+        String newCommentId = commentsRef.push().getKey();
+        if (newCommentId == null) return;
+
+        String name = currentUser.getDisplayName() != null && !currentUser.getDisplayName().isEmpty()
+                ? currentUser.getDisplayName() : "Traveler";
+        String email = currentUser.getEmail() != null ? currentUser.getEmail() : "";
+
+        SpotComment newComment = new SpotComment(
+                newCommentId,
+                spot.getId(),
+                currentUser.getUid(),
+                name,
+                email,
+                commentText,
+                System.currentTimeMillis()
+        );
+
+        commentsRef.child(newCommentId).setValue(newComment)
+                .addOnSuccessListener(aVoid -> {
+                    binding.etCommentInput.setText("");
+                    Toast.makeText(this, "আপনার মতামত ক্লাউডে পোস্ট করা হয়েছে!", Toast.LENGTH_SHORT).show();
+                })
+                .addOnFailureListener(e -> Toast.makeText(this, "পোস্ট করতে ব্যর্থ: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
     private void fetchSpotWeather() {
@@ -405,9 +468,9 @@ public class SpotDetailActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (audioStatusReceiver != null) {
+        if (commentsRef != null && commentsListener != null) {
             try {
-                LocalBroadcastManager.getInstance(this).unregisterReceiver(audioStatusReceiver);
+                commentsRef.removeEventListener(commentsListener);
             } catch (Exception ignored) {}
         }
         if (binding != null && binding.youtubePlayerView != null) {

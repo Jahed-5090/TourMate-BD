@@ -358,8 +358,33 @@ public class FirebaseAuthManager {
     }
 
     /**
-     * Synchronizes local favorites into /users/{uid}/favorites in Firebase Realtime Database
-     * with bidirectional merging (Cloud ↔ SQLite).
+     * Instantly adds a favorite spot to Firebase Realtime Database for current logged in user.
+     */
+    public void addFavoriteToCloud(String spotId) {
+        if (!isLoggedIn() || spotId == null) return;
+        try {
+            String uid = getCurrentUserId();
+            DatabaseReference favRef = database.getReference("users").child(uid).child("favorites").child(spotId);
+            favRef.setValue(true);
+        } catch (Exception ignored) {}
+    }
+
+    /**
+     * Instantly removes a favorite spot from Firebase Realtime Database for current logged in user.
+     */
+    public void removeFavoriteFromCloud(String spotId) {
+        if (!isLoggedIn() || spotId == null) return;
+        try {
+            String uid = getCurrentUserId();
+            DatabaseReference favRef = database.getReference("users").child(uid).child("favorites").child(spotId);
+            favRef.removeValue();
+        } catch (Exception ignored) {}
+    }
+
+    /**
+     * Synchronizes local favorites into /users/{uid}/favorites in Firebase Realtime Database.
+     * If local device has favorites, syncs current local state to cloud.
+     * If local device has 0 favorites (fresh login), restores cloud favorites into local SQLite.
      */
     public void syncUserFavoritesToCloud(Context context, FirebaseManager.CloudSyncCallback callback) {
         if (!isLoggedIn()) {
@@ -371,51 +396,50 @@ public class FirebaseAuthManager {
         TourMateDatabaseHelper db = TourMateDatabaseHelper.getInstance(context);
         DatabaseReference favRef = database.getReference("users").child(uid).child("favorites");
 
-        // Step 1: Read remote cloud favorites first
-        favRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Map<String, Object> mergedFavMap = new HashMap<>();
+        List<String> localFavSpotIds = db.getAllFavoriteSpotIds();
 
-                // Add remote favorites to local SQLite and merged map
-                for (DataSnapshot child : snapshot.getChildren()) {
-                    String spotId = child.getKey();
-                    if (spotId != null) {
-                        mergedFavMap.put(spotId, true);
-                        com.tourmate.bd.models.TouristSpot spot = com.tourmate.bd.data.DataRepository.getInstance().getSpotById(spotId);
-                        if (spot != null) {
-                            db.addFavorite(spot);
+        if (localFavSpotIds.isEmpty()) {
+            // Restore from cloud into local SQLite
+            favRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    int restoredCount = 0;
+                    for (DataSnapshot child : snapshot.getChildren()) {
+                        String spotId = child.getKey();
+                        if (spotId != null) {
+                            com.tourmate.bd.models.TouristSpot spot = com.tourmate.bd.data.DataRepository.getInstance().getSpotById(spotId);
+                            if (spot != null) {
+                                db.addFavorite(spot);
+                                restoredCount++;
+                            }
                         }
+                    }
+                    if (callback != null) {
+                        callback.onSyncSuccess("ক্লাউড থেকে " + restoredCount + " টি স্থান পুনরুদ্ধার করা হয়েছে!");
                     }
                 }
 
-                // Step 2: Merge local SQLite favorites
-                List<String> localFavSpotIds = db.getAllFavoriteSpotIds();
-                for (String spotId : localFavSpotIds) {
-                    mergedFavMap.put(spotId, true);
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    if (callback != null) callback.onSyncFailure("ক্লাউড ডাটা পড়তে ব্যর্থ: " + error.getMessage());
                 }
-
-                // Step 3: Save merged set back to Cloud
-                favRef.setValue(mergedFavMap)
-                        .addOnSuccessListener(aVoid -> {
-                            if (callback != null) {
-                                callback.onSyncSuccess("সিঙ্ক সফল হয়েছে! মোট " + mergedFavMap.size() + " টি স্থান ক্লাউড ও ডিভাইসে সংরক্ষিত।");
-                            }
-                        })
-                        .addOnFailureListener(e -> {
-                            if (callback != null) {
-                                callback.onSyncFailure("ক্লাউড সেভ করতে ব্যর্থ: " + e.getMessage());
-                            }
-                        });
+            });
+        } else {
+            // Push exact current local SQLite favorites state to Cloud
+            Map<String, Object> favMap = new HashMap<>();
+            for (String spotId : localFavSpotIds) {
+                favMap.put(spotId, true);
             }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                if (callback != null) {
-                    callback.onSyncFailure("ক্লাউড ডাটা পড়তে ব্যর্থ: " + error.getMessage());
-                }
-            }
-        });
+            favRef.setValue(favMap)
+                    .addOnSuccessListener(aVoid -> {
+                        if (callback != null) {
+                            callback.onSyncSuccess("সিঙ্ক সফল হয়েছে! মোট " + localFavSpotIds.size() + " টি স্থান ক্লাউডে সংরক্ষিত।");
+                        }
+                    })
+                    .addOnFailureListener(e -> {
+                        if (callback != null) callback.onSyncFailure("ক্লাউড সেভ করতে ব্যর্থ: " + e.getMessage());
+                    });
+        }
     }
 
     /**

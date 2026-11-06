@@ -20,11 +20,9 @@ import com.tourmate.bd.R;
 import com.tourmate.bd.adapters.DivisionAdapter;
 import com.tourmate.bd.components.NetworkChangeReceiver;
 import com.tourmate.bd.data.DataRepository;
-import com.tourmate.bd.database.TourMateDatabaseHelper;
 import com.tourmate.bd.databinding.ActivityMainBinding;
 import com.google.firebase.auth.FirebaseUser;
 import com.tourmate.bd.models.Division;
-import com.tourmate.bd.models.TouristSpot;
 import com.tourmate.bd.network.FirebaseAuthManager;
 import com.tourmate.bd.network.FirebaseManager;
 import com.tourmate.bd.network.WeatherApiClient;
@@ -257,8 +255,6 @@ public class MainActivity extends AppCompatActivity
             } else {
                 startActivity(new Intent(this, LoginActivity.class));
             }
-        } else if (id == R.id.nav_favorites) {
-            showFavoritesDialog();
         } else if (id == R.id.nav_cloud_sync) {
             triggerCloudSync();
         } else if (id == R.id.nav_theme_toggle) {
@@ -276,29 +272,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void showFavoritesDialog() {
-        TourMateDatabaseHelper db = TourMateDatabaseHelper.getInstance(this);
-        List<String> favIds = db.getAllFavoriteSpotIds();
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("❤️ সংরক্ষিত স্থানসমূহ (" + favIds.size() + ")");
-
-        if (favIds.isEmpty()) {
-            builder.setMessage("আপনার কোনো পছন্দের স্থান সংরক্ষিত নেই। যেকোনো স্পটের বিস্তারিত পেজে গিয়ে বুকমার্ক আইকনে ট্যাপ করে সংরক্ষণ করুন।");
-        } else {
-            StringBuilder sb = new StringBuilder();
-            for (String spotId : favIds) {
-                TouristSpot spot = DataRepository.getInstance().getSpotById(spotId);
-                if (spot != null) {
-                    sb.append("• ").append(spot.getName()).append(" (").append(spot.getNameBn()).append(")\n");
-                }
-            }
-            builder.setMessage(sb.toString().trim());
-        }
-
-        builder.setPositiveButton("ঠিক আছে", null);
-        builder.show();
-    }
 
     private void triggerCloudSync() {
         Toast.makeText(this, "Firebase ক্লাউড ডাটাবেজের সাথে সিঙ্ক হচ্ছে...", Toast.LENGTH_SHORT).show();

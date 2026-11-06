@@ -10,8 +10,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
@@ -90,12 +88,6 @@
 
         <!-- ── Android Components (Topic 10) ────────────────────────── -->
 
-
-        <!-- Foreground Service for Background Audio Narration -->
-        <service
-            android:name="com.tourmate.bd.components.AudioGuideService"
-            android:exported="false"
-            android:foregroundServiceType="mediaPlayback" />
 
         <!-- Broadcast Receiver for Network Changes -->
         <receiver

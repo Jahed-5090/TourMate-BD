@@ -29,9 +29,8 @@
     <string name="nav_about">About</string>
 
     <!-- About -->
-    <string name="about_content">TourMate BD is your trusted travel companion for exploring the beautiful tourist destinations of Bangladesh.\n\nOur mission is to empower tourists with accurate, honest information to navigate destinations independently — without falling victim to local syndicates, overcharging, or misinformation.\n\nCurrently featuring: Sylhet Division (complete)\n\nMore divisions coming soon!</string>
-    <string name="disclaimer">📋 Disclaimer: Prices and information are approximate and subject to change. Always verify locally. The app is not responsible for any discrepancies.</string>
-
+    <string name="about_content">TourMate BD is your trusted travel companion for exploring the beautiful tourist destinations of Bangladesh.\n\nOur mission is to empower tourists with accurate, honest information to navigate destinations independently — without falling victim to local syndicates, overcharging, or misinformation.\n\nCurrently featuring: Sylhet Division (complete)\nMore divisions coming soon!\n\n───────────────\n\nট্যুরমেট বিডি বাংলাদেশের মনোরম পর্যটন স্থানসমূহ ভ্রমণের নির্ভরযোগ্য ডিজিটাল গাইড।\n\nআমাদের লক্ষ্য ভ্রমণকারীদের সঠিক ও নিরপেক্ষ তথ্য প্রদান করা, যেন স্থানীয় সিন্ডিকেট বা অতিরিক্ত ভাড়ার প্রতারণা এড়িয়ে পর্যটকরা স্বাধীন ও নিরাপদে ভ্রমণ করতে পারেন।\n\nবর্তমানে যুক্ত রয়েছে: সিলেট বিভাগ (সম্পূর্ণ)\nঅন্যান্য বিভাগ খুব শীঘ্রই যুক্ত করা হবে!</string>
+    <string name="disclaimer">📋 Disclaimer: Prices and information are carefully verified and highly accurate. Always verify locally.\n\n📋 নির্দেশনা: আনুমানিক খরচ ও সময় পরিবর্তন হওয়ার সম্ভাবনা খুবই কম। তবুও ভ্রমণের পূর্বে স্থানীয়ভাবে তথ্য যাচাই করে নিন।</string>
     <!-- Firebase Google Sign-In Web Client ID -->
     <string name="default_web_client_id">108726354819-webclient.apps.googleusercontent.com</string>
 </resources>

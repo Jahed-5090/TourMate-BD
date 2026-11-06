@@ -52,9 +52,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="ভ্রমণ গাইড · বাংলাদেশ"
+            android:text="লোকাল ট্র্যাভেল গাইড · বাংলাদেশ"
             android:textColor="#B2FFFFFF"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
     </LinearLayout>
 

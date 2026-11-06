@@ -179,7 +179,7 @@ public class DataRepository {
                 "Sacred shrine of the great Muslim saint Hazrat Shahjalal who brought Islam to Sylhet.",
                 R.drawable.spot_shahjalal, TouristSpot.SpotCategory.RELIGIOUS
         );
-        shahjalal.setFullDescription("The Dargah of Hazrat Shah Jalal is one of the most revered Islamic shrines in Bangladesh. Hazrat Shah Jalal (R) was a 14th-century Muslim missionary who conquered Sylhet. The shrine complex includes the mosque, his tomb, and the famous Gazzali fish pond. Thousands of devotees visit daily from across Bangladesh and beyond.");
+        shahjalal.setFullDescription("The Dargah of Hazrat Shah Jalal is one of the most revered Islamic shrines in Bangladesh. Hazrat Shah Jalal (R) was a 14th-century Muslim missionary who conquered Sylhet. The shrine complex includes the mosque, his tomb, and the famous Gazzali fish pond. Thousands of devotees visit daily from across Bangladesh and beyond.\n\n───────────────\n\nহযরত শাহজালাল (রঃ) এর দরগাহ বাংলাদেশের অন্যতম সম্মানিত ইসলামি স্থান। চতুর্দশ শতাব্দীর মহান সুফি সাধক হযরত শাহজালাল (রঃ) সিলেটে ইসলাম প্রচার করেন। মাজার কমপ্লেক্সে রয়েছে ঐতিহাসিক মসজিদ, মাযার এবং বিখ্যাত গাজালি মাছের পুকুর। প্রতিদিন দেশ-বিদেশ থেকে হাজার হাজার ভক্ত এখানে আসেন।");
         shahjalal.setHowToReach("Located in the heart of Sylhet city (Dargah Gate area). From Sylhet Railway Station or Bus Terminal: Take CNG auto-rickshaw (~৳60-80) or rickshaw (~৳30-50) to Dargah Gate. About 2-3 km from the station.");
         shahjalal.setTransportOptions("CNG Auto-rickshaw | Rickshaw | Taxi | Uber/Pathao");
         shahjalal.setApproxCostFromDhaka("Bus: ৳450-800 (AC/Non-AC) | Train: ৳200-1200 (Shuvro Express, Upaban, Parabat) | Flight: ৳2500-6000");
@@ -211,7 +211,7 @@ public class DataRepository {
                 "Shrine of Hazrat Shah Paran, nephew of Hazrat Shahjalal, located on a picturesque hill.",
                 R.drawable.spot_shahparan, TouristSpot.SpotCategory.RELIGIOUS
         );
-        shahParan.setFullDescription("Located about 8 km east of Sylhet city, this shrine sits atop a small hill surrounded by lush green. Shah Paran was the nephew and disciple of Hazrat Shahjalal. The location offers a peaceful atmosphere with panoramic views of the surrounding countryside.");
+        shahParan.setFullDescription("Located about 8 km east of Sylhet city, this shrine sits atop a small hill surrounded by lush green. Shah Paran was the nephew and disciple of Hazrat Shahjalal. The location offers a peaceful atmosphere with panoramic views of the surrounding countryside.\n\n───────────────\n\nসিলেট শহর থেকে প্রায় ৮ কিমি পূর্বে টিলার ওপর অবস্থিত হযরত শাহ পরাণ (রাঃ) এর মাজার। তিনি হযরত শাহজালাল (রঃ) এর ভাগ্নে ও শিষ্য ছিলেন। সবুজ পাহাড় ঘেরা এই স্থানে সুন্দর ও শান্ত পরিবেশ বিরাজ করে।");
         shahParan.setHowToReach("From Sylhet city (Dargah Gate or Zindabazar): Take a CNG auto-rickshaw directly to Shah Paran Mazar (~8 km). Local buses also available from Ambarkhana area.");
         shahParan.setTransportOptions("CNG Auto-rickshaw | Local Bus | Leguna (shared mini-van)");
         shahParan.setApproxCostFromSylhet("৳100-150 by CNG (one way) | ৳15-20 by local bus");
@@ -239,7 +239,7 @@ public class DataRepository {
                 "Bangladesh's only freshwater swamp forest — the Amazon of Bengal. Boat ride through submerged trees.",
                 R.drawable.spot_ratargul, TouristSpot.SpotCategory.FOREST
         );
-        ratargul.setFullDescription("Ratargul is the only freshwater swamp forest in Bangladesh and one of the few in the world. During monsoon season (June–October), the forest floor is submerged under 20-30 feet of crystal-clear water, creating a magical ethereal experience. You navigate through the forest on small wooden boats, passing through the canopy of trees rising from the water.");
+        ratargul.setFullDescription("Ratargul is the only freshwater swamp forest in Bangladesh and one of the few in the world. During monsoon season (June–October), the forest floor is submerged under 20-30 feet of crystal-clear water, creating a magical ethereal experience. You navigate through the forest on small wooden boats, passing through the canopy of trees rising from the water.\n\n───────────────\n\nরাতারগুল বাংলাদেশের একমাত্র এবং বিশ্বের অন্যতম স্বাদু পানির সোয়াম্প ফরেস্ট (জলজ বন)। বর্ষাকালে (জুন-অক্টোবর) পুরো বন ২০-৩০ ফুট পানিতে নিমজ্জিত হয়ে এক জাদুকরী রূপ ধারণ করে। নৌকায় চড়ে ভেসে থাকা হিজল ও করচ গাছের গাঢ় বনের মধ্য দিয়ে ভ্রমণ এক অনন্য অভিজ্ঞতা।");
         ratargul.setHowToReach("From Sylhet city: Take a CNG or local bus to Gowainghat Upazila (25 km, ~45 min). Then hire a local boat from Ratargul Ghat. From Sylhet Ambarkhana: Direct CNG or Leguna available.");
         ratargul.setTransportOptions("CNG to Gowainghat | Boat from the ghat");
         ratargul.setApproxCostFromSylhet("CNG: ৳300-400 (one way) | Boat hire: ৳400-600 for 2-3 hours (fixed price from forest office)");
@@ -267,7 +267,7 @@ public class DataRepository {
                 "Where the Piyain river meets India — stone collection beaches, Khasi villages, and stunning mountain views.",
                 R.drawable.spot_jaflong, TouristSpot.SpotCategory.NATURAL
         );
-        jaflong.setFullDescription("Jaflong is one of the most popular tourist destinations in Sylhet, located at the zero point of the Bangladesh-India border in Gowainghat Upazila. The area is famous for its stone-collection activities along the crystal-clear Piyain River, the indigenous Khasi tribal community, betel leaf gardens, and breathtaking views of the Meghalaya hills in India. The Dauki waterfall is visible across the border during monsoon.");
+        jaflong.setFullDescription("Jaflong is one of the most popular tourist destinations in Sylhet, located at the zero point of the Bangladesh-India border in Gowainghat Upazila. The area is famous for its stone-collection activities along the crystal-clear Piyain River, the indigenous Khasi tribal community, betel leaf gardens, and breathtaking views of the Meghalaya hills in India. The Dauki waterfall is visible across the border during monsoon.\n\n───────────────\n\nজাফলং সিলেটের সবচেয়ে জনপ্রিয় পর্যটন স্থানগুলোর অন্যতম, যা গোয়াইনঘাট উপজেলায় ভারত সীমান্তে অবস্থিত। পিয়াইন নদীর স্বচ্ছ পানি, পাথরের বিচ, খাসিয়া পুঞ্জির পান বাগান এবং ভারতের মেঘালয় পাহাড়ের মনোমুগ্ধকর দৃশ্য এখানে পর্যটকদের আকর্ষণ করে।");
         jaflong.setHowToReach("From Sylhet city: Buses from Kadamtali or Ambarkhana bus stand go directly to Jaflong (45-50 km, ~1.5-2 hours). Alternatively hire a CNG or microbus. The route passes through beautiful countryside.");
         jaflong.setTransportOptions("Direct bus from Ambarkhana | CNG (private hire) | Microbus/Leguna | Rental car");
         jaflong.setApproxCostFromDhaka("Total trip cost: ৳2000-5000 (2-day trip including transport, hotel, food)");
@@ -424,7 +424,7 @@ public class DataRepository {
                 "Bangladesh's largest natural waterfall — a 162-foot cascade in a lush eco-park setting.",
                 R.drawable.madhobkundo1, TouristSpot.SpotCategory.WATERFALL
         );
-        madhabkund.setFullDescription("Madhabkund is the largest natural waterfall in Bangladesh, located in Barlekha Upazila of Moulvibazar. The waterfall plunges approximately 162 feet from a rocky cliff into a pool below. It is located within a Government Eco-Park, surrounded by dense tropical forest. The area has significant religious importance for the Hindu community (Shiva temple nearby). On rainy days, additional smaller waterfalls appear around the main fall.");
+        madhabkund.setFullDescription("Madhabkund is the largest natural waterfall in Bangladesh, located in Barlekha Upazila of Moulvibazar. The waterfall plunges approximately 162 feet from a rocky cliff into a pool below. It is located within a Government Eco-Park, surrounded by dense tropical forest. The area has significant religious importance for the Hindu community (Shiva temple nearby).\n\n───────────────\n\nমাধবকুণ্ড মৌলভীবাজারের বড়লেখা উপজেলায় অবস্থিত বাংলাদেশের বৃহত্তম প্রাকৃতিক জলপ্রপাত। প্রায় ১৬২ ফুট উঁচু পাহাড়ের ওপর থেকে গড়িয়ে পড়া পানির ধারা এবং চারপাশের সবুজ ইকোপার্ক পর্যটকদের মুগ্ধ করে। শিব মন্দির সংলগ্ন এই স্থান ধর্মীয় ও প্রাকৃতিক দিক থেকে অত্যন্ত আকর্ষণীয়।");
         madhabkund.setHowToReach("From Sylhet city: Bus or CNG to Moulvibazar town (50 km, ~1.5 hrs), then another bus/CNG to Barlekha/Madhabkund (40 km, ~1 hr). From Dhaka: Direct bus to Moulvibazar via Srimangal.");
         madhabkund.setTransportOptions("Bus (Sylhet-Moulvibazar) | CNG/Microbus | Rental vehicle");
         madhabkund.setApproxCostFromDhaka("Bus: ৳400-600 (Dhaka to Moulvibazar via Srimangal)");
@@ -453,7 +453,7 @@ public class DataRepository {
                 "Primary tropical rainforest — habitat of the endangered western hoolock gibbon and diverse wildlife.",
                 R.drawable.lawachara1, TouristSpot.SpotCategory.FOREST
         );
-        lawachara.setFullDescription("Lawachara National Park is a protected tropical rainforest in Kamalganj Upazila of Moulvibazar. Covering about 1,250 hectares, it is one of Bangladesh's most biodiverse national parks. The forest is home to the critically endangered western hoolock gibbon — the only ape species in Bangladesh — along with leopard cats, olive-backed sunbirds, and over 240 bird species. The park has well-maintained walking trails through primary forest.");
+        lawachara.setFullDescription("Lawachara National Park is a protected tropical rainforest in Kamalganj Upazila of Moulvibazar. Covering about 1,250 hectares, it is one of Bangladesh's most biodiverse national parks. The forest is home to the critically endangered western hoolock gibbon — the only ape species in Bangladesh — along with leopard cats, olive-backed sunbirds, and over 240 bird species.\n\n───────────────\n\nলাউয়াছড়া জাতীয় উদ্যান কমলগঞ্জ উপজেলায় অবস্থিত এক চিরহরিৎ গ্রীষ্মমন্ডলীয় রেইনফরেস্ট। এটি বিলুপ্তপ্রায় উল্লুক (Hoolock Gibbon) এবং বিভিন্ন দুর্লভ পশুপাখি ও উদ্ভিদের অভয়ারণ্য। ট্র্যাকিং ট্রেইল ধরে বনের ভেতর হাঁটা এক অনন্য অভিজ্ঞতা।");
         lawachara.setHowToReach("Located 3 km from Srimangal town. From Srimangal Railway Station or bus stand: CNG or auto (~৳50-80). From Dhaka: Upaban Express or Parabat Express train to Srimangal (direct, ~3.5 hrs).");
         lawachara.setTransportOptions("Train to Srimangal (from Dhaka) | CNG from Srimangal");
         lawachara.setApproxCostFromDhaka("Train (Upaban Express): ৳150-800 depending on class | Bus: ৳300-500");
@@ -482,7 +482,7 @@ public class DataRepository {
                 "A hauntingly beautiful lake surrounded by a tea estate — a jewel hidden in Moulvibazar.",
                 R.drawable.madhobpur_lake1, TouristSpot.SpotCategory.NATURAL
         );
-        madhobpur.setFullDescription("Madhobpur Lake is a stunning artificial lake within the Madhobpur Tea Estate in Chunarughat Upazila. The lake's still dark waters, bordered by tea gardens and tropical forest, create an atmospheric and photogenic landscape unlike anything else in Bangladesh. A walking trail around the lake takes about 30-45 minutes. The reflecting trees in the dark water make for remarkable photographs.");
+        madhobpur.setFullDescription("Madhobpur Lake is a stunning artificial lake within the Madhobpur Tea Estate in Chunarughat Upazila. The lake's still dark waters, bordered by tea gardens and tropical forest, create an atmospheric and photogenic landscape unlike anything else in Bangladesh. A walking trail around the lake takes about 30-45 minutes.\n\n───────────────\n\nমাধবপুর লেক মাধবপুর চা বাগানের অভ্যন্তরে অবস্থিত একটি নয়নাভিরাম লেক। চা বাগানের সবুজ টিলা ও নীল জলের নীল পদ্ম ফুলের দৃশ্য পর্যটকদের মন কেড়ে নেয়। লেকের চারপাশের শান্ত পরিবেশ ও পাহাড়ি হাঁটা পথ ছবি তোলার জন্য অত্যন্ত আকর্ষণীয়।");
         madhobpur.setHowToReach("From Srimangal: CNG/Auto to Chunarughat (~20 km) then local directions to Madhobpur. From Habiganj: about 40 km via Chunarughat.");
         madhobpur.setTransportOptions("CNG/Microbus | Rental vehicle (recommended for easier access)");
         madhobpur.setApproxCostFromSylhet("৳300-500 by CNG from Srimangal area");
@@ -508,7 +508,7 @@ public class DataRepository {
                 "A remote, recently discovered double-tiered waterfall deep in the Rajkandi forest reserve.",
                 R.drawable.ham_ham1, TouristSpot.SpotCategory.WATERFALL
         );
-        hamham.setFullDescription("Hamham (also spelled Hum Hum) is a spectacular double-tiered waterfall discovered as recently as 2010, hidden deep within the Rajkandi Reserve Forest in Kamalganj Upazila. To reach it requires a 4-6 hour trek through dense forest, crossing streams multiple times. The remoteness and pristine natural beauty make the difficult journey extremely rewarding. The waterfall drops about 135 feet in two stages.");
+        hamham.setFullDescription("Hamham (also spelled Hum Hum) is a spectacular double-tiered waterfall discovered as recently as 2010, hidden deep within the Rajkandi Reserve Forest in Kamalganj Upazila. To reach it requires a 4-6 hour trek through dense forest, crossing streams multiple times. The remoteness and pristine natural beauty make the difficult journey extremely rewarding.\n\n───────────────\n\nহামহাম (হুম হুম) কমলগঞ্জের রাজকান্দি সংরক্ষিত বনের গহীনে অবস্থিত এক রহস্যময় পাহাড়ি জলপ্রপাত। ঘন বনের মধ্য দিয়ে ৪-৬ ঘণ্টার ট্র্যাকিং করে পৌঁছাতে হয় এই মনমুগ্ধকর ঝরনায়। রোমাঞ্চপ্রিয় ট্র্যাকারদের জন্য এটি এক অন্যতম জনপ্রিয় অ্যাডভেঞ্চার স্থান।");
         hamham.setHowToReach("From Srimangal: CNG to Kalapur Bazar (~15 km, 30 min). From Kalapur, hire local guide and start the 9-12 km forest trek (takes 4-6 hours one way). Starting the journey at dawn (5-6 AM) is essential.");
         hamham.setTransportOptions("CNG to Kalapur | Trek on foot (mandatory)");
         hamham.setApproxCostFromSylhet("CNG to Kalapur: ৳300-400 | Guide fee: ৳500-800 | Total day trip: ৳1500-2500 per person");
@@ -534,7 +534,7 @@ public class DataRepository {
                 "A protected wetland bird sanctuary — winter home to thousands of migratory birds.",
                 R.drawable.baikka_bil1, TouristSpot.SpotCategory.HAOR
         );
-        baikaBeel.setFullDescription("Baika Beel is a permanently protected wetland sanctuary in the Hail Haor, Srimangal. The beel is a Community Conservation Area managed by the local fishing community with government support. It is famous for its enormous population of migratory birds in winter — thousands of ducks, teals, and wading birds arrive between October and March. A watchtower provides excellent bird-watching opportunities.");
+        baikaBeel.setFullDescription("Baika Beel is a permanently protected wetland sanctuary in the Hail Haor, Srimangal. The beel is a Community Conservation Area managed by the local fishing community with government support. It is famous for its enormous population of migratory birds in winter — thousands of ducks, teals, and wading birds arrive between October and March. A watchtower provides excellent bird-watching opportunities.\n\n───────────────\n\nবাইক্কা বিল শ্রীমঙ্গলের হাইল হাওরে অবস্থিত একটি সংরক্ষিত মৎস্য ও পাখি অভয়ারণ্য। শীতকালে এখানে হাজার হাজার অতিথি পাখির সমাগম ঘটে। ওয়াচ টাওয়ার থেকে পাখি দেখার চমৎকার ব্যবস্থা রয়েছে।");
         baikaBeel.setHowToReach("From Srimangal town: CNG or auto to Baika Beel (~10 km, 20 min).");
         baikaBeel.setTransportOptions("CNG/Auto from Srimangal");
         baikaBeel.setApproxCostFromSylhet("Bus to Srimangal: ৳100-150 | CNG to beel: ৳100-150");
@@ -560,7 +560,7 @@ public class DataRepository {
                 "The tea capital of Bangladesh — endless emerald tea estates, seven-layer tea, and rolling green hills.",
                 R.drawable.sreemongal1, TouristSpot.SpotCategory.TEA_GARDEN
         );
-        sreemongal.setFullDescription("Sreemongal (Srimangal) is known as the Tea Capital of Bangladesh, producing a large percentage of the country's tea. It boasts over 40 sprawling tea estates with picturesque terraced hills, rubber gardens, pineapple and lemon orchards, and ethnic villages (Monipuri, Khasia). It is globally famous for the innovative 7-layer colored tea created at Nilkantha Tea Cabin. The peaceful surroundings, cool misty mornings, and cycling-friendly trails through tea plantations make it one of the premier eco-tourism destinations in South Asia.");
+        sreemongal.setFullDescription("Sreemongal (Srimangal) is known as the Tea Capital of Bangladesh, producing a large percentage of the country's tea. It boasts over 40 sprawling tea estates with picturesque terraced hills, rubber gardens, pineapple and lemon orchards, and ethnic villages (Monipuri, Khasia). It is globally famous for the innovative 7-layer colored tea created at Nilkantha Tea Cabin. The peaceful surroundings, cool misty mornings, and cycling-friendly trails through tea plantations make it one of the premier eco-tourism destinations in South Asia.\n\n───────────────\n\nশ্রীমঙ্গল বাংলাদেশের 'চা রাজধানী' নামে পরিচিত। প্রায় ৪০টিরও বেশি চা বাগান, রাবার বাগান, আনারস বাগান এবং খাসিয়া ও মনিপুরী আদিবাসী পল্লী নিয়ে গঠিত এই অঞ্চল পরিবেশবান্ধব পর্যটনের সেরা স্থান। বিখ্যাত ৭ রঙের চাও এখানে পাওয়া যায়।");
         sreemongal.setHowToReach("From Dhaka: Direct intercity trains (Parabat, Jayantika, Upaban, Kalni Express) take ~3.5 to 4 hours from Kamalapur to Srimangal Railway Station. AC/Non-AC buses (Hanif, Shyamoli, Ena) depart from Sayedabad/Mohakhali (~4-5 hours). From Sylhet city: Direct trains or CNG/bus take around 1.5-2 hours (~75 km).");
         sreemongal.setTransportOptions("Intercity Train | AC/Non-AC Bus | CNG Auto-rickshaw | Rental Bicycle");
         sreemongal.setApproxCostFromDhaka("Train: ৳150-750 (Shovon to Snigdha/AC) | Bus: ৳350-600 | 2-Day Trip: ৳2500-6000");
@@ -608,7 +608,7 @@ public class DataRepository {
                 "Tropical rainforest home to the hoolock gibbon, where 7 streams meet in a pristine forest.",
                 R.drawable.shatchori1, TouristSpot.SpotCategory.FOREST
         );
-        satchhari.setFullDescription("Satchhari National Park (literally 'seven streams') is a protected tropical rainforest in Chunarughat Upazila of Habiganj. The park covers 243 hectares of mixed tropical forest and is named after the seven small streams (chhara) flowing through it. Like Lawachara, it is a habitat for the western hoolock gibbon, as well as leopard cats, various primates, and hundreds of bird species. The park has relatively shorter and easier trails than Lawachara.");
+        satchhari.setFullDescription("Satchhari National Park (literally 'seven streams') is a protected tropical rainforest in Chunarughat Upazila of Habiganj. The park covers 243 hectares of mixed tropical forest and is named after the seven small streams (chhara) flowing through it. Like Lawachara, it is a habitat for the western hoolock gibbon, as well as leopard cats, various primates, and hundreds of bird species.\n\n───────────────\n\nসাতছড়ি জাতীয় উদ্যান হবিগঞ্জের চুনারুঘাট উপজেলায় সাতটি পাহাড়ি ছড়া বা ঝরনার নামানুসারে গঠিত ঘন ক্রান্তীয় বন। এখানে রয়েছে উল্লুক, বানর ও নানা প্রজাতির পাখির প্রাকৃতিক বাসস্থান। সংক্ষিপ্ত ট্র্যাকিং ট্রেইল বনের সৌন্দর্য উপভোগের সুযোগ দেয়।");
         satchhari.setHowToReach("From Habiganj town: CNG or bus to Chunarughat (~25 km), then local directions to Satchhari. From Sylhet: Bus toward Habiganj, alight at Chunarughat.");
         satchhari.setTransportOptions("Bus (Sylhet-Habiganj-Chunarughat) | CNG | Rental vehicle");
         satchhari.setApproxCostFromSylhet("Bus: ৳80-120 | CNG from Habiganj: ৳150-200");
@@ -651,7 +651,7 @@ public class DataRepository {
                 "A UNESCO Ramsar wetland site — one of Bangladesh's most pristine ecosystems and a biodiversity hotspot.",
                 R.drawable.tanguarhaor1, TouristSpot.SpotCategory.HAOR
         );
-        tanguarHaor.setFullDescription("Tanguar Haor is a wetland of international importance, recognized as a Ramsar site. Located in Tahirpur and Dharmapasha Upazilas of Sunamganj, this vast haor system covers about 100 sq km and is bordered by the Meghalaya hills of India. It is home to over 140 species of freshwater fish, 208 bird species (including 98 migratory species), and various other wildlife. Experiencing the haor on a boat — especially at sunrise and sunset — is a transcendent experience. A 2-3 day houseboat trip is the ideal way to explore.");
+        tanguarHaor.setFullDescription("Tanguar Haor is a wetland of international importance, recognized as a Ramsar site. Located in Tahirpur and Dharmapasha Upazilas of Sunamganj, this vast haor system covers about 100 sq km and is bordered by the Meghalaya hills of India. It is home to over 140 species of freshwater fish, 208 bird species (including 98 migratory species), and various other wildlife. Experiencing the haor on a boat — especially at sunrise and sunset — is a transcendent experience.\n\n───────────────\n\nটাঙ্গুয়ার হাওর সুনামগঞ্জে অবস্থিত আন্তর্জাতিকভাবে স্বীকৃত ইউনেস্কো রামসার সাইট। ভারতের মেঘালয় পাহাড়ের পাদদেশে বিস্তৃত এই হাওর জীববৈচিত্র্যের এক বিশাল আধার। শীতকালে অতিথি পাখির আগমন এবং বর্ষাকালে বিশাল জলরাশির ওপর হাউজবোটে রাত্রিযাপন এখানে অন্যতম সেরা ভ্রমণ অভিজ্ঞতা।");
         tanguarHaor.setHowToReach("From Sylhet: Bus to Sunamganj town (75 km, ~2-2.5 hrs). From Sunamganj Sadar Ghat: Hire speedboat or engine boat to reach Tanguar Haor (1.5-2 hrs). Alternatively, go via Tahirpur Ghat which is closer.");
         tanguarHaor.setTransportOptions("Bus to Sunamganj | Speedboat or Engine Boat from Sunamganj Ghat");
         tanguarHaor.setApproxCostFromDhaka("Bus to Sunamganj: ৳500-700 | Total 2-day trip: ৳3000-8000 per person (depending on group size and boat type)");
@@ -680,7 +680,24 @@ public class DataRepository {
                 "An azure blue lake in an abandoned limestone quarry — one of Bangladesh's hidden gems.",
                 R.drawable.tekerghat1, TouristSpot.SpotCategory.NATURAL
         );
-        tekerghat.setFullDescription("Tekerghat is a former lime stone (chinaclay) mining area in Tahirpur Upazila of Sunamganj. The abandoned quarries have filled with stunningly vivid turquoise-blue water, creating an otherworldly lake surrounded by white limestone cliffs. The area also overlooks Tanguar Haor and has views of the Meghalaya hills. A bridge (Syed Nazrul Islam Bridge) connects the area to the mainland. It's often combined with a Tanguar Haor trip.");
+        tekerghat.setFullDescription("Tekerghat is a former lime stone (chinaclay) mining area in Tahirpur Upazila of Sunamganj. The abandoned quarries have filled with stunningly vivid turquoise-blue water, creating an otherworldly lake surrounded by white limestone cliffs. The area also overlooks Tanguar Haor and has views of the Meghalaya hills. A bridge (Syed Nazrul Islam Bridge) connects the area to the mainland.\n\n───────────────\n\nটেকেরঘাট সুনামগঞ্জের তাহিরপুরে অবস্থিত একটি পরিত্যক্ত চুনাপাথর খনি এলাকা। এখানকার নীলাভ পানির হ্রদ এবং চুনাপাথরের টিলা পর্যটকদের কাছে 'নীলাদ্রি লেক' নামে পরিচিত। চমৎকার প্রাকৃতিক দৃশ্য ছবি তোলার জন্য দারুণ উপযোগী।");
+        tekerghat.setHowToReach("From Sunamganj: Speedboat or engine boat to Tahirpur, then to Tekerghat (2-3 hours total). Combined with Tanguar Haor trips.");
+        tekerghat.setTransportOptions("Speedboat | Engine Boat (from Sunamganj Ghat)");
+        tekerghat.setApproxCostFromSylhet("Combine with Tanguar Haor boat hire. Extra cost: ৳500-1000 to extend boat trip to Tekerghat.");
+        tekerghat.setEntranceFee("No entry fee");
+        tekerghat.setBestTimeToVisit("November to April (dry season when water level is lower and limestone structures are more visible)");
+        tekerghat.setTravelTips("Best visited as part of a Tanguar Haor overnight trip. The blue water is most vivid in bright sunlight. Excellent photography opportunity from the hilltop viewpoint.");
+        tekerghat.setWarnings("⚠️ SWIMMING IN THE QUARRY LAKE IS PROHIBITED due to deep, cold water and underwater hazards. ⚠️ Road access during monsoon is often flooded — boat is the primary transport.");
+        tekerghat.setLatitude(25.1417);
+        tekerghat.setLongitude(91.0000);
+        tekerghat.setYoutubeVideoId("dyYwTMqIvj0");
+        tekerghat.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.tekerghat1,
+                R.drawable.tekerghat2,
+                R.drawable.tekerghat3,
+                R.drawable.tekerghat4
+        ));
+        spots.add(tekerghat);
         tekerghat.setHowToReach("From Sunamganj: Speedboat or engine boat to Tahirpur, then to Tekerghat (2-3 hours total). Combined with Tanguar Haor trips.");
         tekerghat.setTransportOptions("Speedboat | Engine Boat (from Sunamganj Ghat)");
         tekerghat.setApproxCostFromSylhet("Combine with Tanguar Haor boat hire. Extra cost: ৳500-1000 to extend boat trip to Tekerghat.");

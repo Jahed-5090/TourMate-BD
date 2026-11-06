@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -80,6 +81,9 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
 
   @NonNull
   public final EditText etNewNote;
+
+  @NonNull
+  public final FrameLayout fullscreenViewContainer;
 
   @NonNull
   public final ImageView ivSpotHeader;
@@ -173,13 +177,14 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
       @NonNull CardView cardFood, @NonNull CardView cardHowToReach, @NonNull CardView cardNotes,
       @NonNull CardView cardPhotoGallery, @NonNull CardView cardTips, @NonNull CardView cardVideo,
       @NonNull CardView cardWarnings, @NonNull TextInputEditText etCommentInput,
-      @NonNull EditText etNewNote, @NonNull ImageView ivSpotHeader,
-      @NonNull RecyclerView rvComments, @NonNull RecyclerView rvPhotoGallery,
-      @NonNull TextInputLayout tilComment, @NonNull Toolbar toolbar, @NonNull TextView tvBestTime,
-      @NonNull TextView tvBudgetAccom, @NonNull TextView tvCategory,
-      @NonNull TextView tvCostFromDhaka, @NonNull TextView tvCostFromSylhet,
-      @NonNull TextView tvDescription, @NonNull TextView tvEntranceFee, @NonNull TextView tvHotels,
-      @NonNull TextView tvHowToReach, @NonNull TextView tvLocalFood, @NonNull TextView tvNoComments,
+      @NonNull EditText etNewNote, @NonNull FrameLayout fullscreenViewContainer,
+      @NonNull ImageView ivSpotHeader, @NonNull RecyclerView rvComments,
+      @NonNull RecyclerView rvPhotoGallery, @NonNull TextInputLayout tilComment,
+      @NonNull Toolbar toolbar, @NonNull TextView tvBestTime, @NonNull TextView tvBudgetAccom,
+      @NonNull TextView tvCategory, @NonNull TextView tvCostFromDhaka,
+      @NonNull TextView tvCostFromSylhet, @NonNull TextView tvDescription,
+      @NonNull TextView tvEntranceFee, @NonNull TextView tvHotels, @NonNull TextView tvHowToReach,
+      @NonNull TextView tvLocalFood, @NonNull TextView tvNoComments,
       @NonNull TextView tvOpeningHours, @NonNull TextView tvPhotoCount,
       @NonNull TextView tvSavedNotes, @NonNull TextView tvSpotName, @NonNull TextView tvSpotNameBn,
       @NonNull TextView tvSpotWeather, @NonNull TextView tvTips, @NonNull TextView tvTransport,
@@ -203,6 +208,7 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
     this.cardWarnings = cardWarnings;
     this.etCommentInput = etCommentInput;
     this.etNewNote = etNewNote;
+    this.fullscreenViewContainer = fullscreenViewContainer;
     this.ivSpotHeader = ivSpotHeader;
     this.rvComments = rvComments;
     this.rvPhotoGallery = rvPhotoGallery;
@@ -359,6 +365,12 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
       id = R.id.et_new_note;
       EditText etNewNote = ViewBindings.findChildViewById(rootView, id);
       if (etNewNote == null) {
+        break missingId;
+      }
+
+      id = R.id.fullscreen_view_container;
+      FrameLayout fullscreenViewContainer = ViewBindings.findChildViewById(rootView, id);
+      if (fullscreenViewContainer == null) {
         break missingId;
       }
 
@@ -533,12 +545,12 @@ public final class ActivitySpotDetailBinding implements ViewBinding {
       return new ActivitySpotDetailBinding((CoordinatorLayout) rootView, appBar, btnOpenMaps,
           btnPostComment, btnSaveNote, btnToggleFavorite, btnWatchYoutube, cardAccommodation,
           cardComments, cardFood, cardHowToReach, cardNotes, cardPhotoGallery, cardTips, cardVideo,
-          cardWarnings, etCommentInput, etNewNote, ivSpotHeader, rvComments, rvPhotoGallery,
-          tilComment, toolbar, tvBestTime, tvBudgetAccom, tvCategory, tvCostFromDhaka,
-          tvCostFromSylhet, tvDescription, tvEntranceFee, tvHotels, tvHowToReach, tvLocalFood,
-          tvNoComments, tvOpeningHours, tvPhotoCount, tvSavedNotes, tvSpotName, tvSpotNameBn,
-          tvSpotWeather, tvTips, tvTransport, tvVideoBadge, tvVideoCaption, tvWarnings,
-          youtubePlayerView);
+          cardWarnings, etCommentInput, etNewNote, fullscreenViewContainer, ivSpotHeader,
+          rvComments, rvPhotoGallery, tilComment, toolbar, tvBestTime, tvBudgetAccom, tvCategory,
+          tvCostFromDhaka, tvCostFromSylhet, tvDescription, tvEntranceFee, tvHotels, tvHowToReach,
+          tvLocalFood, tvNoComments, tvOpeningHours, tvPhotoCount, tvSavedNotes, tvSpotName,
+          tvSpotNameBn, tvSpotWeather, tvTips, tvTransport, tvVideoBadge, tvVideoCaption,
+          tvWarnings, youtubePlayerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

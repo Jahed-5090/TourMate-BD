@@ -82,9 +82,9 @@ public class MainActivity extends AppCompatActivity
 
         if (currentUser != null) {
             String name = currentUser.getDisplayName() != null && !currentUser.getDisplayName().isEmpty()
-                    ? currentUser.getDisplayName() : "ভ্রমণকারী";
+                    ? currentUser.getDisplayName() : "Traveler";
             tvName.setText(name);
-            tvEmail.setText(currentUser.getEmail() != null ? currentUser.getEmail() : "লগইন করা আছে");
+            tvEmail.setText(currentUser.getEmail() != null ? currentUser.getEmail() : "Logged In");
 
             if (currentUser.getPhotoUrl() != null) {
                 com.bumptech.glide.Glide.with(this)
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity
             }
 
             if (authMenuItem != null) {
-                authMenuItem.setTitle("লগআউট (Logout)");
+                authMenuItem.setTitle("Logout");
                 authMenuItem.setIcon(R.drawable.ic_logout);
             }
 
@@ -105,12 +105,12 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(this, ProfileActivity.class));
             });
         } else {
-            tvName.setText("অতিথি পরিব্রাজক");
-            tvEmail.setText("লগইন করতে এখানে ট্যাপ করুন ➔");
+            tvName.setText("Guest Traveler");
+            tvEmail.setText("Tap to log in ➔");
             ivAvatar.setImageResource(R.drawable.ic_person);
 
             if (authMenuItem != null) {
-                authMenuItem.setTitle("লগইন / সাইন আপ");
+                authMenuItem.setTitle("Login / Sign Up");
                 authMenuItem.setIcon(R.drawable.ic_login);
             }
 
@@ -123,14 +123,14 @@ public class MainActivity extends AppCompatActivity
 
     private void showLogoutDialog() {
         new AlertDialog.Builder(this)
-                .setTitle("লগআউট")
-                .setMessage("আপনি কি আপনার অ্যাকাউন্ট থেকে লগআউট করতে চান?")
-                .setPositiveButton("লগআউট", (dialog, which) -> {
+                .setTitle("Logout")
+                .setMessage("Are you sure you want to log out of your account?")
+                .setPositiveButton("Logout", (dialog, which) -> {
                     FirebaseAuthManager.getInstance().signOut(this);
                     updateUserNavHeader();
-                    Toast.makeText(this, "সফলভাবে লগআউট করা হয়েছে", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show();
                 })
-                .setNegativeButton("বাতিল", null)
+                .setNegativeButton("Cancel", null)
                 .show();
     }
 

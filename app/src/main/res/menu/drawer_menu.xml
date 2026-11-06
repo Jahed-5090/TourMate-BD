@@ -9,15 +9,15 @@
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_person"
-            android:title="আমার প্রোফাইল (Profile)"/>
+            android:title="My Profile"/>
         <item
             android:id="@+id/nav_cloud_sync"
             android:icon="@drawable/ic_nav_cloud"
-            android:title="ক্লাউড সিঙ্ক (Firebase)"/>
+            android:title="Cloud Sync"/>
         <item
             android:id="@+id/nav_theme_toggle"
             android:icon="@drawable/ic_mode_night"
-            android:title="ডার্ক / লাইট মোড"/>
+            android:title="Toggle Dark / Light Mode"/>
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/ic_nav_info"
@@ -25,6 +25,6 @@
         <item
             android:id="@+id/nav_auth"
             android:icon="@drawable/ic_login"
-            android:title="লগইন / সাইন আপ"/>
+            android:title="Login / Sign Up"/>
     </group>
 </menu>

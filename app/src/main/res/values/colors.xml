@@ -24,6 +24,13 @@
     <color name="warning_text">#E65100</color>
     <color name="tip_bg">#E0F2FE</color>
     <color name="tip_border">#0284C7</color>
+    <color name="tip_title">#0284C7</color>
+    <color name="tip_text">#0F1E36</color>
+
+    <!-- Input Box Colors -->
+    <color name="input_bg">#F1F5F9</color>
+    <color name="input_text">#0F1E36</color>
+    <color name="input_hint">#64748B</color>
 
     <!-- Category Badge Colors -->
     <color name="cat_religious">#6A1B9A</color>

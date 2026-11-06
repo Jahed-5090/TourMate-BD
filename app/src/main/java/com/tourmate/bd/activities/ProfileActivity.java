@@ -69,7 +69,7 @@ public class ProfileActivity extends AppCompatActivity implements SpotAdapter.On
         setSupportActionBar(binding.toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle("আমার প্রোফাইল (My Profile)");
+            getSupportActionBar().setTitle("My Profile");
         }
     }
 
@@ -99,7 +99,7 @@ public class ProfileActivity extends AppCompatActivity implements SpotAdapter.On
         }
 
         if (isGoogleUser) {
-            binding.tvProviderBadge.setText("Google Account (গুগল সাইন ইন)");
+            binding.tvProviderBadge.setText("Google Account");
         } else {
             binding.tvProviderBadge.setText("Email & Password Account");
         }
@@ -111,7 +111,7 @@ public class ProfileActivity extends AppCompatActivity implements SpotAdapter.On
         binding.btnChangeEmail.setOnClickListener(v -> showChangeEmailDialog());
         binding.btnLogout.setOnClickListener(v -> {
             FirebaseAuthManager.getInstance().signOut(this);
-            Toast.makeText(this, "লগআউট সফল হয়েছে", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show();
             finish();
         });
     }
@@ -131,27 +131,27 @@ public class ProfileActivity extends AppCompatActivity implements SpotAdapter.On
         container.addView(etName);
 
         new AlertDialog.Builder(this)
-                .setTitle("নাম পরিবর্তন করুন")
-                .setMessage("নতুন নাম টাইপ করুন:")
+                .setTitle("Edit Display Name")
+                .setMessage("Enter new display name:")
                 .setView(container)
-                .setPositiveButton("সংরক্ষণ", (dialog, which) -> {
+                .setPositiveButton("Save", (dialog, which) -> {
                     String newName = etName.getText().toString().trim();
                     if (!TextUtils.isEmpty(newName)) {
                         FirebaseAuthManager.getInstance().updateProfileName(newName, new FirebaseAuthManager.AuthCallback() {
                             @Override
                             public void onSuccess(FirebaseUser user, UserProfile profile) {
                                 binding.tvProfileName.setText(newName);
-                                Toast.makeText(ProfileActivity.this, "নাম সফলভাবে আপডেট হয়েছে!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProfileActivity.this, "Name updated successfully!", Toast.LENGTH_SHORT).show();
                             }
 
                             @Override
                             public void onFailure(String errorMessage) {
-                                Toast.makeText(ProfileActivity.this, "আপডেট ব্যর্থ: " + errorMessage, Toast.LENGTH_LONG).show();
+                                Toast.makeText(ProfileActivity.this, "Update failed: " + errorMessage, Toast.LENGTH_LONG).show();
                             }
                         });
                     }
                 })
-                .setNegativeButton("বাতিল", null)
+                .setNegativeButton("Cancel", null)
                 .show();
     }
 
@@ -172,8 +172,8 @@ public class ProfileActivity extends AppCompatActivity implements SpotAdapter.On
         if (isGoogleUser) {
             new AlertDialog.Builder(this)
                     .setTitle("Google Account")
-                    .setMessage("আপনি Google Sign-In ব্যবহার করছেন। পাসওয়ার্ড পরিবর্তন Google সিকিউরিটি পেজ থেকে পরিচালনা করা হয়।")
-                    .setPositiveButton("ঠিক আছে", null)
+                    .setMessage("You are logged in with Google Sign-In. Password management is handled via your Google Account settings.")
+                    .setPositiveButton("OK", null)
                     .show();
             return;
         }
@@ -184,44 +184,44 @@ public class ProfileActivity extends AppCompatActivity implements SpotAdapter.On
         container.setPadding(padding, padding, padding, padding);
 
         final EditText etCurrentPass = new EditText(this);
-        etCurrentPass.setHint("বর্তমান পাসওয়ার্ড (Current Password)");
+        etCurrentPass.setHint("Current Password");
         etCurrentPass.setInputType(android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD);
         container.addView(etCurrentPass);
 
         final EditText etNewPass = new EditText(this);
-        etNewPass.setHint("নতুন পাসওয়ার্ড (কমপক্ষে ৬ অক্ষর)");
+        etNewPass.setHint("New Password (At least 6 characters)");
         etNewPass.setInputType(android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD);
         container.addView(etNewPass);
 
         new AlertDialog.Builder(this)
-                .setTitle("পাসওয়ার্ড পরিবর্তন করুন")
+                .setTitle("Change Password")
                 .setView(container)
-                .setPositiveButton("পরিবর্তন করুন", (dialog, which) -> {
+                .setPositiveButton("Update", (dialog, which) -> {
                     String curr = etCurrentPass.getText().toString().trim();
                     String newP = etNewPass.getText().toString().trim();
 
                     if (TextUtils.isEmpty(curr) || TextUtils.isEmpty(newP)) {
-                        Toast.makeText(this, "পাসওয়ার্ড দিন", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Please enter your password", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     if (newP.length() < 6) {
-                        Toast.makeText(this, "নতুন পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "New password must be at least 6 characters", Toast.LENGTH_SHORT).show();
                         return;
                     }
 
                     FirebaseAuthManager.getInstance().updateUserPassword(curr, newP, new FirebaseAuthManager.AuthCallback() {
                         @Override
                         public void onSuccess(FirebaseUser user, UserProfile profile) {
-                            Toast.makeText(ProfileActivity.this, "পাসওয়ার্ড সফলভাবে পরিবর্তন করা হয়েছে!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(ProfileActivity.this, "Password changed successfully!", Toast.LENGTH_LONG).show();
                         }
 
                         @Override
                         public void onFailure(String errorMessage) {
-                            Toast.makeText(ProfileActivity.this, "পাসওয়ার্ড পরিবর্তন ব্যর্থ: " + errorMessage, Toast.LENGTH_LONG).show();
+                            Toast.makeText(ProfileActivity.this, "Password change failed: " + errorMessage, Toast.LENGTH_LONG).show();
                         }
                     });
                 })
-                .setNegativeButton("বাতিল", null)
+                .setNegativeButton("Cancel", null)
                 .show();
     }
 
@@ -230,7 +230,7 @@ public class ProfileActivity extends AppCompatActivity implements SpotAdapter.On
         if (currentUser == null) return;
 
         final EditText etEmail = new EditText(this);
-        etEmail.setHint("নতুন ইমেইল অ্যাড্রেস");
+        etEmail.setHint("New Email Address");
         etEmail.setInputType(android.text.InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
 
         LinearLayout container = new LinearLayout(this);
@@ -240,13 +240,13 @@ public class ProfileActivity extends AppCompatActivity implements SpotAdapter.On
         container.addView(etEmail);
 
         new AlertDialog.Builder(this)
-                .setTitle("ইমেইল অ্যাড্রেস পরিবর্তন")
-                .setMessage("নতুন ইমেইল অ্যাড্রেস লিখুন। ভেরিফিকেশন লিঙ্ক পাঠানো হবে:")
+                .setTitle("Change Email Address")
+                .setMessage("Enter your new email address. A verification link will be sent:")
                 .setView(container)
-                .setPositiveButton("ভেরিফিকেশন লিঙ্ক পাঠান", (dialog, which) -> {
+                .setPositiveButton("Send Verification Link", (dialog, which) -> {
                     String newEmail = etEmail.getText().toString().trim();
                     if (TextUtils.isEmpty(newEmail) || !Patterns.EMAIL_ADDRESS.matcher(newEmail).matches()) {
-                        Toast.makeText(this, "সঠিক ইমেইল ফরম্যাট দিন", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Please enter a valid email format", Toast.LENGTH_SHORT).show();
                         return;
                     }
 
@@ -254,19 +254,19 @@ public class ProfileActivity extends AppCompatActivity implements SpotAdapter.On
                         @Override
                         public void onSuccess(FirebaseUser user, UserProfile profile) {
                             new AlertDialog.Builder(ProfileActivity.this)
-                                    .setTitle("ভেরিফিকেশন ইমেইল পাঠানো হয়েছে 📩")
-                                    .setMessage("নতুন ইমেইলে (" + newEmail + ") ভেরিফিকেশন লিঙ্ক পাঠানো হয়েছে। অনুগ্রহ করে নতুন ইমেইল ভেরিফাই করুন।")
-                                    .setPositiveButton("ঠিক আছে", null)
+                                    .setTitle("Verification Email Sent 📩")
+                                    .setMessage("A verification link has been sent to " + newEmail + ". Please check your inbox and verify your new email address.")
+                                    .setPositiveButton("OK", null)
                                     .show();
                         }
 
                         @Override
                         public void onFailure(String errorMessage) {
-                            Toast.makeText(ProfileActivity.this, "ইমেইল আপডেট ব্যর্থ: " + errorMessage, Toast.LENGTH_LONG).show();
+                            Toast.makeText(ProfileActivity.this, "Email update failed: " + errorMessage, Toast.LENGTH_LONG).show();
                         }
                     });
                 })
-                .setNegativeButton("বাতিল", null)
+                .setNegativeButton("Cancel", null)
                 .show();
     }
 
@@ -290,7 +290,7 @@ public class ProfileActivity extends AppCompatActivity implements SpotAdapter.On
 
         favoritesAdapter.notifyDataSetChanged();
 
-        binding.tvFavoritesCount.setText(favoriteSpots.size() + " টি স্থান");
+        binding.tvFavoritesCount.setText(favoriteSpots.size() + (favoriteSpots.size() == 1 ? " Spot" : " Spots"));
 
         if (favoriteSpots.isEmpty()) {
             binding.tvNoFavorites.setVisibility(View.VISIBLE);

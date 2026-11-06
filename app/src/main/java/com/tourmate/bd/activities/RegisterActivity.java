@@ -40,33 +40,33 @@ public class RegisterActivity extends AppCompatActivity {
         String confirmPassword = binding.etConfirmPassword.getText() != null ? binding.etConfirmPassword.getText().toString().trim() : "";
 
         if (TextUtils.isEmpty(name)) {
-            binding.tilName.setError("আপনার পুরো নাম লিখুন");
+            binding.tilName.setError("Please enter your full name");
             return;
         }
         binding.tilName.setError(null);
 
         if (TextUtils.isEmpty(email)) {
-            binding.tilEmail.setError("ইমেইল অ্যাড্রেস লিখুন");
+            binding.tilEmail.setError("Please enter your email address");
             return;
         }
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            binding.tilEmail.setError("সঠিক ইমেইল ফরম্যাট দিন");
+            binding.tilEmail.setError("Please enter a valid email format");
             return;
         }
         binding.tilEmail.setError(null);
 
         if (TextUtils.isEmpty(password)) {
-            binding.tilPassword.setError("পাসওয়ার্ড লিখুন");
+            binding.tilPassword.setError("Please enter a password");
             return;
         }
         if (password.length() < 6) {
-            binding.tilPassword.setError("পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে");
+            binding.tilPassword.setError("Password must be at least 6 characters");
             return;
         }
         binding.tilPassword.setError(null);
 
         if (!password.equals(confirmPassword)) {
-            binding.tilConfirmPassword.setError("পাসওয়ার্ড দুটি মিলছে না");
+            binding.tilConfirmPassword.setError("Passwords do not match");
             return;
         }
         binding.tilConfirmPassword.setError(null);
@@ -77,9 +77,9 @@ public class RegisterActivity extends AppCompatActivity {
             public void onSuccess(FirebaseUser user, UserProfile profile) {
                 setLoading(false);
                 new androidx.appcompat.app.AlertDialog.Builder(RegisterActivity.this)
-                        .setTitle("ইমেইল ভেরিফিকেশন পাঠানো হয়েছে 📩")
-                        .setMessage("আপনার ইমেইলে (" + email + ") একটি ভেরিফিকেশন লিঙ্ক পাঠানো হয়েছে। অনুগ্রহ করে ইনবক্স/স্প্যাম ফোল্ডার থেকে লিঙ্কটি চেপে অ্যাকাউন্ট ভেরিফাই করার পর লগইন করুন।")
-                        .setPositiveButton("ঠিক আছে (Log In)", (dialog, which) -> finish())
+                        .setTitle("Verification Email Sent 📩")
+                        .setMessage("A verification link has been sent to " + email + ". Please check your inbox/spam folder and verify your account before logging in.")
+                        .setPositiveButton("OK (Log In)", (dialog, which) -> finish())
                         .setCancelable(false)
                         .show();
             }
@@ -87,7 +87,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onFailure(String errorMessage) {
                 setLoading(false);
-                Toast.makeText(RegisterActivity.this, "নিবন্ধন ব্যর্থ: " + errorMessage, Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this, "Registration failed: " + errorMessage, Toast.LENGTH_LONG).show();
             }
         });
     }

@@ -19,6 +19,9 @@
     <color name="cat_tea_garden">#558B2F</color>
     <color name="cat_waterfall">#0277BD</color>
     <color name="divider">#DCE5F0</color>
+    <color name="input_bg">#F1F5F9</color>
+    <color name="input_hint">#64748B</color>
+    <color name="input_text">#0F1E36</color>
     <color name="overlay_gradient_end">#CC000000</color>
     <color name="overlay_gradient_start">#00000000</color>
     <color name="splash_center">#103778</color>
@@ -31,6 +34,8 @@
     <color name="text_secondary">#475569</color>
     <color name="tip_bg">#E0F2FE</color>
     <color name="tip_border">#0284C7</color>
+    <color name="tip_text">#0F1E36</color>
+    <color name="tip_title">#0284C7</color>
     <color name="warning_bg">#FFF8E1</color>
     <color name="warning_border">#FFB300</color>
     <color name="warning_text">#E65100</color>

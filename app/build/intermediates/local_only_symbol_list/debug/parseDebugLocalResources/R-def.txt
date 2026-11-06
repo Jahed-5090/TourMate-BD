@@ -23,6 +23,9 @@ color cat_religious
 color cat_tea_garden
 color cat_waterfall
 color divider
+color input_bg
+color input_hint
+color input_text
 color nav_item_icon_tint
 color nav_item_text_tint
 color overlay_gradient_end
@@ -37,6 +40,8 @@ color text_primary
 color text_secondary
 color tip_bg
 color tip_border
+color tip_text
+color tip_title
 color warning_bg
 color warning_border
 color warning_text
@@ -192,6 +197,7 @@ id et_email
 id et_name
 id et_new_note
 id et_password
+id fullscreen_view_container
 id iv_district
 id iv_division
 id iv_gallery_photo

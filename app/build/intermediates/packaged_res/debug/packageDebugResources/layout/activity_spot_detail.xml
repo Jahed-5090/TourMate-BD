@@ -684,7 +684,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="💡 Travel Tips"
-                        android:textColor="#2E7D32"
+                        android:textColor="@color/tip_title"
                         android:textSize="14sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="8dp"/>
@@ -693,7 +693,7 @@
                         android:id="@+id/tv_tips"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#1B5E20"
+                        android:textColor="@color/tip_text"
                         android:textSize="13sp"
                         android:lineSpacingMultiplier="1.5"/>
 
@@ -731,7 +731,7 @@
                         android:id="@+id/tv_warnings"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="#B71C1C"
+                        android:textColor="@color/warning_text"
                         android:textSize="13sp"
                         android:lineSpacingMultiplier="1.6"/>
 
@@ -777,8 +777,10 @@
                         android:layout_height="wrap_content"
                         android:hint="যেমন: নৌকা ভাড়া ৫০০ টাকা চুক্তি করেছি..."
                         android:textSize="13sp"
+                        android:textColor="@color/input_text"
+                        android:textColorHint="@color/input_hint"
                         android:background="@drawable/badge_bg"
-                        android:backgroundTint="#F5F5F5"
+                        android:backgroundTint="@color/input_bg"
                         android:padding="10dp"
                         android:minLines="2"
                         android:gravity="top"/>
@@ -911,5 +913,13 @@
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <!-- Fullscreen Video Overlay Container -->
+    <FrameLayout
+        android:id="@+id/fullscreen_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:visibility="gone"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

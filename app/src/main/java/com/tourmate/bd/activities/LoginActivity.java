@@ -93,21 +93,21 @@ public class LoginActivity extends AppCompatActivity {
         String password = binding.etPassword.getText() != null ? binding.etPassword.getText().toString().trim() : "";
 
         if (TextUtils.isEmpty(email)) {
-            binding.tilEmail.setError("ইমেইল লিখুন");
+            binding.tilEmail.setError("Please enter your email");
             return;
         }
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            binding.tilEmail.setError("সঠিক ইমেইল ফরম্যাট দিন");
+            binding.tilEmail.setError("Please enter a valid email format");
             return;
         }
         binding.tilEmail.setError(null);
 
         if (TextUtils.isEmpty(password)) {
-            binding.tilPassword.setError("পাসওয়ার্ড লিখুন");
+            binding.tilPassword.setError("Please enter your password");
             return;
         }
         if (password.length() < 6) {
-            binding.tilPassword.setError("পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে");
+            binding.tilPassword.setError("Password must be at least 6 characters");
             return;
         }
         binding.tilPassword.setError(null);
@@ -118,14 +118,14 @@ public class LoginActivity extends AppCompatActivity {
             public void onSuccess(FirebaseUser user, UserProfile profile) {
                 setLoading(false);
                 String name = profile != null && profile.getName() != null ? profile.getName() : user.getEmail();
-                Toast.makeText(LoginActivity.this, "স্বাগতম " + name + "!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Welcome " + name + "!", Toast.LENGTH_SHORT).show();
                 finish();
             }
 
             @Override
             public void onFailure(String errorMessage) {
                 setLoading(false);
-                Toast.makeText(LoginActivity.this, "লগইন ব্যর্থ: " + errorMessage, Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this, "Login failed: " + errorMessage, Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -136,14 +136,14 @@ public class LoginActivity extends AppCompatActivity {
             public void onSuccess(FirebaseUser user, UserProfile profile) {
                 setLoading(false);
                 String name = profile != null ? profile.getName() : "Traveler";
-                Toast.makeText(LoginActivity.this, "Google দিয়ে সফলভাবে লগইন হয়েছে! স্বাগতম " + name, Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Google Sign-In successful! Welcome " + name, Toast.LENGTH_SHORT).show();
                 finish();
             }
 
             @Override
             public void onFailure(String errorMessage) {
                 setLoading(false);
-                Toast.makeText(LoginActivity.this, "Google প্রমাণীকরণ ব্যর্থ: " + errorMessage, Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this, "Google authentication failed: " + errorMessage, Toast.LENGTH_LONG).show();
             }
         });
     }

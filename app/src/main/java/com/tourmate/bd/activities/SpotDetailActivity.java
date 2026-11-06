@@ -180,16 +180,16 @@ public class SpotDetailActivity extends AppCompatActivity {
     private void setupCommunityComments() {
         commentAdapter = new CommentAdapter(this, spotComments, comment -> {
             new AlertDialog.Builder(this)
-                    .setTitle("মুছে ফেলা নিশ্চিত করুন")
-                    .setMessage("আপনি কি নিশ্চিত যে এই মন্তব্যটি ক্লাউড থেকে মুছে ফেলতে চান?")
-                    .setPositiveButton("মুছে ফেলুন (Delete)", (dialog, which) -> {
+                    .setTitle("Confirm Delete")
+                    .setMessage("Are you sure you want to delete this comment from the cloud?")
+                    .setPositiveButton("Delete", (dialog, which) -> {
                         if (commentsRef != null && comment.getCommentId() != null) {
                             commentsRef.child(comment.getCommentId()).removeValue()
-                                    .addOnSuccessListener(aVoid -> Toast.makeText(this, "মন্তব্য মুছে ফেলা হয়েছে", Toast.LENGTH_SHORT).show())
-                                    .addOnFailureListener(e -> Toast.makeText(this, "মুছে ফেলতে ব্যর্থ: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                                    .addOnSuccessListener(aVoid -> Toast.makeText(this, "Comment deleted successfully", Toast.LENGTH_SHORT).show())
+                                    .addOnFailureListener(e -> Toast.makeText(this, "Failed to delete: " + e.getMessage(), Toast.LENGTH_SHORT).show());
                         }
                     })
-                    .setNegativeButton("বাতিল", null)
+                    .setNegativeButton("Cancel", null)
                     .show();
         });
 
@@ -226,7 +226,7 @@ public class SpotDetailActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(SpotDetailActivity.this, "মন্তব্য ডাটা পড়তে ব্যর্থ: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SpotDetailActivity.this, "Failed to load comments: " + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         };
         commentsRef.addValueEventListener(commentsListener);
@@ -238,17 +238,17 @@ public class SpotDetailActivity extends AppCompatActivity {
         FirebaseUser currentUser = FirebaseAuthManager.getInstance().getCurrentUser();
         if (currentUser == null) {
             new AlertDialog.Builder(this)
-                    .setTitle("লগইন প্রয়োজন")
-                    .setMessage("মতামত পোস্ট করতে আপনার অ্যাকাউন্টে লগইন করুন।")
-                    .setPositiveButton("লগইন করুন", (dialog, which) -> startActivity(new Intent(this, LoginActivity.class)))
-                    .setNegativeButton("বাতিল", null)
+                    .setTitle("Login Required")
+                    .setMessage("Please log in to your account to post comments or feedback.")
+                    .setPositiveButton("Log In", (dialog, which) -> startActivity(new Intent(this, LoginActivity.class)))
+                    .setNegativeButton("Cancel", null)
                     .show();
             return;
         }
 
         String commentText = binding.etCommentInput.getText() != null ? binding.etCommentInput.getText().toString().trim() : "";
         if (commentText.isEmpty()) {
-            binding.tilComment.setError("মন্তব্য লিখুন");
+            binding.tilComment.setError("Please enter a comment");
             return;
         }
         binding.tilComment.setError(null);
@@ -273,9 +273,9 @@ public class SpotDetailActivity extends AppCompatActivity {
         commentsRef.child(newCommentId).setValue(newComment)
                 .addOnSuccessListener(aVoid -> {
                     binding.etCommentInput.setText("");
-                    Toast.makeText(this, "আপনার মতামত ক্লাউডে পোস্ট করা হয়েছে!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Thank you! Your comment has been posted.", Toast.LENGTH_SHORT).show();
                 })
-                .addOnFailureListener(e -> Toast.makeText(this, "পোস্ট করতে ব্যর্থ: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                .addOnFailureListener(e -> Toast.makeText(this, "Failed to post comment: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
     private void fetchSpotWeather() {
@@ -398,10 +398,26 @@ public class SpotDetailActivity extends AppCompatActivity {
 
             IFramePlayerOptions options = new IFramePlayerOptions.Builder(this)
                     .controls(1)
+                    .fullscreen(1)
                     .rel(0)
                     .ivLoadPolicy(3)
                     .ccLoadPolicy(0)
                     .build();
+
+            binding.youtubePlayerView.addFullscreenListener(new com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.FullscreenListener() {
+                @Override
+                public void onEnterFullscreen(@NonNull View fullscreenView, @NonNull kotlin.jvm.functions.Function0<kotlin.Unit> exitFullscreen) {
+                    binding.fullscreenViewContainer.removeAllViews();
+                    binding.fullscreenViewContainer.addView(fullscreenView);
+                    binding.fullscreenViewContainer.setVisibility(View.VISIBLE);
+                }
+
+                @Override
+                public void onExitFullscreen() {
+                    binding.fullscreenViewContainer.removeAllViews();
+                    binding.fullscreenViewContainer.setVisibility(View.GONE);
+                }
+            });
 
             binding.youtubePlayerView.initialize(new AbstractYouTubePlayerListener() {
                 @Override

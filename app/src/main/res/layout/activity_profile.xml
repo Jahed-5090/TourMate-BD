@@ -136,7 +136,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:layout_marginStart="14dp"
-                            android:text="নাম পরিবর্তন করুন (Edit Name)"
+                            android:text="Edit Display Name"
                             android:textColor="@color/text_primary"
                             android:textSize="14sp"/>
 
@@ -178,7 +178,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:layout_marginStart="14dp"
-                            android:text="পাসওয়ার্ড পরিবর্তন করুন (Change Password)"
+                            android:text="Change Password"
                             android:textColor="@color/text_primary"
                             android:textSize="14sp"/>
 
@@ -220,7 +220,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:layout_marginStart="14dp"
-                            android:text="ইমেইল অ্যাড্রেস পরিবর্তন করুন (Change Email)"
+                            android:text="Change Email Address"
                             android:textColor="@color/text_primary"
                             android:textSize="14sp"/>
 
@@ -262,7 +262,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:layout_marginStart="14dp"
-                            android:text="লগআউট করুন (Sign Out)"
+                            android:text="Sign Out"
                             android:textColor="#EF4444"
                             android:textSize="14sp"
                             android:textStyle="bold"/>
@@ -283,7 +283,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="⭐ সংরক্ষিত প্রিয় স্থানসমূহ"
+                    android:text="⭐ Saved Favorite Spots"
                     android:textColor="@color/brand_primary"
                     android:textSize="16sp"
                     android:textStyle="bold"/>

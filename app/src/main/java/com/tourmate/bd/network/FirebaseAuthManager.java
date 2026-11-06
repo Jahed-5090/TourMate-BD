@@ -137,7 +137,7 @@ public class FirebaseAuthManager {
                             firebaseUser.sendEmailVerification();
                             auth.signOut();
                             if (callback != null) {
-                                callback.onFailure("আপনার ইমেইল ভেরিফাই করা হয়নি। ইমেইলে ভেরিফিকেশন লিঙ্ক পাঠানো হয়েছে, অনুগ্রহ করে ইনবক্স/স্প্যাম চেক করে ভেরিফাই করুন।");
+                                callback.onFailure("Your email address is not verified. A verification link has been sent to your email inbox/spam folder.");
                             }
                             return;
                         }
@@ -196,17 +196,17 @@ public class FirebaseAuthManager {
 
     private String parseAuthError(Exception e) {
         if (e == null || e.getMessage() == null) {
-            return "প্রমাণীকরণ ব্যর্থ হয়েছে। আবার চেষ্টা করুন।";
+            return "Authentication failed. Please try again.";
         }
         String msg = e.getMessage().toLowerCase();
         if (msg.contains("credential") || msg.contains("password") || msg.contains("invalid_login_credentials") || msg.contains("invalid-credential")) {
-            return "ইমেইল বা পাসওয়ার্ড সঠিক নয়। (Google দিয়ে অ্যাকাউন্ট খুলে থাকলে 'Google দিয়ে সাইন ইন করুন' চাপুন)";
+            return "Incorrect email or password. (If signed up via Google, click 'Sign in with Google')";
         } else if (msg.contains("no user record") || msg.contains("user-not-found")) {
-            return "এই ইমেইল দিয়ে কোনো অ্যাকাউন্ট পাওয়া যায়নি। দয়া করে নতুন অ্যাকাউন্ট তৈরি করুন।";
+            return "No account found with this email address. Please sign up.";
         } else if (msg.contains("already in use") || msg.contains("email-already-in-use")) {
-            return "এই ইমেইল দিয়ে ইতিমধ্যে একটি অ্যাকাউন্ট তৈরি করা আছে।";
+            return "An account already exists with this email address.";
         } else if (msg.contains("network") || msg.contains("connection")) {
-            return "ইন্টারনেট সংযোগ চেক করুন এবং আবার চেষ্টা করুন।";
+            return "Please check your internet connection and try again.";
         }
         return e.getMessage();
     }
@@ -388,7 +388,7 @@ public class FirebaseAuthManager {
      */
     public void syncUserFavoritesToCloud(Context context, FirebaseManager.CloudSyncCallback callback) {
         if (!isLoggedIn()) {
-            if (callback != null) callback.onSyncFailure("ব্যবহারকারী লগইন করা নেই।");
+            if (callback != null) callback.onSyncFailure("User is not signed in.");
             return;
         }
 
@@ -415,13 +415,13 @@ public class FirebaseAuthManager {
                         }
                     }
                     if (callback != null) {
-                        callback.onSyncSuccess("ক্লাউড থেকে " + restoredCount + " টি স্থান পুনরুদ্ধার করা হয়েছে!");
+                        callback.onSyncSuccess("Restored " + restoredCount + " favorites from cloud!");
                     }
                 }
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
-                    if (callback != null) callback.onSyncFailure("ক্লাউড ডাটা পড়তে ব্যর্থ: " + error.getMessage());
+                    if (callback != null) callback.onSyncFailure("Failed to read cloud data: " + error.getMessage());
                 }
             });
         } else {
@@ -433,11 +433,11 @@ public class FirebaseAuthManager {
             favRef.setValue(favMap)
                     .addOnSuccessListener(aVoid -> {
                         if (callback != null) {
-                            callback.onSyncSuccess("সিঙ্ক সফল হয়েছে! মোট " + localFavSpotIds.size() + " টি স্থান ক্লাউডে সংরক্ষিত।");
+                            callback.onSyncSuccess("Sync successful! " + localFavSpotIds.size() + " favorites saved to cloud.");
                         }
                     })
                     .addOnFailureListener(e -> {
-                        if (callback != null) callback.onSyncFailure("ক্লাউড সেভ করতে ব্যর্থ: " + e.getMessage());
+                        if (callback != null) callback.onSyncFailure("Failed to save to cloud: " + e.getMessage());
                     });
         }
     }

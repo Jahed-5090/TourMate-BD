@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity
         MenuItem themeMenuItem = binding.navView.getMenu().findItem(R.id.nav_theme_toggle);
         if (themeMenuItem != null) {
             themeMenuItem.setIcon(isDark ? R.drawable.ic_mode_light : R.drawable.ic_mode_night);
-            themeMenuItem.setTitle(isDark ? "লাইট মোড (Light Mode)" : "ডার্ক মোড (Dark Mode)");
+            themeMenuItem.setTitle(isDark ? "Light Mode" : "Dark Mode");
         }
     }
 
@@ -275,7 +275,7 @@ public class MainActivity extends AppCompatActivity
 
 
     private void triggerCloudSync() {
-        Toast.makeText(this, "Firebase ক্লাউড ডাটাবেজের সাথে সিঙ্ক হচ্ছে...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Firebase Cloud Database is syncing...", Toast.LENGTH_SHORT).show();
         FirebaseManager.getInstance().syncFavoritesWithCloud(this, new FirebaseManager.CloudSyncCallback() {
             @Override
             public void onSyncSuccess(String message) {

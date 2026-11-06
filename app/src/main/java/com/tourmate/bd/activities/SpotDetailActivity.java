@@ -90,19 +90,40 @@ public class SpotDetailActivity extends AppCompatActivity {
             binding.rvPhotoGallery.setLayoutManager(lm);
 
             SpotPhotoAdapter adapter = new SpotPhotoAdapter(this, photos, (resId, position) -> {
-                // Open full-screen photo viewer on tap
-                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
-                android.widget.ImageView fullImg = new android.widget.ImageView(this);
-                fullImg.setImageResource(resId);
-                fullImg.setScaleType(android.widget.ImageView.ScaleType.FIT_CENTER);
-                fullImg.setAdjustViewBounds(true);
-                builder.setView(fullImg);
-                builder.create().show();
+                showFullScreenGalleryDialog(photos, position);
             });
             binding.rvPhotoGallery.setAdapter(adapter);
         } else {
             binding.cardPhotoGallery.setVisibility(View.GONE);
         }
+    }
+
+    private void showFullScreenGalleryDialog(List<Integer> photos, int startPosition) {
+        if (photos == null || photos.isEmpty()) return;
+
+        android.app.Dialog dialog = new android.app.Dialog(this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+        dialog.setContentView(R.layout.dialog_full_screen_gallery);
+
+        androidx.viewpager2.widget.ViewPager2 viewPager = dialog.findViewById(R.id.vp_full_screen_gallery);
+        android.widget.ImageButton btnClose = dialog.findViewById(R.id.btn_close_gallery);
+        android.widget.TextView tvIndicator = dialog.findViewById(R.id.tv_photo_indicator);
+
+        com.tourmate.bd.adapters.FullScreenImageAdapter adapter = new com.tourmate.bd.adapters.FullScreenImageAdapter(this, photos);
+        viewPager.setAdapter(adapter);
+        viewPager.setCurrentItem(startPosition, false);
+
+        tvIndicator.setText("Photo " + (startPosition + 1) + " of " + photos.size());
+
+        viewPager.registerOnPageChangeCallback(new androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int pos) {
+                super.onPageSelected(pos);
+                tvIndicator.setText("Photo " + (pos + 1) + " of " + photos.size());
+            }
+        });
+
+        btnClose.setOnClickListener(v -> dialog.dismiss());
+        dialog.show();
     }
 
 

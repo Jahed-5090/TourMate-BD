@@ -195,6 +195,13 @@ public class DataRepository {
         shahjalal.setLatitude(24.8961);
         shahjalal.setLongitude(91.8690);
         shahjalal.setYoutubeVideoId("ScTmIPB5G4A");
+        shahjalal.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.spot_shahjalal,
+                R.drawable.spot_shahjalal1,
+                R.drawable.spot_shahjalal2,
+                R.drawable.spot_shahjalal3,
+                R.drawable.spot_shahjalal4
+        ));
         spots.add(shahjalal);
 
         // 2. Hazrat Shah Paran Mazar
@@ -216,6 +223,13 @@ public class DataRepository {
         shahParan.setLatitude(24.9108);
         shahParan.setLongitude(91.9220);
         shahParan.setYoutubeVideoId("qbCcINkiWbM");
+        shahParan.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.spot_shahparan,
+                R.drawable.spot_shahporan1,
+                R.drawable.spot_shahporan2,
+                R.drawable.spot_shahporan3,
+                R.drawable.spot_shahporan4
+        ));
         spots.add(shahParan);
 
         // 3. Ratargul Swamp Forest
@@ -268,6 +282,13 @@ public class DataRepository {
         jaflong.setLatitude(25.1671);
         jaflong.setLongitude(92.0313);
         jaflong.setYoutubeVideoId("QHhGeWyxntI");
+        jaflong.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.spot_jaflong,
+                R.drawable.spot_jaflong1,
+                R.drawable.spot_jaflong2,
+                R.drawable.spot_jaflong3,
+                R.drawable.spot_jaflong4
+        ));
         spots.add(jaflong);
 
         // 5. Lalakhal
@@ -288,6 +309,13 @@ public class DataRepository {
         lalakhal.setLatitude(25.1020);
         lalakhal.setLongitude(92.0764);
         lalakhal.setYoutubeVideoId("-FT5qgbxAUY");
+        lalakhal.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.spot_lalakhal,
+                R.drawable.spot_lalakhal1,
+                R.drawable.spot_lalakhal2,
+                R.drawable.spot_lalakhal3,
+                R.drawable.spot_lalakhal4
+        ));
         spots.add(lalakhal);
 
         // 6. Bichanakandi
@@ -308,6 +336,13 @@ public class DataRepository {
         bichanakandi.setLatitude(25.0873);
         bichanakandi.setLongitude(91.9671);
         bichanakandi.setYoutubeVideoId("yJWh34w-05U");
+        bichanakandi.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.spot_bichanakandi,
+                R.drawable.spot_bichanakandi1,
+                R.drawable.spot_bichanakandi2,
+                R.drawable.spot_bichanakandi3,
+                R.drawable.spot_bichanakandi4
+        ));
         spots.add(bichanakandi);
 
         // 7. Dibir Haor
@@ -328,6 +363,13 @@ public class DataRepository {
         dibirHaor.setLatitude(25.0833);
         dibirHaor.setLongitude(91.4167);
         dibirHaor.setYoutubeVideoId("43_EH6k4Mug");
+        dibirHaor.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.spot_dibir_haor,
+                R.drawable.spot_dibirhaor1,
+                R.drawable.spot_dibirhaor2,
+                R.drawable.spot_dibirhaor3,
+                R.drawable.spot_dibirhaor4
+        ));
         spots.add(dibirHaor);
 
         // 8. Lakkatura Tea Garden
@@ -344,6 +386,15 @@ public class DataRepository {
         lakkatura.setEntranceFee("Free entry (it is a working tea garden — please respect the workers)");
         lakkatura.setBestTimeToVisit("Year-round. October to March has clear skies. Early morning is best for photography.");
         lakkatura.setTravelTips("Visit in the early morning when tea pickers are working for authentic photography. This is a great spot to combine with airport transfers. Stay on designated paths — do not disturb the tea plants.");
+        lakkatura.setWarnings("⚠️ This is a private working tea estate. Entering restricted plantation areas without permission is prohibited. Be respectful to workers.");
+        lakkatura.setLatitude(24.9630);
+        lakkatura.setLongitude(91.8930);
+        lakkatura.setYoutubeVideoId("NzCQK_y9nuk");
+        lakkatura.setGalleryImages(java.util.Arrays.asList(
+                R.drawable.spot_lakkatura,
+                R.drawable.spot_tea_garden
+        ));
+        spots.add(lakkatura);
         lakkatura.setWarnings("⚠️ This is a private working tea estate. Entering restricted plantation areas without permission is prohibited. Be respectful to workers.");
         lakkatura.setLatitude(24.9630);
         lakkatura.setLongitude(91.8930);

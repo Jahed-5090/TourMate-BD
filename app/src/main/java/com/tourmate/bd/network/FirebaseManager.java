@@ -51,7 +51,7 @@ public class FirebaseManager {
             // Perform asynchronous background sync operation / notification for guest
             handler.postDelayed(() -> {
                 if (callback != null) {
-                    callback.onSyncSuccess("অতিথি মোড: " + localFavorites.size() + " টি স্থান সংরক্ষিত। ক্লাউডে সুরক্ষিত রাখতে লগইন করুন।");
+                    callback.onSyncSuccess("Guest Mode: " + localFavorites.size() + " number of places saved. Login to sync in cloud.");
                 }
             }, 800);
         }

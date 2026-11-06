@@ -173,6 +173,68 @@ public class TourMateDatabaseHelper extends SQLiteOpenHelper {
         return notes;
     }
 
+    // ─────────────────────────────────────────────────────────────────────────
+    // Asynchronous Multithreaded Database Operations (Background Execution)
+    // ─────────────────────────────────────────────────────────────────────────
+
+    public interface DatabaseCallback<T> {
+        void onResult(T result);
+    }
+
+    public void addFavoriteAsync(TouristSpot spot, DatabaseCallback<Boolean> callback) {
+        com.tourmate.bd.utils.AppExecutors.getInstance().diskIO().execute(() -> {
+            boolean success = addFavorite(spot);
+            com.tourmate.bd.utils.AppExecutors.getInstance().mainThread().execute(() -> {
+                if (callback != null) callback.onResult(success);
+            });
+        });
+    }
+
+    public void removeFavoriteAsync(String spotId, DatabaseCallback<Boolean> callback) {
+        com.tourmate.bd.utils.AppExecutors.getInstance().diskIO().execute(() -> {
+            boolean success = removeFavorite(spotId);
+            com.tourmate.bd.utils.AppExecutors.getInstance().mainThread().execute(() -> {
+                if (callback != null) callback.onResult(success);
+            });
+        });
+    }
+
+    public void isFavoriteAsync(String spotId, DatabaseCallback<Boolean> callback) {
+        com.tourmate.bd.utils.AppExecutors.getInstance().diskIO().execute(() -> {
+            boolean isFav = isFavorite(spotId);
+            com.tourmate.bd.utils.AppExecutors.getInstance().mainThread().execute(() -> {
+                if (callback != null) callback.onResult(isFav);
+            });
+        });
+    }
+
+    public void getAllFavoriteSpotIdsAsync(DatabaseCallback<List<String>> callback) {
+        com.tourmate.bd.utils.AppExecutors.getInstance().diskIO().execute(() -> {
+            List<String> list = getAllFavoriteSpotIds();
+            com.tourmate.bd.utils.AppExecutors.getInstance().mainThread().execute(() -> {
+                if (callback != null) callback.onResult(list);
+            });
+        });
+    }
+
+    public void addNoteAsync(String spotId, String noteText, DatabaseCallback<Boolean> callback) {
+        com.tourmate.bd.utils.AppExecutors.getInstance().diskIO().execute(() -> {
+            boolean success = addNote(spotId, noteText);
+            com.tourmate.bd.utils.AppExecutors.getInstance().mainThread().execute(() -> {
+                if (callback != null) callback.onResult(success);
+            });
+        });
+    }
+
+    public void getNotesForSpotAsync(String spotId, DatabaseCallback<List<String>> callback) {
+        com.tourmate.bd.utils.AppExecutors.getInstance().diskIO().execute(() -> {
+            List<String> notes = getNotesForSpot(spotId);
+            com.tourmate.bd.utils.AppExecutors.getInstance().mainThread().execute(() -> {
+                if (callback != null) callback.onResult(notes);
+            });
+        });
+    }
+
     // Direct cursor accessor for ContentProvider
     public Cursor queryFavorites(String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         SQLiteDatabase db = getReadableDatabase();

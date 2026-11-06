@@ -6,7 +6,6 @@ import com.tourmate.bd.models.Division;
 import com.tourmate.bd.models.TouristSpot;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -77,6 +76,39 @@ public class DataRepository {
             }
         }
         return null;
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Multithreaded Asynchronous Search & Processing
+    // ─────────────────────────────────────────────────────────────────────────
+
+    public interface RepositoryCallback<T> {
+        void onResult(T result);
+    }
+
+    public void searchSpotsAsync(String query, RepositoryCallback<List<TouristSpot>> callback) {
+        com.tourmate.bd.utils.AppExecutors.getInstance().diskIO().execute(() -> {
+            List<TouristSpot> matches = new ArrayList<>();
+            if (query != null && !query.trim().isEmpty()) {
+                String q = query.trim().toLowerCase();
+                for (Division div : divisions) {
+                    for (District dist : div.getDistricts()) {
+                        if (dist.getSpots() != null) {
+                            for (TouristSpot spot : dist.getSpots()) {
+                                if (spot.getName().toLowerCase().contains(q) ||
+                                        (spot.getNameBn() != null && spot.getNameBn().contains(q)) ||
+                                        (spot.getShortDescription() != null && spot.getShortDescription().toLowerCase().contains(q))) {
+                                    matches.add(spot);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            com.tourmate.bd.utils.AppExecutors.getInstance().mainThread().execute(() -> {
+                if (callback != null) callback.onResult(matches);
+            });
+        });
     }
 
     // ─────────────────────────────────────────────────────────────────────────

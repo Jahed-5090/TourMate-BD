@@ -150,20 +150,23 @@ public class SpotDetailActivity extends AppCompatActivity {
     private void setupFavoritesAndNotes() {
         TourMateDatabaseHelper dbHelper = TourMateDatabaseHelper.getInstance(this);
 
-        boolean isFav = dbHelper.isFavorite(spot.getId());
-        updateFavoriteIcon(isFav);
+        // Multithreaded Async Database check
+        dbHelper.isFavoriteAsync(spot.getId(), isFav -> updateFavoriteIcon(Boolean.TRUE.equals(isFav)));
 
         binding.btnToggleFavorite.setOnClickListener(v -> {
-            boolean currentFav = dbHelper.isFavorite(spot.getId());
-            if (currentFav) {
-                dbHelper.removeFavorite(spot.getId());
-                updateFavoriteIcon(false);
-                Toast.makeText(this, "Removed from Favorites", Toast.LENGTH_SHORT).show();
-            } else {
-                dbHelper.addFavorite(spot);
-                updateFavoriteIcon(true);
-                Toast.makeText(this, "Added to Favorites", Toast.LENGTH_SHORT).show();
-            }
+            dbHelper.isFavoriteAsync(spot.getId(), currentFav -> {
+                if (Boolean.TRUE.equals(currentFav)) {
+                    dbHelper.removeFavoriteAsync(spot.getId(), success -> {
+                        updateFavoriteIcon(false);
+                        Toast.makeText(this, "Removed from Favorites", Toast.LENGTH_SHORT).show();
+                    });
+                } else {
+                    dbHelper.addFavoriteAsync(spot, success -> {
+                        updateFavoriteIcon(true);
+                        Toast.makeText(this, "Added to Favorites", Toast.LENGTH_SHORT).show();
+                    });
+                }
+            });
         });
 
         loadSavedNotes();
@@ -171,14 +174,15 @@ public class SpotDetailActivity extends AppCompatActivity {
         binding.btnSaveNote.setOnClickListener(v -> {
             String noteText = binding.etNewNote.getText().toString().trim();
             if (!noteText.isEmpty()) {
-                boolean success = dbHelper.addNote(spot.getId(), noteText);
-                if (success) {
-                    binding.etNewNote.setText("");
-                    loadSavedNotes();
-                    Toast.makeText(this, "Note saved successfully", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(this, "Failed to save note", Toast.LENGTH_SHORT).show();
-                }
+                dbHelper.addNoteAsync(spot.getId(), noteText, success -> {
+                    if (Boolean.TRUE.equals(success)) {
+                        binding.etNewNote.setText("");
+                        loadSavedNotes();
+                        Toast.makeText(this, "Note saved successfully", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(this, "Failed to save note", Toast.LENGTH_SHORT).show();
+                    }
+                });
             } else {
                 Toast.makeText(this, "Please write a note first", Toast.LENGTH_SHORT).show();
             }
@@ -196,18 +200,19 @@ public class SpotDetailActivity extends AppCompatActivity {
     }
 
     private void loadSavedNotes() {
-        List<String> notes = TourMateDatabaseHelper.getInstance(this).getNotesForSpot(spot.getId());
-        if (notes != null && !notes.isEmpty()) {
-            StringBuilder sb = new StringBuilder();
-            sb.append("সংরক্ষিত নোটসমূহ:\n");
-            for (String note : notes) {
-                sb.append("• ").append(note).append("\n");
+        TourMateDatabaseHelper.getInstance(this).getNotesForSpotAsync(spot.getId(), notes -> {
+            if (notes != null && !notes.isEmpty()) {
+                StringBuilder sb = new StringBuilder();
+                sb.append("সংরক্ষিত নোটসমূহ:\n");
+                for (String note : notes) {
+                    sb.append("• ").append(note).append("\n");
+                }
+                binding.tvSavedNotes.setText(sb.toString().trim());
+                binding.tvSavedNotes.setVisibility(View.VISIBLE);
+            } else {
+                binding.tvSavedNotes.setVisibility(View.GONE);
             }
-            binding.tvSavedNotes.setText(sb.toString().trim());
-            binding.tvSavedNotes.setVisibility(View.VISIBLE);
-        } else {
-            binding.tvSavedNotes.setVisibility(View.GONE);
-        }
+        });
     }
 
     private void fetchSpotWeather() {

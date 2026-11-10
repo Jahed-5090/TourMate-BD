@@ -11,6 +11,10 @@
             android:icon="@drawable/ic_person"
             android:title="My Profile"/>
         <item
+            android:id="@+id/nav_add_spot"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="Add Spot (Admin)"/>
+        <item
             android:id="@+id/nav_cloud_sync"
             android:icon="@drawable/ic_nav_cloud"
             android:title="Cloud Sync"/>

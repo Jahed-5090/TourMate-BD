@@ -65,6 +65,51 @@ public class DataRepository {
         return new ArrayList<>();
     }
 
+    public void addDynamicSpot(TouristSpot spot) {
+        if (spot == null || spot.getDistrictId() == null) return;
+        District dist = getDistrictById(spot.getDistrictId());
+        if (dist != null) {
+            List<TouristSpot> currentSpots = dist.getSpots();
+            if (currentSpots == null) currentSpots = new ArrayList<>();
+            // Check if already exists to avoid duplicates
+            boolean exists = false;
+            for (TouristSpot s : currentSpots) {
+                if (s.getId().equals(spot.getId())) {
+                    exists = true;
+                    break;
+                }
+            }
+            if (!exists) {
+                currentSpots.add(spot);
+                dist.setSpots(currentSpots);
+            }
+        }
+    }
+
+    public void updateSpot(TouristSpot updatedSpot) {
+        if (updatedSpot == null || updatedSpot.getId() == null) return;
+        boolean found = false;
+        for (Division div : divisions) {
+            for (District dist : div.getDistricts()) {
+                if (dist.getSpots() != null) {
+                    List<TouristSpot> spotsList = dist.getSpots();
+                    for (int i = 0; i < spotsList.size(); i++) {
+                        if (spotsList.get(i).getId().equals(updatedSpot.getId())) {
+                            spotsList.set(i, updatedSpot);
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                if (found) break;
+            }
+            if (found) break;
+        }
+        if (!found) {
+            addDynamicSpot(updatedSpot);
+        }
+    }
+
     public TouristSpot getSpotById(String id) {
         for (Division div : divisions) {
             for (District dist : div.getDistricts()) {

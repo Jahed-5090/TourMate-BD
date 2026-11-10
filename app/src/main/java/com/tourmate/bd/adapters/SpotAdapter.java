@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.firestore.Blob;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.tourmate.bd.R;
 import com.tourmate.bd.models.TouristSpot;
 
@@ -72,7 +74,29 @@ public class SpotAdapter extends RecyclerView.Adapter<SpotAdapter.SpotViewHolder
         }
 
         void bind(TouristSpot spot, int number) {
-            ivSpot.setImageResource(spot.getImageResId());
+            if (spot.getImageUrl() != null && !spot.getImageUrl().isEmpty()) {
+                if (spot.getImageUrl().startsWith("firestore:")) {
+                    String docId = spot.getImageUrl().replace("firestore:", "");
+                    FirebaseFirestore.getInstance().collection("spot_images").document(docId).get()
+                            .addOnSuccessListener(document -> {
+                                Blob imageBlob = document.getBlob("image_blob");
+                                if (imageBlob != null) {
+                                    byte[] imageByteArray = imageBlob.toBytes();
+                                    com.bumptech.glide.Glide.with(context)
+                                            .load(imageByteArray)
+                                            .placeholder(R.drawable.placeholder_spot)
+                                            .into(ivSpot);
+                                }
+                            });
+                } else {
+                    com.bumptech.glide.Glide.with(context)
+                            .load(spot.getImageUrl())
+                            .placeholder(R.drawable.placeholder_spot)
+                            .into(ivSpot);
+                }
+            } else {
+                ivSpot.setImageResource(spot.getImageResId() != 0 ? spot.getImageResId() : R.drawable.placeholder_spot);
+            }
             tvNumber.setText(String.valueOf(number));
             tvName.setText(spot.getName());
             tvNameBn.setText(spot.getNameBn());

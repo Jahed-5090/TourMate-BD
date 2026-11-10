@@ -32,6 +32,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.Blob;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.tourmate.bd.adapters.CommentAdapter;
 import com.tourmate.bd.adapters.SpotPhotoAdapter;
 import com.tourmate.bd.models.SpotComment;
@@ -79,36 +81,85 @@ public class SpotDetailActivity extends AppCompatActivity {
         fetchSpotWeather();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (spot != null) {
+            TouristSpot updated = DataRepository.getInstance().getSpotById(spot.getId());
+            if (updated != null) {
+                spot = updated;
+                populateData();
+                setupPhotoGallery();
+                setupYouTubePlayer();
+            }
+        }
+        invalidateOptionsMenu();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        FirebaseUser currentUser = FirebaseAuthManager.getInstance().getCurrentUser();
+        if (currentUser != null && "jmjahed47@gmail.com".equalsIgnoreCase(currentUser.getEmail())) {
+            menu.add(0, 1001, 0, "Edit Spot")
+                    .setIcon(android.R.drawable.ic_menu_edit)
+                    .setShowAsAction(android.view.MenuItem.SHOW_AS_ACTION_ALWAYS);
+        }
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item) {
+        if (item.getItemId() == 1001) {
+            Intent intent = new Intent(this, EditSpotActivity.class);
+            intent.putExtra(EditSpotActivity.EXTRA_SPOT_ID, spot.getId());
+            startActivity(intent);
+            return true;
+        }
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private void setupPhotoGallery() {
-        List<Integer> rawPhotos = spot.getGalleryImages();
-        List<Integer> photos = new java.util.ArrayList<>();
-        if (rawPhotos != null) {
-            for (Integer resId : rawPhotos) {
-                if (resId != null && !photos.contains(resId)) {
-                    photos.add(resId);
+        List<SpotPhotoAdapter.PhotoItem> photoItems = new ArrayList<>();
+
+        if (spot.getGalleryImages() != null) {
+            for (Integer resId : spot.getGalleryImages()) {
+                if (resId != null && resId != 0) {
+                    photoItems.add(new SpotPhotoAdapter.PhotoItem(resId));
                 }
             }
         }
 
-        if (!photos.isEmpty()) {
-            final List<Integer> galleryPhotos = photos;
+        if (spot.getGalleryImageUrls() != null) {
+            for (String url : spot.getGalleryImageUrls()) {
+                if (url != null && !url.trim().isEmpty()) {
+                    photoItems.add(new SpotPhotoAdapter.PhotoItem(url));
+                }
+            }
+        }
+
+        if (!photoItems.isEmpty()) {
+            final List<SpotPhotoAdapter.PhotoItem> finalItems = photoItems;
             binding.cardPhotoGallery.setVisibility(View.VISIBLE);
-            binding.tvPhotoCount.setText(galleryPhotos.size() + " Photo" + (galleryPhotos.size() > 1 ? "s" : ""));
+            binding.tvPhotoCount.setText(finalItems.size() + " Photo" + (finalItems.size() > 1 ? "s" : ""));
 
             LinearLayoutManager lm = new LinearLayoutManager(
                     this, LinearLayoutManager.HORIZONTAL, false);
             binding.rvPhotoGallery.setLayoutManager(lm);
 
-            SpotPhotoAdapter adapter = new SpotPhotoAdapter(this, galleryPhotos, (resId, position) -> {
-                showFullScreenGalleryDialog(galleryPhotos, position);
-            });
+            SpotPhotoAdapter adapter = new SpotPhotoAdapter(this, finalItems, (item, position) -> {
+                showFullScreenGalleryDialog(finalItems, position);
+            }, true);
             binding.rvPhotoGallery.setAdapter(adapter);
         } else {
             binding.cardPhotoGallery.setVisibility(View.GONE);
         }
     }
 
-    private void showFullScreenGalleryDialog(List<Integer> photos, int startPosition) {
+    private void showFullScreenGalleryDialog(List<SpotPhotoAdapter.PhotoItem> photos, int startPosition) {
         if (photos == null || photos.isEmpty()) return;
 
         android.app.Dialog dialog = new android.app.Dialog(this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
@@ -337,7 +388,29 @@ public class SpotDetailActivity extends AppCompatActivity {
 
     private void populateData() {
         // Header image
-        binding.ivSpotHeader.setImageResource(spot.getImageResId());
+        if (spot.getImageUrl() != null && !spot.getImageUrl().isEmpty()) {
+            if (spot.getImageUrl().startsWith("firestore:")) {
+                String docId = spot.getImageUrl().replace("firestore:", "");
+                FirebaseFirestore.getInstance().collection("spot_images").document(docId).get()
+                        .addOnSuccessListener(document -> {
+                            Blob imageBlob = document.getBlob("image_blob");
+                            if (imageBlob != null) {
+                                byte[] imageByteArray = imageBlob.toBytes();
+                                com.bumptech.glide.Glide.with(this)
+                                        .load(imageByteArray)
+                                        .placeholder(R.drawable.placeholder_spot)
+                                        .into(binding.ivSpotHeader);
+                            }
+                        });
+            } else {
+                com.bumptech.glide.Glide.with(this)
+                        .load(spot.getImageUrl())
+                        .placeholder(R.drawable.placeholder_spot)
+                        .into(binding.ivSpotHeader);
+            }
+        } else {
+            binding.ivSpotHeader.setImageResource(spot.getImageResId() != 0 ? spot.getImageResId() : R.drawable.placeholder_spot);
+        }
 
         // Names
         binding.tvSpotName.setText(spot.getName());
@@ -484,14 +557,7 @@ public class SpotDetailActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+    // Option items merged above
 
     @Override
     public void onBackPressed() {

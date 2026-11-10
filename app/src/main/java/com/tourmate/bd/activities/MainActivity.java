@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity
         setupDivisionGrid();
         setupNetworkReceiver();
         fetchLiveWeather();
+        
+        FirebaseManager.getInstance().listenForNewSpots(this);
     }
 
     @Override
@@ -67,6 +69,16 @@ public class MainActivity extends AppCompatActivity
         super.onResume();
         updateThemeToggleUI();
         updateUserNavHeader();
+        updateAdminMenu();
+    }
+
+    private void updateAdminMenu() {
+        MenuItem addSpotItem = binding.navView.getMenu().findItem(R.id.nav_add_spot);
+        if (addSpotItem != null) {
+            FirebaseUser currentUser = FirebaseAuthManager.getInstance().getCurrentUser();
+            boolean isMasterAdmin = currentUser != null && "jmjahed47@gmail.com".equalsIgnoreCase(currentUser.getEmail());
+            addSpotItem.setVisible(isMasterAdmin);
+        }
     }
 
     private void updateUserNavHeader() {
@@ -268,6 +280,8 @@ public class MainActivity extends AppCompatActivity
             }
         } else if (id == R.id.nav_cloud_sync) {
             triggerCloudSync();
+        } else if (id == R.id.nav_add_spot) {
+            startActivity(new Intent(this, AddSpotActivity.class));
         } else if (id == R.id.nav_theme_toggle) {
             handleThemeToggle();
         } else if (id == R.id.nav_about) {

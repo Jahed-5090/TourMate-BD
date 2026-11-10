@@ -9,21 +9,25 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.google.firebase.firestore.Blob;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.tourmate.bd.R;
 
 import java.util.List;
 
 /**
  * RecyclerView Adapter for ViewPager2 full-screen swipeable photo gallery.
+ * Supports static drawable resources, dynamic Firestore Blobs, and local Uris.
  */
 public class FullScreenImageAdapter extends RecyclerView.Adapter<FullScreenImageAdapter.ViewHolder> {
 
     private final Context context;
-    private final List<Integer> imageResIds;
+    private final List<SpotPhotoAdapter.PhotoItem> items;
 
-    public FullScreenImageAdapter(Context context, List<Integer> imageResIds) {
+    public FullScreenImageAdapter(Context context, List<SpotPhotoAdapter.PhotoItem> items) {
         this.context = context;
-        this.imageResIds = imageResIds;
+        this.items = items;
     }
 
     @NonNull
@@ -35,13 +39,43 @@ public class FullScreenImageAdapter extends RecyclerView.Adapter<FullScreenImage
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        int resId = imageResIds.get(position);
-        holder.imageView.setImageResource(resId);
+        SpotPhotoAdapter.PhotoItem item = items.get(position);
+
+        if (item.uri != null) {
+            Glide.with(context)
+                    .load(item.uri)
+                    .placeholder(R.drawable.placeholder_spot)
+                    .into(holder.imageView);
+        } else if (item.url != null && !item.url.isEmpty()) {
+            if (item.url.startsWith("firestore:")) {
+                String docId = item.url.replace("firestore:", "");
+                FirebaseFirestore.getInstance().collection("spot_images").document(docId).get()
+                        .addOnSuccessListener(document -> {
+                            Blob imageBlob = document.getBlob("image_blob");
+                            if (imageBlob != null) {
+                                byte[] imageByteArray = imageBlob.toBytes();
+                                Glide.with(context)
+                                        .load(imageByteArray)
+                                        .placeholder(R.drawable.placeholder_spot)
+                                        .into(holder.imageView);
+                            }
+                        });
+            } else {
+                Glide.with(context)
+                        .load(item.url)
+                        .placeholder(R.drawable.placeholder_spot)
+                        .into(holder.imageView);
+            }
+        } else if (item.resId != null && item.resId != 0) {
+            holder.imageView.setImageResource(item.resId);
+        } else {
+            holder.imageView.setImageResource(R.drawable.placeholder_spot);
+        }
     }
 
     @Override
     public int getItemCount() {
-        return imageResIds.size();
+        return items != null ? items.size() : 0;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

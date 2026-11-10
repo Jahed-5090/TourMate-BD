@@ -4,12 +4,20 @@
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-78:/layout/activity_register.xml"
     },
     {
+        "merged": "com.tourmate.bd.app-mergeDebugResources-75:/layout/activity_add_spot.xml",
+        "source": "com.tourmate.bd.app-main-78:/layout/activity_add_spot.xml"
+    },
+    {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-mergeDebugResources-75:/layout/activity_login.xml",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-78:/layout/activity_login.xml"
     },
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-mergeDebugResources-75:/layout/item_comment.xml",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-78:/layout/item_comment.xml"
+    },
+    {
+        "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-mergeDebugResources-75:/layout/activity_edit_spot.xml",
+        "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-78:/layout/activity_edit_spot.xml"
     },
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-mergeDebugResources-75:/layout/item_full_screen_image.xml",
@@ -20,20 +28,20 @@
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-78:/layout/item_district.xml"
     },
     {
-        "merged": "com.tourmate.bd.app-mergeDebugResources-75:/layout/activity_about.xml",
-        "source": "com.tourmate.bd.app-main-78:/layout/activity_about.xml"
-    },
-    {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-mergeDebugResources-75:/layout/nav_header.xml",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-78:/layout/nav_header.xml"
     },
     {
-        "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-mergeDebugResources-75:/layout/activity_splash.xml",
-        "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-78:/layout/activity_splash.xml"
+        "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-mergeDebugResources-75:/layout/activity_add_spot.xml",
+        "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-78:/layout/activity_add_spot.xml"
     },
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-mergeDebugResources-75:/layout/activity_about.xml",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-78:/layout/activity_about.xml"
+    },
+    {
+        "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-mergeDebugResources-75:/layout/activity_splash.xml",
+        "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-78:/layout/activity_splash.xml"
     },
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-mergeDebugResources-75:/layout/item_spot.xml",
@@ -70,5 +78,9 @@
     {
         "merged": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-mergeDebugResources-75:/layout/activity_profile.xml",
         "source": "/Users/jahedahmed/.gradle/daemon/8.7/com.tourmate.bd.app-main-78:/layout/activity_profile.xml"
+    },
+    {
+        "merged": "com.tourmate.bd.app-mergeDebugResources-75:/layout/activity_edit_spot.xml",
+        "source": "com.tourmate.bd.app-main-78:/layout/activity_edit_spot.xml"
     }
 ]

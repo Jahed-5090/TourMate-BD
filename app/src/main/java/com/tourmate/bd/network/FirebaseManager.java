@@ -67,4 +67,71 @@ public class FirebaseManager {
             }
         }, 800);
     }
+
+    public void listenForNewSpots(android.content.Context context) {
+        com.google.firebase.database.DatabaseReference spotsRef = com.google.firebase.database.FirebaseDatabase.getInstance().getReference("dynamic_spots");
+        spotsRef.addChildEventListener(new com.google.firebase.database.ChildEventListener() {
+            @Override
+            public void onChildAdded(@androidx.annotation.NonNull com.google.firebase.database.DataSnapshot snapshot, @androidx.annotation.Nullable String previousChildName) {
+                com.tourmate.bd.models.TouristSpot spot = snapshot.getValue(com.tourmate.bd.models.TouristSpot.class);
+                if (spot != null) {
+                    com.tourmate.bd.data.DataRepository.getInstance().addDynamicSpot(spot);
+                    
+                    if (FirebaseAuthManager.getInstance().isLoggedIn()) {
+                        String uid = FirebaseAuthManager.getInstance().getCurrentUser().getUid();
+                        android.content.SharedPreferences prefs = context.getSharedPreferences("tourmate_prefs", android.content.Context.MODE_PRIVATE);
+                        long lastNotified = prefs.getLong("last_notified_" + uid, 0);
+                        
+                        if (spot.getTimestamp() > lastNotified) {
+                            sendNewSpotNotification(context, spot);
+                            prefs.edit().putLong("last_notified_" + uid, spot.getTimestamp()).apply();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onChildChanged(@androidx.annotation.NonNull com.google.firebase.database.DataSnapshot snapshot, @androidx.annotation.Nullable String previousChildName) {
+                com.tourmate.bd.models.TouristSpot spot = snapshot.getValue(com.tourmate.bd.models.TouristSpot.class);
+                if (spot != null) {
+                    com.tourmate.bd.data.DataRepository.getInstance().updateSpot(spot);
+                }
+            }
+
+            @Override
+            public void onChildRemoved(@androidx.annotation.NonNull com.google.firebase.database.DataSnapshot snapshot) {}
+
+            @Override
+            public void onChildMoved(@androidx.annotation.NonNull com.google.firebase.database.DataSnapshot snapshot, @androidx.annotation.Nullable String previousChildName) {}
+
+            @Override
+            public void onCancelled(@androidx.annotation.NonNull com.google.firebase.database.DatabaseError error) {}
+        });
+    }
+
+    private void sendNewSpotNotification(android.content.Context context, com.tourmate.bd.models.TouristSpot spot) {
+        String channelId = "new_spots_channel";
+        android.app.NotificationManager notificationManager = (android.app.NotificationManager) context.getSystemService(android.content.Context.NOTIFICATION_SERVICE);
+        
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            android.app.NotificationChannel channel = new android.app.NotificationChannel(
+                    channelId, "New Tourist Spots", android.app.NotificationManager.IMPORTANCE_DEFAULT);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        String districtName = "a district";
+        com.tourmate.bd.models.District dist = com.tourmate.bd.data.DataRepository.getInstance().getDistrictById(spot.getDistrictId());
+        if (dist != null) districtName = dist.getName();
+
+        androidx.core.app.NotificationCompat.Builder builder = new androidx.core.app.NotificationCompat.Builder(context, channelId)
+                .setSmallIcon(android.R.drawable.ic_dialog_info)
+                .setContentTitle("New Tourist Spot Added!")
+                .setContentText(spot.getName() + " has been added in " + districtName + ".")
+                .setPriority(androidx.core.app.NotificationCompat.PRIORITY_DEFAULT)
+                .setAutoCancel(true);
+
+        if (androidx.core.content.ContextCompat.checkSelfPermission(context, android.Manifest.permission.POST_NOTIFICATIONS) == android.content.pm.PackageManager.PERMISSION_GRANTED || android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.TIRAMISU) {
+            notificationManager.notify(spot.getId().hashCode(), builder.build());
+        }
+    }
 }

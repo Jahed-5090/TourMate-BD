@@ -42,8 +42,13 @@ public class TouristSpot {
 
     // Media
     private int imageResId;            // Primary image
-    private List<Integer> galleryImages; // Gallery images
+    private String imageUrl;           // Firebase Storage URL for dynamic spots
+    private List<Integer> galleryImages; // Gallery images (resource IDs)
+    private List<String> galleryImageUrls; // Dynamic gallery image URLs (Firestore / external)
     private String youtubeVideoId;     // YouTube Video ID (e.g. "dQw4w9WgXcQ")
+
+    // Dynamic sync metadata
+    private long timestamp;
 
     // Category
     private SpotCategory category;
@@ -62,6 +67,10 @@ public class TouristSpot {
         private final String displayName;
         SpotCategory(String displayName) { this.displayName = displayName; }
         public String getDisplayName() { return displayName; }
+    }
+
+    public TouristSpot() {
+        // Empty constructor needed for Firebase
     }
 
     public TouristSpot(String id, String districtId, String name, String nameBn,
@@ -99,11 +108,19 @@ public class TouristSpot {
     public double getLongitude() { return longitude; }
     public String getGoogleMapsLink() { return googleMapsLink; }
     public int getImageResId() { return imageResId; }
+    public String getImageUrl() { return imageUrl; }
     public List<Integer> getGalleryImages() { return galleryImages; }
+    public List<String> getGalleryImageUrls() { return galleryImageUrls; }
     public String getYoutubeVideoId() { return youtubeVideoId; }
     public SpotCategory getCategory() { return category; }
+    public long getTimestamp() { return timestamp; }
 
     // ---- Setters ----
+    public void setId(String id) { this.id = id; }
+    public void setDistrictId(String districtId) { this.districtId = districtId; }
+    public void setName(String name) { this.name = name; }
+    public void setNameBn(String nameBn) { this.nameBn = nameBn; }
+    public void setShortDescription(String shortDescription) { this.shortDescription = shortDescription; }
     public void setFullDescription(String fullDescription) { this.fullDescription = fullDescription; }
     public void setHowToReach(String howToReach) { this.howToReach = howToReach; }
     public void setTransportOptions(String transportOptions) { this.transportOptions = transportOptions; }
@@ -122,5 +139,9 @@ public class TouristSpot {
     public void setLongitude(double longitude) { this.longitude = longitude; }
     public void setGoogleMapsLink(String googleMapsLink) { this.googleMapsLink = googleMapsLink; }
     public void setGalleryImages(List<Integer> galleryImages) { this.galleryImages = galleryImages; }
+    public void setGalleryImageUrls(List<String> galleryImageUrls) { this.galleryImageUrls = galleryImageUrls; }
     public void setYoutubeVideoId(String youtubeVideoId) { this.youtubeVideoId = youtubeVideoId; }
+    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
+    public void setCategory(SpotCategory category) { this.category = category; }
+    public void setTimestamp(long timestamp) { this.timestamp = timestamp; }
 }

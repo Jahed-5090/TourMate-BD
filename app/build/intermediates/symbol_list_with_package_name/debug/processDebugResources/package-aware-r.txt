@@ -3529,7 +3529,9 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btn_add_gallery_image
 id btn_change_email
+id btn_change_header_image
 id btn_change_password
 id btn_close_gallery
 id btn_delete_comment
@@ -3540,7 +3542,10 @@ id btn_logout
 id btn_open_maps
 id btn_post_comment
 id btn_register
+id btn_save_changes
 id btn_save_note
+id btn_save_spot
+id btn_select_image
 id btn_theme_toggle
 id btn_toggle_favorite
 id btn_watch_youtube
@@ -3643,12 +3648,24 @@ id endToStart
 id enterAlways
 id enterAlwaysCollapsed
 id escape
+id et_best_time
 id et_comment_input
 id et_confirm_password
+id et_cost_sylhet
 id et_email
+id et_entrance_fee
+id et_full_desc
+id et_how_to_reach
 id et_name
+id et_name_bn
+id et_name_en
 id et_new_note
 id et_password
+id et_short_desc
+id et_transport
+id et_travel_tips
+id et_warnings
+id et_youtube_id
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3709,6 +3726,8 @@ id iv_district
 id iv_division
 id iv_full_screen
 id iv_gallery_photo
+id iv_header_preview
+id iv_preview
 id iv_profile_avatar
 id iv_spot
 id iv_spot_header
@@ -3794,6 +3813,7 @@ id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
 id nav_about
+id nav_add_spot
 id nav_auth
 id nav_cloud_sync
 id nav_controller_view_tag
@@ -3876,6 +3896,7 @@ id rtl
 id rv_comments
 id rv_districts
 id rv_divisions
+id rv_edit_gallery
 id rv_favorites
 id rv_photo_gallery
 id rv_spots
@@ -3922,6 +3943,8 @@ id software
 id south
 id spacer
 id special_effects_controller_view_tag
+id spinner_district
+id spinner_division
 id spline
 id split_action_bar
 id spread
@@ -4020,6 +4043,7 @@ id tv_division_name_bn
 id tv_empty_spots
 id tv_entrance_fee
 id tv_favorites_count
+id tv_gallery_count
 id tv_go_to_login
 id tv_go_to_register
 id tv_hotels
@@ -4196,7 +4220,9 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_about
+layout activity_add_spot
 layout activity_district_list
+layout activity_edit_spot
 layout activity_login
 layout activity_main
 layout activity_profile

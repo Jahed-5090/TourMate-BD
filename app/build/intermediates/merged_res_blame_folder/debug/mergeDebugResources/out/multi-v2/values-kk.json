@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.tourmate.bd.app-mergeDebugResources-74:/values-kk/values-kk.xml",
+            "outputFile": "com.tourmate.bd.app-mergeDebugResources-82:/values-kk/values-kk.xml",
             "map": [
                 {
                     "source": "/Users/jahedahmed/.gradle/caches/transforms-4/c6bd033c083d4eb692ffc566e4a6781d/transformed/navigation-ui-2.7.7/res/values-kk/values-kk.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.tourmate.bd.app-mergeDebugResources-74:/values-da/values-da.xml",
+            "outputFile": "com.tourmate.bd.app-mergeDebugResources-82:/values-da/values-da.xml",
             "map": [
                 {
                     "source": "/Users/jahedahmed/.gradle/caches/transforms-4/6808231ed99f6293a8803c94551a2f01/transformed/jetified-credentials-1.2.0-rc01/res/values-da/values-da.xml",

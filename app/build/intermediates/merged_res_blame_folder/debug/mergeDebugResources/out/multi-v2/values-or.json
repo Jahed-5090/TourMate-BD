@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.tourmate.bd.app-mergeDebugResources-74:/values-or/values-or.xml",
+            "outputFile": "com.tourmate.bd.app-mergeDebugResources-82:/values-or/values-or.xml",
             "map": [
                 {
                     "source": "/Users/jahedahmed/.gradle/caches/transforms-4/747d93c52211b83608b4634504129115/transformed/jetified-play-services-base-18.3.0/res/values-or/values.xml",

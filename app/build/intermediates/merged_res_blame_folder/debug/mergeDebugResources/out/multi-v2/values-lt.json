@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.tourmate.bd.app-mergeDebugResources-74:/values-lt/values-lt.xml",
+            "outputFile": "com.tourmate.bd.app-mergeDebugResources-82:/values-lt/values-lt.xml",
             "map": [
                 {
                     "source": "/Users/jahedahmed/.gradle/caches/transforms-4/5d31677775b8f9d7ad92e0d999937e38/transformed/browser-1.4.0/res/values-lt/values-lt.xml",

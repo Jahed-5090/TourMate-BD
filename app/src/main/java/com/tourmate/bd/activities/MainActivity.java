@@ -64,7 +64,8 @@ public class MainActivity extends AppCompatActivity
         fetchLiveWeather();
         checkNotificationPermission();
         
-        FirebaseManager.getInstance().listenForNewSpots(this);
+        Intent serviceIntent = new Intent(this, com.tourmate.bd.network.SpotSyncService.class);
+        androidx.core.content.ContextCompat.startForegroundService(this, serviceIntent);
     }
 
     private final ActivityResultLauncher<String> requestNotificationPermissionLauncher =

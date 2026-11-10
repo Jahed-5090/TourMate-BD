@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
 
     <application
         android:name=".TourMateApplication"
@@ -87,6 +89,12 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
             </intent-filter>
         </receiver>
+
+        <!-- Foreground Service for Instant Database Sync -->
+        <service
+            android:name=".network.SpotSyncService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
 
         <!-- Content Provider for Data Sharing -->
         <provider

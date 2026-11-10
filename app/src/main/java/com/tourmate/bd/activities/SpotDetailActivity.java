@@ -80,17 +80,27 @@ public class SpotDetailActivity extends AppCompatActivity {
     }
 
     private void setupPhotoGallery() {
-        List<Integer> photos = spot.getGalleryImages();
-        if (photos != null && !photos.isEmpty()) {
+        List<Integer> rawPhotos = spot.getGalleryImages();
+        List<Integer> photos = new java.util.ArrayList<>();
+        if (rawPhotos != null) {
+            for (Integer resId : rawPhotos) {
+                if (resId != null && !photos.contains(resId)) {
+                    photos.add(resId);
+                }
+            }
+        }
+
+        if (!photos.isEmpty()) {
+            final List<Integer> galleryPhotos = photos;
             binding.cardPhotoGallery.setVisibility(View.VISIBLE);
-            binding.tvPhotoCount.setText(photos.size() + " Photo" + (photos.size() > 1 ? "s" : ""));
+            binding.tvPhotoCount.setText(galleryPhotos.size() + " Photo" + (galleryPhotos.size() > 1 ? "s" : ""));
 
             LinearLayoutManager lm = new LinearLayoutManager(
                     this, LinearLayoutManager.HORIZONTAL, false);
             binding.rvPhotoGallery.setLayoutManager(lm);
 
-            SpotPhotoAdapter adapter = new SpotPhotoAdapter(this, photos, (resId, position) -> {
-                showFullScreenGalleryDialog(photos, position);
+            SpotPhotoAdapter adapter = new SpotPhotoAdapter(this, galleryPhotos, (resId, position) -> {
+                showFullScreenGalleryDialog(galleryPhotos, position);
             });
             binding.rvPhotoGallery.setAdapter(adapter);
         } else {

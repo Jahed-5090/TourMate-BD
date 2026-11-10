@@ -197,7 +197,6 @@ public class DataRepository {
         shahjalal.setYoutubeVideoId("ScTmIPB5G4A");
         shahjalal.setGalleryImages(java.util.Arrays.asList(
                 R.drawable.spot_shahjalal,
-                R.drawable.spot_shahjalal1,
                 R.drawable.spot_shahjalal2,
                 R.drawable.spot_shahjalal3,
                 R.drawable.spot_shahjalal4
@@ -225,7 +224,6 @@ public class DataRepository {
         shahParan.setYoutubeVideoId("qbCcINkiWbM");
         shahParan.setGalleryImages(java.util.Arrays.asList(
                 R.drawable.spot_shahparan,
-                R.drawable.spot_shahporan1,
                 R.drawable.spot_shahporan2,
                 R.drawable.spot_shahporan3,
                 R.drawable.spot_shahporan4
@@ -335,7 +333,7 @@ public class DataRepository {
         bichanakandi.setWarnings("⚠️ Boat operators frequently overcharge tourists. Negotiate FIRMLY before boarding. Standard round-trip boat fare: ৳600-800 per boat (not per person). ⚠️ The rocky surface is slippery — exercise caution. ⚠️ Can be crowded on weekends.");
         bichanakandi.setLatitude(25.0873);
         bichanakandi.setLongitude(91.9671);
-        bichanakandi.setYoutubeVideoId("yJWh34w-05U");
+        bichanakandi.setYoutubeVideoId("4jybtxUi6d4");
         bichanakandi.setGalleryImages(java.util.Arrays.asList(
                 R.drawable.spot_bichanakandi,
                 R.drawable.spot_bichanakandi1,
@@ -389,16 +387,10 @@ public class DataRepository {
         lakkatura.setWarnings("⚠️ This is a private working tea estate. Entering restricted plantation areas without permission is prohibited. Be respectful to workers.");
         lakkatura.setLatitude(24.9630);
         lakkatura.setLongitude(91.8930);
-        lakkatura.setYoutubeVideoId("NzCQK_y9nuk");
-        lakkatura.setGalleryImages(java.util.Arrays.asList(
-                R.drawable.spot_lakkatura,
-                R.drawable.spot_tea_garden
+        lakkatura.setYoutubeVideoId("hxic8wziWME");
+        lakkatura.setGalleryImages(java.util.Collections.singletonList(
+                R.drawable.spot_lakkatura
         ));
-        spots.add(lakkatura);
-        lakkatura.setWarnings("⚠️ This is a private working tea estate. Entering restricted plantation areas without permission is prohibited. Be respectful to workers.");
-        lakkatura.setLatitude(24.9630);
-        lakkatura.setLongitude(91.8930);
-        lakkatura.setYoutubeVideoId("NzCQK_y9nuk");
         spots.add(lakkatura);
 
         dist.setSpots(spots);
@@ -467,7 +459,7 @@ public class DataRepository {
         lawachara.setWarnings("⚠️ Do not hire unofficial 'guides' who approach you before reaching the park gate. Use only Forest Department certified guides. ⚠️ Maintain complete silence inside — noise disturbs wildlife. ⚠️ Do not litter — heavy fines apply.");
         lawachara.setLatitude(24.3275);
         lawachara.setLongitude(91.7856);
-        lawachara.setYoutubeVideoId("pG1Zx6sL-Ks");
+        lawachara.setYoutubeVideoId("2YNR_-sGdrg");
         lawachara.setGalleryImages(java.util.Arrays.asList(
                 R.drawable.lawachara1,
                 R.drawable.lawachara2,
@@ -492,7 +484,7 @@ public class DataRepository {
         madhobpur.setWarnings("⚠️ This is within a private tea estate — follow estate rules. Photography of factory equipment may be restricted.");
         madhobpur.setLatitude(24.3667);
         madhobpur.setLongitude(91.8500);
-        madhobpur.setYoutubeVideoId("NzCQK_y9nuk");
+        madhobpur.setYoutubeVideoId("rg71i0v46K0");
         madhobpur.setGalleryImages(java.util.Arrays.asList(
                 R.drawable.madhobpur_lake1,
                 R.drawable.madhobpur_lake2,
@@ -518,7 +510,7 @@ public class DataRepository {
         hamham.setWarnings("⚠️ CRITICAL: Do NOT attempt this trek without a local guide — people have gotten lost in this forest. ⚠️ Do NOT visit during monsoon — risk of flash floods and very slippery trail. ⚠️ Tell someone your itinerary and expected return time. ⚠️ There is NO mobile network inside the forest.");
         hamham.setLatitude(24.3000);
         hamham.setLongitude(91.8333);
-        hamham.setYoutubeVideoId("WJaa_1cJD_w");
+        hamham.setYoutubeVideoId("swCffKstcC8");
         hamham.setGalleryImages(java.util.Arrays.asList(
                 R.drawable.ham_ham1,
                 R.drawable.ham_ham2,
@@ -545,7 +537,7 @@ public class DataRepository {
         baikaBeel.setWarnings("⚠️ This is a protected sanctuary — fishing is prohibited within the sanctuary boundary. Respect wildlife. ⚠️ Keep noise to minimum to avoid disturbing birds.");
         baikaBeel.setLatitude(24.3194);
         baikaBeel.setLongitude(91.7917);
-        baikaBeel.setYoutubeVideoId("yJWh34w-05U");
+        baikaBeel.setYoutubeVideoId("VqYYwxoALUc");
         baikaBeel.setGalleryImages(java.util.Arrays.asList(
                 R.drawable.baikka_bil1,
                 R.drawable.baikka_bil2,
@@ -664,7 +656,7 @@ public class DataRepository {
         tanguarHaor.setWarnings("⚠️ The haor can be dangerous during storms — do not travel in bad weather. ⚠️ Do NOT book random boat operators from the ghat without checking credentials — significant overcharging occurs. Get quotes from multiple operators. ⚠️ Do not purchase or consume illegally caught Hilsa fish or protected species. ⚠️ Some operators falsely claim 'official' status — verify with the District Administration Tourism office.");
         tanguarHaor.setLatitude(25.1167);
         tanguarHaor.setLongitude(91.0167);
-        tanguarHaor.setYoutubeVideoId("yJWh34w-05U");
+        tanguarHaor.setYoutubeVideoId("QHj94XqtAGQ");
         tanguarHaor.setGalleryImages(java.util.Arrays.asList(
                 R.drawable.tanguarhaor1,
                 R.drawable.tanguarhaor2,
@@ -681,23 +673,6 @@ public class DataRepository {
                 R.drawable.tekerghat1, TouristSpot.SpotCategory.NATURAL
         );
         tekerghat.setFullDescription("Tekerghat is a former lime stone (chinaclay) mining area in Tahirpur Upazila of Sunamganj. The abandoned quarries have filled with stunningly vivid turquoise-blue water, creating an otherworldly lake surrounded by white limestone cliffs. The area also overlooks Tanguar Haor and has views of the Meghalaya hills. A bridge (Syed Nazrul Islam Bridge) connects the area to the mainland.\n\n───────────────\n\nটেকেরঘাট সুনামগঞ্জের তাহিরপুরে অবস্থিত একটি পরিত্যক্ত চুনাপাথর খনি এলাকা। এখানকার নীলাভ পানির হ্রদ এবং চুনাপাথরের টিলা পর্যটকদের কাছে 'নীলাদ্রি লেক' নামে পরিচিত। চমৎকার প্রাকৃতিক দৃশ্য ছবি তোলার জন্য দারুণ উপযোগী।");
-        tekerghat.setHowToReach("From Sunamganj: Speedboat or engine boat to Tahirpur, then to Tekerghat (2-3 hours total). Combined with Tanguar Haor trips.");
-        tekerghat.setTransportOptions("Speedboat | Engine Boat (from Sunamganj Ghat)");
-        tekerghat.setApproxCostFromSylhet("Combine with Tanguar Haor boat hire. Extra cost: ৳500-1000 to extend boat trip to Tekerghat.");
-        tekerghat.setEntranceFee("No entry fee");
-        tekerghat.setBestTimeToVisit("November to April (dry season when water level is lower and limestone structures are more visible)");
-        tekerghat.setTravelTips("Best visited as part of a Tanguar Haor overnight trip. The blue water is most vivid in bright sunlight. Excellent photography opportunity from the hilltop viewpoint.");
-        tekerghat.setWarnings("⚠️ SWIMMING IN THE QUARRY LAKE IS PROHIBITED due to deep, cold water and underwater hazards. ⚠️ Road access during monsoon is often flooded — boat is the primary transport.");
-        tekerghat.setLatitude(25.1417);
-        tekerghat.setLongitude(91.0000);
-        tekerghat.setYoutubeVideoId("dyYwTMqIvj0");
-        tekerghat.setGalleryImages(java.util.Arrays.asList(
-                R.drawable.tekerghat1,
-                R.drawable.tekerghat2,
-                R.drawable.tekerghat3,
-                R.drawable.tekerghat4
-        ));
-        spots.add(tekerghat);
         tekerghat.setHowToReach("From Sunamganj: Speedboat or engine boat to Tahirpur, then to Tekerghat (2-3 hours total). Combined with Tanguar Haor trips.");
         tekerghat.setTransportOptions("Speedboat | Engine Boat (from Sunamganj Ghat)");
         tekerghat.setApproxCostFromSylhet("Combine with Tanguar Haor boat hire. Extra cost: ৳500-1000 to extend boat trip to Tekerghat.");

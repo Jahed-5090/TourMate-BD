@@ -210,9 +210,20 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    private Boolean previousNetworkState = null;
+
     @Override
     public void onNetworkChanged(boolean isConnected) {
         binding.layoutOfflineBanner.setVisibility(isConnected ? View.GONE : View.VISIBLE);
+        
+        if (previousNetworkState != null && previousNetworkState != isConnected) {
+            if (isConnected) {
+                Toast.makeText(this, "🌐 Internet connection restored (Online Mode)", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "⚠️ Internet disconnected (Offline Mode)", Toast.LENGTH_SHORT).show();
+            }
+        }
+        previousNetworkState = isConnected;
     }
 
     // ── Topic 11: HTTP Network Request, Background Operation & JSON Parsing ──
@@ -275,6 +286,11 @@ public class MainActivity extends AppCompatActivity
 
 
     private void triggerCloudSync() {
+        if (!NetworkChangeReceiver.isNetworkAvailable(this)) {
+            Toast.makeText(this, "⚠️ You are offline. Data is saved locally. Cloud sync will happen when online.", Toast.LENGTH_LONG).show();
+            return;
+        }
+        
         Toast.makeText(this, "Firebase Cloud Database is syncing...", Toast.LENGTH_SHORT).show();
         FirebaseManager.getInstance().syncFavoritesWithCloud(this, new FirebaseManager.CloudSyncCallback() {
             @Override

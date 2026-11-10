@@ -82,9 +82,11 @@ public class FirebaseManager {
                         android.content.SharedPreferences prefs = context.getSharedPreferences("tourmate_prefs", android.content.Context.MODE_PRIVATE);
                         long lastNotified = prefs.getLong("last_notified_" + uid, 0);
                         
-                        if (spot.getTimestamp() > lastNotified) {
+                        // If spot was added recently or is newer than last notified spot for this user
+                        long spotTime = spot.getTimestamp() > 0 ? spot.getTimestamp() : System.currentTimeMillis();
+                        if (spotTime > lastNotified) {
                             sendNewSpotNotification(context, spot);
-                            prefs.edit().putLong("last_notified_" + uid, spot.getTimestamp()).apply();
+                            prefs.edit().putLong("last_notified_" + uid, spotTime).apply();
                         }
                     }
                 }
@@ -115,7 +117,9 @@ public class FirebaseManager {
         
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             android.app.NotificationChannel channel = new android.app.NotificationChannel(
-                    channelId, "New Tourist Spots", android.app.NotificationManager.IMPORTANCE_DEFAULT);
+                    channelId, "New Tourist Spots", android.app.NotificationManager.IMPORTANCE_HIGH);
+            channel.setDescription("Notifications when a new tourist spot is added");
+            channel.enableVibration(true);
             notificationManager.createNotificationChannel(channel);
         }
 
@@ -123,11 +127,22 @@ public class FirebaseManager {
         com.tourmate.bd.models.District dist = com.tourmate.bd.data.DataRepository.getInstance().getDistrictById(spot.getDistrictId());
         if (dist != null) districtName = dist.getName();
 
+        android.content.Intent intent = new android.content.Intent(context, com.tourmate.bd.activities.SpotDetailActivity.class);
+        intent.putExtra(com.tourmate.bd.activities.SpotDetailActivity.EXTRA_SPOT_ID, spot.getId());
+        android.app.PendingIntent pendingIntent = android.app.PendingIntent.getActivity(
+                context,
+                spot.getId().hashCode(),
+                intent,
+                android.app.PendingIntent.FLAG_UPDATE_CURRENT | android.app.PendingIntent.FLAG_IMMUTABLE
+        );
+
         androidx.core.app.NotificationCompat.Builder builder = new androidx.core.app.NotificationCompat.Builder(context, channelId)
                 .setSmallIcon(android.R.drawable.ic_dialog_info)
-                .setContentTitle("New Tourist Spot Added!")
+                .setContentTitle("New Tourist Spot Added! 📍")
                 .setContentText(spot.getName() + " has been added in " + districtName + ".")
-                .setPriority(androidx.core.app.NotificationCompat.PRIORITY_DEFAULT)
+                .setPriority(androidx.core.app.NotificationCompat.PRIORITY_HIGH)
+                .setDefaults(androidx.core.app.NotificationCompat.DEFAULT_ALL)
+                .setContentIntent(pendingIntent)
                 .setAutoCancel(true);
 
         if (androidx.core.content.ContextCompat.checkSelfPermission(context, android.Manifest.permission.POST_NOTIFICATIONS) == android.content.pm.PackageManager.PERMISSION_GRANTED || android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.TIRAMISU) {
